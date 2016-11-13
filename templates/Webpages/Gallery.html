@@ -1,0 +1,78 @@
+<p>Hello {{ username }}</p>
+<div>
+    <form enctype="multipart/form-data" method="POST" action="/transform/uploadp/">
+        <input type="file" name="image" />
+        <input type="submit" value="upload"/>
+    </form>
+</div>
+<div>
+    <h1>我的相片</h1>
+    <div>
+        {% for pic in my_pic_list %}
+            <img src="/media/{{ pic.img }}">
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    <h1>照片转换</h1>
+
+    <h3>格式转换</h3>
+     <h5> 文件格式转换 </h5>
+    <form  enctype="multipart/form-data" method="POST" action="/transform/process_p/">
+        <input type="file" name="image" />
+        <select name="file_type">
+            <option value="jpg">jpg</option>
+            <option value="png">png</option>
+            <option value="bmp">bmp</option>
+            <option value="gif">gif</option>
+        </select>
+        <input type="submit" value="transform"/>
+    </form>
+
+    <h5> 显示格式转换（1|L|P|RGB|RGBA|CMYK|YCbCr|I|F） </h5>
+    <form  enctype="multipart/form-data" method="POST" action="/transform/process_p/">
+        <input type="file" name="image" />
+        <select name="display_mode">
+            <option value="1">1</option>
+            <option value="L">L</option>
+            <option value="P">P</option>
+            <option value="RGB">RGB</option>
+            <option value="RGBA">RGBA</option>
+            <option value="CMYK">CMYK</option>
+            <option value="YCbCr">YCbCr</option>
+            <option value="I">I</option>
+            <option value="F">F</option>
+        </select>
+        <input type="submit" value="transform"/>
+    </form>
+
+
+    <h3>图片美化</h3>
+    <h5> 滤镜(ImageFilter.EMBOSS|ImageFilter.FIND_EDGES|ImageFilter.SMOOTH|ImageFilter.SMOOTH_MORE|ImageFilter.SHARPEN) </h5>
+    <form enctype="multipart/form-data" method="POST" action="/transform/process_p/">
+        <input type="file" name="image" />
+        <select name="set_filter">
+            <option value="EMBOSS">EMBOSS</option>
+            <option value="FIND_EDGES">FIND_EDGES</option>
+            <option value="SMOOTH">SMOOTH</option>
+            <option value="SMOOTH_MORE">SMOOTH_MORE</option>
+            <option value="SHARPEN">SHARPEN</option>
+        </select>
+        <input type="submit" value="transform"/>
+    </form>
+
+    <h5> 亮度 锐度 对比度调整 </h5>
+    <form enctype="multipart/form-data" method="POST" action="/transform/process_p/">
+        <input type="file" name="image" />
+        <select name="bsc_adjust">
+            <option value="brightness">brightness</option>
+            <option value="sharpness">sharpness</option>
+            <option value="contrast">contrast</option>
+        </select>
+        <input type="text" name="adjust_value" />
+        <input type="submit" value="transform"/>
+    </form>
+
+
+</div>

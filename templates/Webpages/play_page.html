@@ -1,0 +1,28 @@
+<head>
+    
+</head>
+
+<body>
+	<div style=" width:660px;margin:0 auto;">
+		<div id="a1"></div>
+	</div>
+
+	<script type="text/javascript">
+		var isLive=false;
+	</script>
+	<script type="text/javascript" src="/static/ckplayer/ckplayer/ckplayer.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/static/ckplayer/js/barrage.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		var flashvars={
+			f:'/media/{{ video_name }}',
+			c:0,
+			b:0,
+			loaded:'loadedHandler'
+			};
+		var video=['http://movie.ks.js.cn/flv/other/1_0.mp4->video/mp4'];
+		CKobject.embed('/static/ckplayer/ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',false,flashvars,video)
+	</script>
+		    
+
+</body>
