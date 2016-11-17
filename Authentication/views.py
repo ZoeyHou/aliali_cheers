@@ -3,6 +3,9 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import User
 from django import forms
+import base64
+
+import face_recog as fr
 
 
 #定义表单模型
@@ -54,3 +57,26 @@ def logout(req):
     #清理cookie里保存username
     response.delete_cookie('username')
     return response
+
+
+def recog_register(req):
+    username = req.COOKIES.get("username", '')
+    fr.face_regist(User.objects.filter(username=username)[0])
+
+#人脸识别登录
+def recog_login(req):
+    if req.method == 'POST':
+        img = req.POST['image'][23:]
+        username = req.POST.get('username', '')
+        imgData = base64.b64decode(img)
+
+        user = User.objects.filter(username=username)[0]
+        if fr.is_user(user.username, imgData):
+            #用了ajax post,ajax请求无法重定向
+            response = HttpResponse('T')
+            response.set_cookie('username', username, 3600)
+            return response
+        else:
+            return HttpResponse('F')
+
+    return render_to_response('Authentication/recog_login.html')
