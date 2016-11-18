@@ -1,4 +1,6 @@
 #coding: utf-8
+from django.conf import settings
+
 import requests
 import os
 import time
@@ -30,14 +32,16 @@ def get_local_faceid(imgData):
 
     # 如果读取到图片中的头像则输出，其中的'face_id'就是所需值
     faces = r.json().get('face')
-    # print faces
-    face_id = faces[0]['face_id']
-    # print face_id
-    #print 'done'
+    face_id = 0
+    print faces
+    if faces:
+        face_id = faces[0]['face_id']
+        # print face_id
+
     return face_id
 
-def verify_face(Api, name, face_id):
-    result = Api.recognition.verify(person_name=name, face_id=face_id)
+def verify_face(name, face_id):
+    result = api.recognition.verify(person_name=name, face_id=face_id)
     print '=' * 60
     print_result('Recognize result:', result)
     print '=' * 60
@@ -53,16 +57,15 @@ def delete_pergro(name, group):
 
 
 # name为人的姓名， group为组名， face_list为预设人的三张图片
-def create_person(name, group, face_list, Api):
-    api = Api
+def create_person(name, group, face_list):
 
-    face_id = get_local_faceid(face_list[0][1])
+    face_id = get_local_faceid(open(face_list[0][1], 'rb'))
     api.person.create(person_name = name, group_name = group,
                       face_id = face_id)
     print 'person create done'
 
     for i in range(1, len(face_list)):
-        face_id = get_local_faceid(open(face_list[0][1],'rb'))
+        face_id = get_local_faceid(open(face_list[0][1], 'rb'))
         result = api.person.add_face(person_name = name, face_id = face_id)
         print 'add %d' % i
     print 'add all done'
@@ -89,16 +92,18 @@ def face_regist(user):
     GROUP='test'
 
     # 预设的三张图片，名字和文件位置
-    face_list = [(NAME, user.face1),
-         (NAME, user.face2),
-         (NAME, user.face3)]
-    create_person(name=NAME, group=GROUP, face_list=face_list, Api=api)
+    face_list = [(NAME, settings.MEDIA_ROOT+str(user.face1)),
+                (NAME, settings.MEDIA_ROOT + str(user.face2)),
+                (NAME, settings.MEDIA_ROOT + str(user.face3))]
+    create_person(name=NAME, group=GROUP, face_list=face_list)
     train_person(name=NAME)
 
 def is_user(username, img):
     target_face = img
     target_face_id = get_local_faceid(target_face)
+    final_result = False
     print 'target face id done : %s' % target_face_id
-    final_result = verify_face(api, username, target_face_id)
+    if target_face_id:
+        final_result = verify_face(username, target_face_id)
 
     return final_result

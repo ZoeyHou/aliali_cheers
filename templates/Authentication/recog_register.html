@@ -9,7 +9,8 @@
     $(document).ready(function(){
 
     var pos = 0, pic_count = 3;
-    var up_url = "/login/recog_login"
+    var img1, img2, img3;
+    var up_url = "/login/recog_register";
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', 320);
     canvas.setAttribute('height', 240);
@@ -45,13 +46,25 @@
         　　	}
             if (pos >= 4 * 320 * 240) {
             　　	ctx.putImageData(img, 0, 0);
-                if(pic_count > 0){
-            　　	$.post(up_url, {type: "data", image: canvas.toDataURL("image/jpeg"), username: $("#username").val()}, function(return_html){
-            　　		if(return_html=="T")
-                        self.location.href='/'
-                    else
-                        self.location.href='/login/recog_login'
-            　　	});
+                if(pic_count <= 0){
+                　　	$.post(up_url, {type: "data", img1: img1, img2: img2, img3: img3}, function(return_html){
+                            self.location.href='/'
+                　　	});
+
+                }
+                if(pic_count==3){
+                    $("#1").hide();
+                    img1 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==2){
+                    $("#2").hide();
+                    img2 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==1){
+                    $("#3").hide();
+                    img3 = canvas.toDataURL("image/jpeg");
+                }
+                pic_count -= 1;
             　　	pos = 0;
             　　}
         　　} else {
@@ -59,20 +72,19 @@
                 　　pos+= 4 * 320;　　
                 　　if (pos >= 4 * 320 * 240) {
                     　　$.post(up_url, {type: "data", image: image.join('|')},  function(){
-                    　　  location.href = "/";
+                    　　  location.href("/");
                     　　});
                     　　pos = 0;
                 　　}
         　　}
-            }
         },
-        onCapture: function() {
+        onCapture: function () {
             webcam.save();
         },
 
-        debug: function(type, string) {},
+        debug: function (type, string) {},
 
-        onLoad: function() {
+        onLoad: function () {
         // Page load
             var cams = webcam.getCameraList();
             for(var i in cams) {
@@ -84,9 +96,11 @@
 </script>
 </head>
 <body>
-    <p><input id="username" type="text"/></p>
-    <p><div id="webcam"></div></p>
-    <button id="capture_btn">login</button>
+    <p id="1">1</p>
+    <p id="2">2</p>
+    <p id="3">3</p>
+    <div id="webcam"></div>
+    <button id="capture_btn">capture</button>
     <script>
         $("#capture_btn").click(function(){
             webcam.capture();
