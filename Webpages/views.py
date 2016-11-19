@@ -13,7 +13,7 @@ def return_hello(req):
 
 def index(req):
     username = req.COOKIES.get('username', '')
-    return render_to_response('Webpages/Home.html', {'username': username})
+    return render_to_response('Webpages/index.html', {'username': username})
 
 def gallery(req):
     username = req.COOKIES.get('username', '')
