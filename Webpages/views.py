@@ -29,7 +29,9 @@ def video(req):
 
 def playpage(req, video_name):
     username = req.COOKIES.get('username', '')
-    return render_to_response('Webpages/play_page.html', {'username': username, 'video_name': video_name})
+    video = Video.objects.filter(video=video_name)[0]
+    comments = video.Video_Comment.all()
+    return render_to_response('Webpages/video_diaplay.html', {'username': username, 'video': video, 'comments':comments})
 
 def barrage(req, video_name):
     username = req.COOKIES.get('username', '')
