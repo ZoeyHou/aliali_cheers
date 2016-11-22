@@ -12,31 +12,35 @@
   position:absolute;
   z-index:0;
 }
+#Edit {
+  position: relative;
+  top: 200px;
+  height: 570px;
+}
 #Edit_bgd {
   position:absolute;
   left:110px;
-  top:200px;
   width:1200px;
   height:510px;
 }
 #Edit_title {
   position:absolute;
   left:140px;
-  top:142px;
-  width:166px;
+  top:-58px;
+  width:266px;
   height:28px;
 }
 #Edit_img {
   position:absolute;
   left:210px;
-  top:269px;
+  top:69px;
   width:150px;
   height:160px;
 }
 #Edit_update {
   position:absolute;
   left:600px;
-  top:610px;
+  top:410px;
   width:220px;
   height:50px;
   font-size:24px;
@@ -55,17 +59,22 @@
   width:216px;
   word-wrap:break-word;
 }
+#Edit_update_link {
+  position:absolute;
+  width:220px;
+  height:50px;
+}
 #Edit_name_txt {
   position:absolute;
   left:470px;
-  top:249px;
+  top:49px;
   width:125px;
   height:28px;
 }
 #Edit_name {
   position:absolute;
   left:635px;
-  top:269px;
+  top:69px;
   width:235px;
   height:28px;
 }
@@ -86,14 +95,14 @@
 #Edit_discription_txt {
   position:absolute;
   left:470px;
-  top:330px;
+  top:130px;
   width:134px;
   height:28px;
 }
 #Edit_discription {
   position:absolute;
   left:635px;
-  top:350px;
+  top:150px;
   width:490px;
   height:170px;
 }
@@ -111,10 +120,13 @@
   color:#000000;
   text-align:left;
 }
+#blank {
+  position: relative;
+  height: 200px;
+}
 #Footer{
-  position:absolute;
+  position:relative;
   left:293px;
-  top:780px;
   width:854px;
   border-top: #888888 solid 1px;
 }

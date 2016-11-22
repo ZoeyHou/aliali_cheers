@@ -8,63 +8,56 @@
   margin-right:auto;
   text-align:left;
 }
-#base {
-  position:absolute;
-  z-index:0;
+#Display_image {
+  position: relative;
+  top: 200px;
+  height: 1000px;
 }
 #Image_txt {
   position:absolute;
   left:140px;
-  top:142px;
+  top:-58px;
   width:70px;
   height:28px;
 }
 #Image_bgd {
   position:absolute;
   left:110px;
-  top:200px;
   width:1200px;
-  height:530px;
+  height:700px;
 }
 #Image_display {
   position:absolute;
-  left:140px;
-  top:230px;
-  width:760px;
-  height:420px;
+  left:150px;
+  top:30px;
+  width:1100px;
+  height:600px;
 }
 #Image_title {
   position:absolute;
   left:960px;
-  top:220px;
+  top:20px;
   width:101px;
   height:39px;
   font-family:'CenturyGothic-Bold', 'Century Gothic Bold', 'Century Gothic';
   font-weight:700;
   font-style:normal;
 }
-#Image_discription {
-  position:absolute;
-  left:960px;
-  top:290px;
-  width:300px;
-  height:264px;
-  font-family:'CenturyGothic', 'Century Gothic';
-  font-weight:400;
-  font-style:normal;
-  font-size:18px;
+#icon {
+  position: relative;
+  top:640px;
+  left:50px;
 }
 #Image_download_icon {
   position:absolute;
   left:140px;
-  top:675px;
+  top:10px;
   width:30px;
   height:30px;
 }
 #Image_download_txt {
   position:absolute;
   left:180px;
-  top:664px;
   width:87px;
   height:21px;
   font-size:18px;
@@ -73,14 +66,13 @@
 #Image_like_icon {
   position:absolute;
   left:340px;
-  top:675px;
+  top:10px;
   width:30px;
   height:30px;
 }
 #Image_like_txt {
   position:absolute;
   left:380px;
-  top:664px;
   width:37px;
   height:21px;
   font-size:18px;
@@ -89,7 +81,6 @@
 #Image_like_num {
   position:absolute;
   left:427px;
-  top:664px;
   width:29px;
   height:21px;
   font-size:18px;
@@ -97,14 +88,13 @@
 #Image_dislike_icon{
   position:absolute;
   left:520px;
-  top:680px;
+  top:15px;
   width:30px;
   height:30px;
 }
 #Image_dislike_txt {
   position:absolute;
   left:571px;
-  top:664px;
   width:59px;
   height:21px;
   font-size:18px;
@@ -113,7 +103,6 @@
 #Image_dislike_num {
   position:absolute;
   left:640px;
-  top:664px;
   width:11px;
   height:21px;
   font-size:18px;
@@ -121,124 +110,117 @@
 #Image_collect_icon {
   position:absolute;
   left:710px;
-  top:680px;
+  top:15px;
   width:25px;
   height:25px;
 }
 #Image_collect_txt {
   position:absolute;
   left:750px;
-  top:664px;
   width:61px;
   height:21px;
   font-size:18px;
   color:#666666;
 }
+#Display_discription {
+  position: relative;
+  height: 300px;
+}
 #Discription_bgd {
   position:absolute;
   left:110px;
-  top:798px;
   width:1200px;
   height:190px;
 }
 #Discription_title {
   position:absolute;
   left:130px;
-  top:740px;
+  top:-60px;
   width:126px;
   height:28px;
 }
 #Discription_cover {
   position:absolute;
   left:140px;
-  top:822px;
+  top:22px;
   width:140px;
   height:140px;
 }
 #Discription_name {
   position:absolute;
   left:320px;
-  top:810px;
+  top:10px;
   width:88px;
   height:28px;
 }
 #Discription_txt {
   position:absolute;
   left:320px;
-  top:858px;
+  top:58px;
   width:930px;
   height:54px;
   font-size:16px;
 }
-#u90 {
-  position:absolute;
-  left:110px;
-  top:1346px;
-  width:1200px;
-  height:210px;
-}
 #Display_author {
   position: relative;
-  top: 270px;
+  height: 300px;
 }
 #Author_bgd {
   position:absolute;
   left:110px;
-  top:810px;
   width:1200px;
   height:190px;
 }
 #Author_txt {
   position:absolute;
   left:130px;
-  top:752px;
+  top:-58px;
   width:80px;
   height:28px;
 }
 #Author_img {
   position:absolute;
   left:140px;
-  top:835px;
+  top:25px;
   width:140px;
   height:140px;
 }
 #Author_name {
   position:absolute;
   left:320px;
-  top:822px;
+  top:12px;
   width:90px;
   height:28px;
 }
 #Author_discription {
   position:absolute;
   left:320px;
-  top:870px;
+  top:60px;
   width:930px;
   height:54px;
   font-size:16px;
 }
 #Display_recommand {
   position: relative;
-  top: 270px;
+  height: 300px;
 }
 #Recommand_bgd {
   position:absolute;
   left:110px;
-  top:1080px;
   width:1200px;
   height:210px;
 }
 #Recommand_title {
   position:absolute;
   left:130px;
-  top:1022px;
+  top:-58px;
   width:202px;
   height:28px;
 }
 #item0{
   position: absolute;
   left:140px;
-  top:1105px;
+  top:25px;
 }
 #recommand a {
   position:absolute;
@@ -269,40 +251,43 @@
 #item1 {
   position:absolute;
   left:375px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item2 {
   position:absolute;
   left:610px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item3 {
   position:absolute;
   left:846px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item4 {
   position:absolute;
   left:1080px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #Display_comments {
-  position:absolute;
-  left:110px;
-  top:1830px;
+  position:relative;
   width:1200px;
-  height:450px;
+}
+#Display_comments li{
+    left:110px;
+}
+.comments{
+  position: relative;
 }
 .Comments_bgd {
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:1200px;
@@ -376,32 +361,24 @@
 }
 #Write_comment {
   position: relative;
-  top: 270px;
+  height: 200px;
 }
 #Comment_bgd {
   position:absolute;
   left:110px;
-  top:1380px;
   width:1200px;
   height:150px;
 }
 #Comment_input {
   position:absolute;
   left:269px;
-  top:1408px;
-  width:841px;
-  height:95px;
-}
-#u149_input {
-  position:absolute;
-  left:0px;
-  top:0px;
+  top:28px;
   width:841px;
   height:95px;
   font-family:'ArialMT', 'Arial';
   font-weight:400;
   font-style:normal;
-  font-size:13px;
+  font-size:16px;
   text-decoration:none;
   color:#000000;
   text-align:left;
@@ -411,19 +388,19 @@
 #Comment_title{
   position: absolute;
   left: 140px;
-  top:1320px;
+  top:-58px;
 }
 #Comment_img {
   position:absolute;
   left:135px;
-  top:1400px;
+  top:20px;
   width:90px;
   height:91px;
 }
 #Comment_name {
   position:absolute;
   left:146px;
-  top:1481px;
+  top:100px;
   width:68px;
   height:21px;
   font-size:18px;
@@ -431,7 +408,7 @@
 #Comment_send {
   position:absolute;
   left:1170px;
-  top:1440px;
+  top:60px;
   width:100px;
   height:30px;
   font-size:16px;
@@ -449,4 +426,14 @@
   top:-9px;
   width:96px;
   word-wrap:break-word;
+}
+#blank {
+  position: relative;
+  height: 80px
+}
+#Footer{
+  position: relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
 }

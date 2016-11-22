@@ -1,4 +1,7 @@
-﻿#photo {
+﻿.Photo_display {
+  position: relative;
+}
+#photo {
   position:absolute;
   left:136px;
   top:70px;
@@ -208,66 +211,20 @@
   background-color: #333333;
   opacity: 0.3;
 }
-#Animation {
-  position:absolute;
-  left:100px;
+.display_detail {
+  position: relative;
   top:770px;
-  width:1240px;
-  border-top: #000000 solid 2px;
 }
-#Music{
-  position:absolute;
+.video_display {
+  position: relative;
   left:100px;
-  top:1390px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#Gaming {
-  position:absolute;
-  left:100px;
-  top:2010px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#Tech {
-  position:absolute;
-  left:100px;
-  top:2630px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#Entertainment {
-  position:absolute;
-  left:100px;
-  top:3250px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#TV {
-  position:absolute;
-  left:100px;
-  top:3870px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#Life {
-  position:absolute;
-  left:100px;
-  top:4490px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
-#Fashion {
-  position:absolute;
-  left:100px;
-  top:5110px;
+  height:610px;
   width:1240px;
   border-top: #000000 solid 2px;
 }
 #Footer{
-  position:absolute;
+  position: relative;
   left:293px;
-  top:5730px;
   width:854px;
   border-top: #888888 solid 1px;
 }

@@ -1,18 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Personal page</title>
+  <title>Reset Password</title>
   <meta charset='utf-8'/>
   <link href="css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="css/edit.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
-  <script type="text/javascript" src="js/edit.js"></script>
+  <script type="text/javascript" src="js/reset.js"></script>
 </head>
   <body>
-    <div id="base" class="">
-
     <div id='header'>
         <!-- Logo -->
         <div id='logo'>
@@ -59,63 +57,57 @@
         <!-- Login -->
         <div id="Login">
           <div id="Login_containt" style="display:none;">
-          <img id="Login_bgd" src="images/header/Login_bgd.png">
-          <!-- Logo -->
-          <p id="Login_logo_title1">Super</p>
-          <p id="Login_logo_title2">JiJi</p>
-          <img id="Login_logo_circle" src="images/header/logo_login.png"/>
+            <img id="Login_bgd" src="images/header/Login_bgd.png">
+            <!-- Logo -->
+            <p id="Login_logo_title1">Super</p>
+            <p id="Login_logo_title2">JiJi</p>
+            <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
-          <form id="Input" action="action_page.php">
-              <p id="email_txt">E-mail Address</p>
-              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
-              <input id="email_input" type="email" name="E-mail" value=""/>
+            <form id="Input" action="action_page.php">
+                <p id="email_txt">E-mail Address</p>
+                <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+                <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <p id="pwd_txt">Password</p>
-              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
-              <input id="pwd_input" type="password" name="pwd" value=""/>
-          </form> 
-          <!-- Login -->
-          <a id="Login_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">LOGIN</p>
-          </a>
-          <!-- Sign up -->
-          <a id="Face_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">FACE LOGIN</p>
-          </a>
-        </div>
-        <div id="Login_body" style="display:none;">
+                <p id="pwd_txt">Password</p>
+                <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+                <input id="pwd_input" type="password" name="pwd" value=""/>
+            </form> 
+            <!-- Login -->
+            <a id="Login_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="images/header/button.png"/>
+              <p id="Login_button_txt" class="text">LOGIN</p>
+            </a>
+            <!-- Sign up -->
+            <a id="Face_button" class="shape" href="#">
+              <img id="Login_button_img" class="button" src="images/header/button.png"/>
+              <p id="Login_button_txt" class="text">FACE LOGIN</p>
+            </a>
           </div>
+          <div id="Login_body" style="display:none;"></div>
         </div>
     </div>
-      
-      <div id="Edit">
-        <img id="Edit_bgd" src="images/edit/u0.png"/>
-        <p id="Edit_title" class="h2">Personal Page Edit</p>
-        <a href="#"><img id="Edit_img" src="images/edit/u60.png"/></a>
+    
+    <div id="base" class="">
 
-        <p id="Edit_name_txt" class="h2">Username:</p>
+      <img id="Reset_bgd" src="images/video_display/u0.png"/>
+      <p id="Reset_txt" class="h2">Reset password</p>
 
-        <div id="Edit_name" class="ax_text_field">
-          <input id="Edit_name_input" type="text" value="Starboy"/>
-        </div>
+      <p id="reset_npwd_txt" class="h2">New Password:</p>
+      <input id="reset_npwd_input" class="ax_text_field" type="text" value=""/>
+      <p id="reset_npwd_hint" class="paragraph">Password is too short!</p>
 
-        <p id="Edit_discription_txt" class="h2">Discription:</p>
+      <p id="reset_rpwd_txt" class="h2">Reenter Password:</p>
+      <input id="reset_rpwd_input" class="ax_text_field" type="text" value=""/>
+      <p id="reset_rpwd_hint" class="paragraph">Different passwords!</p>
 
-        <div id="Edit_discription" class="ax_text_area">
-          <textarea id="Edit_discription_input">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</textarea>
-        </div>
+      <a id="reset_bt" class="shape" href="index.html">
+        <img id="reset_bt_img" class="img " src="images/edit/u62.png"/>
+        <p id="reset_bt_txt">Change</p>
+      </a>
+    </div>
 
-        <div id="Edit_update" class="shape">
-          <img id="Edit_update_bt" class="img " src="images/edit/u62.png"/>
-          <p id="Edit_update_txt" class="text">Update</p>
-          <a id="Edit_update_link" href="personal_page.html">
-        </div>
-      </div>
-      <div id="blank"></div>
-       <!-- Footer -->
-      <div id = "Footer">
+    <div id="blank"></div>
+    <div id = "Footer">
         <p id="Footer_txt_1" class="paragraph">Contact us</p>
         <p id="Footer_txt_2" class="paragraph">About this website.</p>
         <p id="Footer_txt_3" class="paragraph">Join us</p>
@@ -126,8 +118,6 @@
         <img id="slice_2" class="slice" src="images/header/slice.png"/>
         <img id="slice_3" class="slice" src="images/header/slice.png"/>
         <img id="slice_4" class="slice" src="images/header/slice.png"/>
-      </div>
-
     </div>
   </body>
 </html>
