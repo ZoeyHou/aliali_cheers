@@ -1,111 +1,119 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Audio display</title>
+  <title>Video display</title>
   <meta charset='utf-8'/>
   <link href="css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="css/audio_display.css">
+  <link rel="stylesheet" type="text/css" href="css/video_display.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
-  <script type="text/javascript" src="js/audio_display.js"></script>
+  <script type="text/javascript" src="js/video_display.js"></script>
 </head>
   <body>
     <div id="base" class="">
+    <div id='header'>
+        <!-- Logo -->
+        <div id='logo'>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
+          <img id="Logo_circle" src="images/header/logo_header.png"/>
+        </div>
+        <!-- Navigator -->
+        <ul id='Navigator'>
+          <li id = "Nav_Home">
+              <p id="Txt_home">Home</p>
+              <img id= "Line_home" class="Line" src="images/header/line.png" />
+              <a id = "Hot_home" class="Hot" href="./index.html"></a>
+          </li>
+          <li id = "Nav_Video">
+            <p id="Txt_video">Video</p>
+            <img id= "Line_video" class="Line"src="images/header/line.png" />
+            <a id= "Hot_video" class="Hot" href="./video.html"></a>
+          <li>
+          <li id = "Nav_Audio">
+            <p id="Txt_audio">Audio</p>
+            <img id= "Line_audio" class="Line"src="images/header/line.png" />
+            <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
+          </li>
+          <li id = "Nav_Image">
+            <p id="Txt_image">Image</p>
+            <img id= "Line_image" class="Line" src="images/header/line.png"/>
+            <a id= "Hot_image" class="Hot" href="./image.html"></a>
+          <li>
+        </ul>
+        <!-- Search -->
+        <div id = 'Search'>
+          <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
+          <div id = 'User'>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+            <p id="User_circle1" class="paragraph">○</p>
+            <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
+            <p id="User_circle2" class="paragraph">○</p>
+            <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
+          </div>
+          <img id="Search_bgd" src="images/header/Search_bgd.png"/>
+          <a id="search" href ="./search.html"><img id="Search_icon" src="images/header/Search_icon.png"/></a>
+        </div>
+        <!-- Login -->
+        <div id="Login">
+          <div id="Login_containt" style="display:none;">
+          <img id="Login_bgd" src="images/header/Login_bgd.png">
+          <!-- Logo -->
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
+          <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
-      <div id='header'>
-            <!-- Logo -->
-            <div id='logo'>
-              <p id="Logo_title1">Super</p>
-              <p id="Logo_title2">JiJi</p>
-              <img id="Logo_circle" src="images/header/logo_header.png"/>
-            </div>
-            <!-- Navigator -->
-            <ul id='Navigator'>
-              <li id = "Nav_Home">
-                  <p id="Txt_home">Home</p>
-                  <img id= "Line_home" class="Line" src="images/header/line.png" />
-                  <a id = "Hot_home" class="Hot" href="./index.html"></a>
-              </li>
-              <li id = "Nav_Video">
-                <p id="Txt_video">Video</p>
-                <img id= "Line_video" class="Line"src="images/header/line.png" />
-                <a id= "Hot_video" class="Hot" href="./video.html"></a>
-              <li>
-              <li id = "Nav_Audio">
-                <p id="Txt_audio">Audio</p>
-                <img id= "Line_audio" class="Line"src="images/header/line.png" />
-                <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
-              </li>
-              <li id = "Nav_Image">
-                <p id="Txt_image">Image</p>
-                <img id= "Line_image" class="Line" src="images/header/line.png"/>
-                <a id= "Hot_image" class="Hot" href="./image.html"></a>
-              <li>
-            </ul>
-            <!-- Search -->
-            <div id = 'Search'>
-              <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
-              <div id = 'User'>
-                <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
-                <p id="User_circle1" class="paragraph">○</p>
-                <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
-                <p id="User_circle2" class="paragraph">○</p>
-                <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
-              </div>
-              <img id="Search_bgd" src="images/header/Search_bgd.png"/>
-              <a id="search" href ="./search.html"><img id="Search_icon" src="images/header/Search_icon.png"/></a>
-            </div>
-            <!-- Login -->
-            <div id="Login">
-              <div id="Login_containt" style="display:none;">
-              <img id="Login_bgd" src="images/header/Login_bgd.png">
-              <!-- Logo -->
-              <p id="Login_logo_title1">Super</p>
-              <p id="Login_logo_title2">JiJi</p>
-              <img id="Login_logo_circle" src="images/header/logo_login.png"/>
+          <form id="Input" action="action_page.php">
+              <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <form id="Input" action="action_page.php">
-                  <p id="email_txt">E-mail Address</p>
-                  <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
-                  <input id="email_input" type="email" name="E-mail" value=""/>
+              <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
+          </form> 
+          <!-- Login -->
+          <a id="Login_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <p id="Login_button_txt" class="text">LOGIN</p>
+          </a>
+          <!-- Sign up -->
+          <a id="Face_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
+          </a>
+        </div>
+        <div id="Login_body" style="display:none;">
+          </div>
+        </div>
+    </div>
 
-                  <p id="pwd_txt">Password</p>
-                  <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
-                  <input id="pwd_input" type="password" name="pwd" value=""/>
-              </form> 
-              <!-- Login -->
-              <a id="Login_button" class="shape" href="#">
-                <img id="Login_button_img" class="button " src="images/header/button.png"/>
-                <p id="Login_button_txt" class="text">LOGIN</p>
-              </a>
-              <!-- Sign up -->
-              <a id="Face_button" class="shape" href="#">
-                <img id="Login_button_img" class="button " src="images/header/button.png"/>
-                <p id="Login_button_txt" class="text">FACE LOGIN</p>
-              </a>
-            </div>
-            <div id="Login_body" style="display:none;">
-              </div>
-            </div>
+      <div id="Display_image">
+        <p id="Image_txt" class="h2">GIPFEL</p>
+        <img id="Image_bgd" class="shape" src="images/video_display/u0.png"/>
+        <img id="Image_display" src="images/home/photo_1.jpg"/>
+        
+        <div id="icon">
+          <a href="#"><img id="Image_download_icon" src="images/video_display/u58.png"/></a>
+          <p id="Image_download_txt" class="h2">Download</p>
+          <a href="#"><img id="Image_like_icon" class="image" src="images/video_display/u62.png"/></a>
+          <p id="Image_like_txt" class="h2">Like</p>
+          <p id="Image_like_num" class="h2">111</p>
+          <a href="#"><img id="Image_dislike_icon" class="image" src="images/video_display/u68.png"/></a>
+          <p id="Image_dislike_txt" class="h2">Dislike</p>
+          <p id="Image_dislike_num" class="h2">4</p>
+          <a href="#"><img id="Image_collect_icon" class="shape" src="images/video_display/u56.png"/></a>
+          <p id="Image_collect_txt" class="h2">Collect</p>
+        </div>
       </div>
 
-      <div id="Audio">
-        <img id="Audio_bgd" src="images/audio_display/u0.png"/>
-        <a href="#"><img id="Download_icon" src="images/video_display/u58.png"/></a>
-        <p id="Download_txt" class="h2">Download</p>
-        <a href="#"><img id="Like_icon" class="ax_image" src="images/video_display/u62.png"/></a>
-        <p id="Like_txt" class="h2">Like</p>
-        <p id="Like_num" class="h2">111</p>
-        <a href="#"><img id="Dislike_icon" class="ax_image" src="images/video_display/u68.png"/></a>
-        <p id="Dislike_txt" class="h2">Dislike</p>
-        <p id="Dislike_num" class="h2">4</p>
-        <a href="#"><img id="Collect_icon" src="images/video_display/u56.png"/></a>
-        <p id="Collect_txt" class="h2">Collect</p>
-        <p id="Audio_title" class="h2">Starboy</p>
-        <img id="Audio_cover" src="images/video_display/image_u125.jpg"/>
-        <iframe id="Audio_lyric" class="ax_inline_frame" scrolling="auto" frameborder="0" src="lyric.html"></iframe>
-        <img id="Audio_player" class="shape" src="images/audio_display/u177.png"/>
+      <div id="Display_discription">
+        <img id="Discription_bgd" class="shape" src="images/video_display/u80.png"/>
+        <p id="Discription_title" class="h2">Discription</p>
+        <img id="Discription_cover" src="images/home/photo_1.jpg"/>
+        <p id="Discription_name" class="h2">GIPFEL</p>
+        <p id="Discription_txt" class="paragraph">Proin facilisis elit vitae mollis faucibus. Proin vitae massa nec mauris dictum consequat. Maecenas congue non felis a malesuada. Phasellus ullamcorper laoreet felis eu viverra. In at tincidunt tortor. Praesent tempor eros vitae elit dignissim, vitae elementum dui dapibus. Duis tristique, ligula eget lobortis accumsan, nibh enim venenatis urna, a commodo elit ex ac urna.</p>
       </div>
 
       <div id="Display_author">
@@ -150,12 +158,11 @@
 
       <div id="Write_comment">
         <p id="Comment_title" class="h2">Comments</p>
-        <!-- Unnamed (Shape) -->
         <img id="Comment_bgd" class="ax_shape" src="images/video_display/u143.png"/>
         <textarea id="Comment_input" class="ax_text_area"></textarea>
         <img id="Comment_img" class="ax_image" data-label="Image" src="images/video_display/image_u125.jpg"/>
         <p id="Comment_name" class="h2" data-label="name">Starboy</p>
-        <a id="Comment_send" class="shape" href="#">
+        <a id="Comment_send" href="#" class="shape">
           <img id="send_button" src="images/video_display/u150.png"/>
           <p id="send_txt" class="text">Send</p>
         </a>

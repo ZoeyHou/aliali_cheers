@@ -14,7 +14,8 @@
 	<div id='header'>
         <!-- Logo -->
         <div id='logo'>
-          <p id="Logo_title">Super&nbsp; JiJi</p>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
           <img id="Logo_circle" src="images/header/logo_header.png"/>
         </div>
         <!-- Navigator -->
@@ -58,15 +59,18 @@
           <div id="Login_containt" style="display:none;">
           <img id="Login_bgd" src="images/header/Login_bgd.png">
           <!-- Logo -->
-          <p id="Login_logo_title">Super&nbsp; JiJi</p>
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
           <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
           <form id="Input" action="action_page.php">
-              <input id="email_input" type="email" name="E-mail" value=""/>
               <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <input id="pwd_input" type="password" name="pwd" value=""/>
               <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
           </form> 
           <!-- Login -->
           <a id="Login_button" class="shape" href="#">
@@ -74,95 +78,99 @@
             <p id="Login_button_txt" class="text">LOGIN</p>
           </a>
           <!-- Sign up -->
-          <a id="Signup_button" class="shape" href="#">
+          <a id="Face_button" class="shape" href="#">
             <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">SIGN UP</p>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
           </a>
         </div>
         <div id="Login_body" style="display:none;">
           </div>
         </div>
   </div>
-  <!-- Photo -->
-	<div id='photo'>
-		<ul>
-			<li id='li1'><a href='#'><img src='images/home/photo_1.jpg'/></a></li>
-			<li id='li2'><a href='#'><img src='images/home/photo_2.png'/></a></li>
-			<li id='li3'><a href='#'><img src='images/home/photo_3.jpg'/></a></li>
-			<li id='li4'><a href='#'><img src='images/home/photo_4.jpg'/></a></li>
-		</ul>
-	</div>
-  <!-- next -->
-  <a id="next" href="#">
-    <img class="photo_nav_bgd" src="images/home/next_u123.png"/>
-    <p class="photo_nav_txt">&gt;</p>
-  </a>
+  
+  <div class="Photo_display">
+    <!-- Photo -->
+  	<div id='photo'>
+  		<ul>
+  			<li id='li1'><a href='#'><img src='images/home/photo_1.jpg'/></a></li>
+  			<li id='li2'><a href='#'><img src='images/home/photo_2.png'/></a></li>
+  			<li id='li3'><a href='#'><img src='images/home/photo_3.jpg'/></a></li>
+  			<li id='li4'><a href='#'><img src='images/home/photo_4.jpg'/></a></li>
+  		</ul>
+  	</div>
+    <!-- next -->
+    <a id="next" href="#">
+      <img class="photo_nav_bgd" src="images/home/next_u123.png"/>
+      <p class="photo_nav_txt">&gt;</p>
+    </a>
 
-  <!-- pre -->
-  <a id="pre" href="#">
-    <img class="photo_nav_bgd" src="images/home/next_u123.png"/>
-    <p class="photo_nav_txt">&lt;</p>
-  </a>
+    <!-- pre -->
+    <a id="pre" href="#">
+      <img class="photo_nav_bgd" src="images/home/next_u123.png"/>
+      <p class="photo_nav_txt">&lt;</p>
+    </a>
 
-  <!-- mark -->
-  <div id="mark">
-    <ul>
-      <li id="markli4">
-        <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker4" class="mark_item" src="images/home/u128.png"/></a>
-      </li>
-      <li id="markli3">
-        <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker3" class="mark_item" src="images/home/u128.png"/></a>
-        <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
-      </li>
-      <li id="markli2">
-        <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker2" class="mark_item" src="images/home/u128.png"/></a>
-        <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
-      </li>
-      <li id="markli1">
-        <a href="#"><img id="marker1" class="mark_item" src="images/home/u128.png"/></a>
-        <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
-        <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
-      </li>
-    </ul>
+    <!-- mark -->
+    <div id="mark">
+      <ul>
+        <li id="markli4">
+          <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="images/home/u128.png"/></a>
+        </li>
+        <li id="markli3">
+          <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="images/home/u128.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
+        </li>
+        <li id="markli2">
+          <a href="#"><img id="marker1" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="images/home/u128.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
+        </li>
+        <li id="markli1">
+          <a href="#"><img id="marker1" class="mark_item" src="images/home/u128.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="images/home/u130.png"/></a>
+        </li>
+      </ul>
+    </div>
   </div>
 
+  <div class="display_detail">
       <!-- Video showing -->
-      <div id = "Video">
+      <div id = "Display0" class="video_display">
         <p class="Title">Video</p>
         <a class="More" href="video.html" style="text-decoration:underline;">more</a>
 
-        <ul id = "video_display" class="display">
+        <ul id = "display_detail0" class="display">
         </ul>
       </div>
       <!-- Audio showing -->
-      <div id = "Audio">
+      <div id = "Display1" class="video_display">
         <p class="Title">Audio</p>
         <a class="More" href="audio.html" style="text-decoration:underline;">more</a>
-        <ul id="audio_display" class="display">
+        
+        <ul id="display_detail1" class="display">
         </ul>
       </div>
       <!-- Image showing -->
-      <div id = "Image">
+      <div id = "Display2" class="video_display">
         <p class="Title">Image</p>
         <a class="More" href="image.html" style="text-decoration:underline;">more</a>
 
-        <!-- Unnamed (Repeater) -->
-        <ul id="image_display" class="display">
+        <ul id="display_detail2" class="display">
         </ul>
       </div>
-      <!-- Footer -->
+            <!-- Footer -->
       <div id = "Footer">
-        <p id="Footer_txt_1" class="paragraph">Contact us</p>
-        <p id="Footer_txt_2" class="paragraph">About this website.</p>
-        <p id="Footer_txt_3" class="paragraph">Join us</p>
+        <a href="#"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+        <a href="#"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+        <a href="#"><p id="Footer_txt_3" class="paragraph">Join us</p></a>
         <img id="Footer_logo" src="images/header/logo_footer.png"/>
         <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
         <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
@@ -171,6 +179,7 @@
         <img id="slice_3" class="slice" src="images/header/slice.png"/>
         <img id="slice_4" class="slice" src="images/header/slice.png"/>
       </div>
+  </div>
 </body>
 <script type="text/javascript">
 	$('#photo').slider();
