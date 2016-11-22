@@ -170,12 +170,11 @@
 
       <!-- Unnamed (Repeater) -->
       <ul id="Display_comments">
-        <li id="comment0">
+        {% for item in comments %}
+        <li id="comment0" class="comments">
           <img class="shape Comments_bgd" src="/static/images/video_display/u123.png"/>
           <img class="image Comments_img" src="/static/images/video_display/image_u125.jpg"/>
           <p class="h2 Comments_name">Starboy</p>
-          <!-- comment (Shape) -->
-          {% for item in comments %}
           <p class="paragraph Comments_content" data-label="comment"> {{ item.content }}</p>
           <img class="Comments_like_img" src="/static/images/video_display/u131.png"/>
           <p class="paragraph Comments_like_num">{{ item.like }}</p>

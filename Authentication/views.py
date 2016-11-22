@@ -9,11 +9,6 @@ import base64
 import face_recog as fr
 
 
-#定义表单模型
-class UserForm(forms.Form):
-    username = forms.CharField(label='用户名：',max_length=100)
-    password = forms.CharField(label='密码：',widget=forms.PasswordInput())
-
 # 注册
 def register(req):
     if req.method == "POST":
@@ -97,3 +92,4 @@ def recog_login(req):
             return HttpResponse('F')
 
     return render_to_response('Authentication/recog_login.html')
+

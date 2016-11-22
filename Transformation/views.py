@@ -1,4 +1,4 @@
-#coding:utf-8
+# coding:utf-8
 from Webpages.models import Picture, Video
 from Authentication.models import User
 from django.http import HttpResponseRedirect, HttpResponse
@@ -11,6 +11,7 @@ import process_img as p_i
 import process_video as p_v
 
 import threading
+
 
 def upload_picture(req):
     if req.method == 'POST':
@@ -26,6 +27,7 @@ def upload_picture(req):
     else:
         return HttpResponseRedirect('/')
 
+
 def upload_video(req):
     if req.method == 'POST':
         video = req.FILES.get('video')
@@ -39,6 +41,7 @@ def upload_video(req):
             return HttpResponse("要选择视频才能上传")
     else:
         return HttpResponseRedirect('/')
+
 
 def process_img(req):
     if req.method == 'POST':
@@ -56,17 +59,18 @@ def process_img(req):
         pro_file = ''
 
         if req.POST.get('file_type', ''):
-            pro_file = 'pictures/'+shotname+'.'+req.POST['file_type']
-            p_i.open_save(picture.img.path, settings.MEDIA_ROOT+pro_file)
+            pro_file = 'pictures/' + shotname + '.' + req.POST['file_type']
+            p_i.open_save(picture.img.path, settings.MEDIA_ROOT + pro_file)
         elif req.POST.get('display_mode', ''):
-            pro_file = 'pictures/'+req.POST['display_mode']+'_'+file_name
-            p_i.mode_convert(picture.img.path, settings.MEDIA_ROOT+pro_file, req.POST['display_mode'])
+            pro_file = 'pictures/' + req.POST['display_mode'] + '_' + file_name
+            p_i.mode_convert(picture.img.path, settings.MEDIA_ROOT + pro_file, req.POST['display_mode'])
         elif req.POST.get('set_filter', ''):
-            pro_file = 'pictures/'+req.POST['set_filter']+'_'+file_name
-            p_i.set_filter(picture.img.path, settings.MEDIA_ROOT+pro_file, req.POST['set_filter'])
+            pro_file = 'pictures/' + req.POST['set_filter'] + '_' + file_name
+            p_i.set_filter(picture.img.path, settings.MEDIA_ROOT + pro_file, req.POST['set_filter'])
         elif req.POST.get('bsc_adjust', ''):
-            pro_file = 'pictures/'+req.POST['bsc_adjust']+'_'+file_name
-            p_i.handle(picture.img.path, settings.MEDIA_ROOT+pro_file, req.POST['bsc_adjust'], int(req.POST['adjust_value']))
+            pro_file = 'pictures/' + req.POST['bsc_adjust'] + '_' + file_name
+            p_i.handle(picture.img.path, settings.MEDIA_ROOT + pro_file, req.POST['bsc_adjust'],
+                       int(req.POST['adjust_value']))
 
         if pro_file:
             username = req.COOKIES.get('username', '')
@@ -75,6 +79,17 @@ def process_img(req):
             picture1.save()
 
         return render_to_response('Transformation/transform_result.html', {'before': picture, 'after': picture1})
+
+
+def upload(req):
+    username = req.COOKIES.get("username", '')
+    if username:
+        if req.method == "POST":
+            pass
+        return render_to_response("Transformation/upload.html", {'username': username})
+    else:
+        return HttpResponse("Not_login")
+
 
 def process_video(req):
     if req.method == 'POST':
@@ -98,5 +113,3 @@ def process_video(req):
         t1.setDaemon(True)
         t1.start()
         return HttpResponse("Processing...")
-
-

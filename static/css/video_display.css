@@ -8,10 +8,6 @@
   margin-right:auto;
   text-align:left;
 }
-#base {
-  position:absolute;
-  z-index:0;
-}
 #Image_txt {
   position:absolute;
   left:140px;
@@ -24,14 +20,14 @@
   left:110px;
   top:200px;
   width:1200px;
-  height:530px;
+  height:700px;
 }
 #Image_display {
   position:absolute;
-  left:140px;
+  left:150px;
   top:230px;
-  width:760px;
-  height:420px;
+  width:1100px;
+  height:600px;
 }
 #Image_title {
   position:absolute;
@@ -43,16 +39,9 @@
   font-weight:700;
   font-style:normal;
 }
-#Image_discription {
-  position:absolute;
-  left:960px;
-  top:290px;
-  width:300px;
-  height:264px;
-  font-family:'CenturyGothic', 'Century Gothic';
-  font-weight:400;
-  font-style:normal;
-  font-size:18px;
+#icon {
+  position: relative;
+  top:175px;
 }
 #Image_download_icon {
   position:absolute;
@@ -134,6 +123,10 @@
   font-size:18px;
   color:#666666;
 }
+#Display_discription {
+  position: relative;
+  top: 200px;
+}
 #Discription_bgd {
   position:absolute;
   left:110px;
@@ -179,7 +172,7 @@
 }
 #Display_author {
   position: relative;
-  top: 270px;
+  top: 470px;
 }
 #Author_bgd {
   position:absolute;
@@ -219,7 +212,7 @@
 }
 #Display_recommand {
   position: relative;
-  top: 270px;
+  top: 470px;
 }
 #Recommand_bgd {
   position:absolute;
@@ -297,12 +290,15 @@
 #Display_comments {
   position:absolute;
   left:110px;
-  top:1830px;
+  top:2030px;
   width:1200px;
   height:450px;
 }
+.comments{
+  position: relative;
+}
 .Comments_bgd {
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:1200px;
@@ -376,7 +372,7 @@
 }
 #Write_comment {
   position: relative;
-  top: 270px;
+  top: 470px;
 }
 #Comment_bgd {
   position:absolute;
@@ -391,17 +387,10 @@
   top:1408px;
   width:841px;
   height:95px;
-}
-#u149_input {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:841px;
-  height:95px;
   font-family:'ArialMT', 'Arial';
   font-weight:400;
   font-style:normal;
-  font-size:13px;
+  font-size:16px;
   text-decoration:none;
   color:#000000;
   text-align:left;
