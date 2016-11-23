@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign up</title>
+  <meta charset='utf-8'/>
+  <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
+  <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+  <script type="text/javascript" src="/static/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/signup.js"></script>
+</head>
+  <body>
+    <div id='header'>
+          <!-- Logo -->
+          <div id='logo'>
+            <p id="Logo_title1">Super</p>
+            <p id="Logo_title2">JiJi</p>
+            <img id="Logo_circle" src="/static/images/header/logo_header.png"/>
+          </div>
+          <!-- Navigator -->
+          <ul id='Navigator'>
+            <li id = "Nav_Home">
+                <p id="Txt_home">Home</p>
+                <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
+                <a id = "Hot_home" class="Hot" href="./index.html"></a>
+            </li>
+            <li id = "Nav_Video">
+              <p id="Txt_video">Video</p>
+              <img id= "Line_video" class="Line"src="/static/images/header/line.png" />
+              <a id= "Hot_video" class="Hot" href="./video.html"></a>
+            <li>
+            <li id = "Nav_Audio">
+              <p id="Txt_audio">Audio</p>
+              <img id= "Line_audio" class="Line"src="/static/images/header/line.png" />
+              <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
+            </li>
+            <li id = "Nav_Image">
+              <p id="Txt_image">Image</p>
+              <img id= "Line_image" class="Line" src="/static/images/header/line.png"/>
+              <a id= "Hot_image" class="Hot" href="./image.html"></a>
+            <li>
+          </ul>
+          <!-- Search -->
+          <div id = 'Search'>
+            <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
+            <div id = 'User'>
+              <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+              <p id="User_circle1" class="paragraph">○</p>
+              <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
+              <p id="User_circle2" class="paragraph">○</p>
+              <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
+            </div>
+            <img id="Search_bgd" src="/static/images/header/Search_bgd.png"/>
+            <a id="search" href ="./search.html"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
+          </div>
+          <!-- Login -->
+          <div id="Login">
+            <div id="Login_containt" style="display:none;">
+            <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
+            <!-- Logo -->
+            <p id="Login_logo_title1">Super</p>
+            <p id="Login_logo_title2">JiJi</p>
+            <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
+
+            <form id="Input" action="action_page.php">
+                <p id="email_txt">E-mail Address</p>
+                <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+                <input id="email_input" type="email" name="E-mail" value=""/>
+
+                <p id="pwd_txt">Password</p>
+                <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+                <input id="pwd_input" type="password" name="pwd" value=""/>
+            </form> 
+            <!-- Login -->
+            <a id="Login_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">LOGIN</p>
+            </a>
+            <!-- Sign up -->
+            <a id="Face_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">FACE LOGIN</p>
+            </a>
+          </div>
+          <div id="Login_body" style="display:none;">
+            </div>
+          </div>
+    </div>
+    <div id="base">
+      <p id="Signup_txt" class="h2">Sign up</p>
+      <img id="Signup_bgd" src="/static/images/video_display/u0.png"/>
+
+      <a id="signup_img" class="shape" href="#">
+        <img id="signup_img_bgd" src="/static/images/upload/u60.png"/>
+        <p id="signup_img_txt">+</p>
+      </a>
+
+      <p id="signup_email_txt" class="h2">E-mail:</p>
+      <input id="signup_email_input" class="ax_text_field" type="text" value=""/>
+      <p id="signup_email_hint" class="paragraph">E-mail cannot be none!</p>
+
+      <p id="signup_usr_txt" class="h2">Username:</p>
+      <input id="signup_usr_input" class="ax_text_field" type="text" value=""/>
+      <p id="signup_usr_hint" class="paragraph">Username cannot be none!</p>
+
+      <p id="signup_pwd_txt" class="h2">Password:</p>
+      <input id="signup_pwd_input" class="ax_text_field" type="text" value=""/>
+      <p id="signup_pwd_hint" class="paragraph">Password is too short!</p>
+
+      <p id="signup_rpwd_txt" class="h2">Reenter Password:</p>
+      <input id="signup_rpwd_input" class="ax_text_field" type="text" value=""/>
+      <p id="signup_rpwd_hint" class="paragraph">Different passwords!</p>
+
+      <p id="signup_dis_txt" class="h2">Discription:</p>
+      <textarea id="signup_dis_input" class="ax_text_area"></textarea>
+
+      <a id="Signup_bt" class="shape" href="index.html">
+        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
+        <p id="Signup_bt_txt">Sign up</p>
+      </a>
+    </div>
+    <div id="blank"></div>
+    <div id = "Footer">
+        <p id="Footer_txt_1" class="paragraph">Contact us</p>
+        <p id="Footer_txt_2" class="paragraph">About this website.</p>
+        <p id="Footer_txt_3" class="paragraph">Join us</p>
+        <img id="Footer_logo" src="/static/images/header/logo_footer.png"/>
+        <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+        <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+        <img id="slice_1" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_2" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
+    </div>
+  </body>
+</html>

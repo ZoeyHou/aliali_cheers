@@ -46,14 +46,14 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="/personal_page" ><p id="User_name" class="paragraph">{{ username }}</p></a>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
             <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
           </div>
           <img id="Search_bgd" src="/static/images/header/Search_bgd.png"/>
-          <a id="search" href ="./search.html"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
+          <a id="search" href ="/search"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
         </div>
         <!-- Login -->
         <div id="Login">
@@ -355,10 +355,4 @@
       </div>
     </div>
   </body>
-{% if username %}
-    <script>
-        document.getElementById("Search_login").style.visibility="hidden";
-        document.getElementById("User").style.visibility="visible";
-    </script>
-{% endif %}
 </html>

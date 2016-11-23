@@ -1,7 +1,10 @@
-﻿#photo {
+﻿.Photo_display {
+  position: relative;
+}
+#photo {
   position:absolute;
   left:136px;
-  top:70px;
+  top: 70px;
   width:1168px;
   height:510px;
   overflow:hidden;
@@ -116,13 +119,6 @@
 #marker4 {
   left:70px;
 }
-#Video {
-  position:absolute;
-  left:100px;
-  top:770px;
-  width:1240px;
-  border-top: #000000 solid 2px;
-}
 .Title {
   position:absolute;
   top:-45px;
@@ -215,25 +211,20 @@
   background-color: #333333;
   opacity: 0.3;
 }
-
-#Audio{
-  position:absolute;
-  left:100px;
-  top:1395px;
-  width:1240px;
-  border-top: #000000 solid 2px;
+.display_detail{
+  position: relative;
+  top: 770px;
 }
-#Image {
-  position:absolute;
+.video_display{
+  position: relative;
   left:100px;
-  top:2005px;
   width:1240px;
+  height: 610px;
   border-top: #000000 solid 2px;
 }
 #Footer{
-  position:absolute;
+  position:relative;
   left:293px;
-  top:2580px;
   width:854px;
   border-top: #888888 solid 1px;
 }

@@ -36,32 +36,22 @@
 	$.post("/login/", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
 		if(ret=='T'){
 			document.getElementById("Search_login").style.visibility="hidden";
-			document.getElementById("User_name").innerHTML = username=document.cookie.split(";")[1].split("=")[1]
+			document.getElementById("User_name").innerHTML = document.cookie.split("=")[1]
     		document.getElementById("User").style.visibility="visible";
 			$("#Login_containt").fadeOut(1000);
 		}else{
 			alert("Oops!! Password is Wrong.");
 		}
 	});
-
   });
   $("#Signup_button").click(function(){
     $("#Login_body").fadeOut(1000);
-    $.post("/login/register", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
-		if(ret=='T'){
-			document.getElementById("Search_login").style.visibility="hidden";
-			document.getElementById("User_name").innerHTML = username=document.cookie.split(";")[1].split("=")[1]
-    		document.getElementById("User").style.visibility="visible";
-			$("#Login_containt").fadeOut(1000);
-		}else{
-			alert("Oops!! The username has been registed");
-		}
-	});
+    $("#Login_containt").fadeOut(1000);
     document.getElementById("Search_login").style.visibility="hidden";
     document.getElementById("User").style.visibility="visible";
   });
   $("#User_logout").click(function(){
-	$.post("/login/logout", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
+    $.post("/login/logout", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
 		document.getElementById("Search_login").style.visibility="visible";
     	document.getElementById("User").style.visibility="hidden";
 	});
