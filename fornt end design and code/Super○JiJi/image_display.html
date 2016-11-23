@@ -13,82 +13,82 @@
   <body>
     <div id="base" class="">
 
-      <div id='header'>
-            <!-- Logo -->
-            <div id='logo'>
-              <p id="Logo_title1">Super</p>
-              <p id="Logo_title2">JiJi</p>
-              <img id="Logo_circle" src="images/header/logo_header.png"/>
-            </div>
-            <!-- Navigator -->
-            <ul id='Navigator'>
-              <li id = "Nav_Home">
-                  <p id="Txt_home">Home</p>
-                  <img id= "Line_home" class="Line" src="images/header/line.png" />
-                  <a id = "Hot_home" class="Hot" href="./index.html"></a>
-              </li>
-              <li id = "Nav_Video">
-                <p id="Txt_video">Video</p>
-                <img id= "Line_video" class="Line"src="images/header/line.png" />
-                <a id= "Hot_video" class="Hot" href="./video.html"></a>
-              <li>
-              <li id = "Nav_Audio">
-                <p id="Txt_audio">Audio</p>
-                <img id= "Line_audio" class="Line"src="images/header/line.png" />
-                <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
-              </li>
-              <li id = "Nav_Image">
-                <p id="Txt_image">Image</p>
-                <img id= "Line_image" class="Line" src="images/header/line.png"/>
-                <a id= "Hot_image" class="Hot" href="./image.html"></a>
-              <li>
-            </ul>
-            <!-- Search -->
-            <div id = 'Search'>
-              <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
-              <div id = 'User'>
-                <a href="personal_page.html"><p id="User_name" class="paragraph">Username</p></a>
-                <p id="User_circle1" class="paragraph">○</p>
-                <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
-                <p id="User_circle2" class="paragraph">○</p>
-                <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
-              </div>
-              <img id="Search_bgd" src="images/header/Search_bgd.png"/>
-              <a id="search" href ="./search.html"><img id="Search_icon" src="images/header/Search_icon.png"/></a>
-            </div>
-            <!-- Login -->
-            <div id="Login">
-              <div id="Login_containt" style="display:none;">
-              <img id="Login_bgd" src="images/header/Login_bgd.png">
-              <!-- Logo -->
-              <p id="Login_logo_title1">Super</p>
-              <p id="Login_logo_title2">JiJi</p>
-              <img id="Login_logo_circle" src="images/header/logo_login.png"/>
+  <div id='header'>
+        <!-- Logo -->
+        <div id='logo'>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
+          <img id="Logo_circle" src="images/header/logo_header.png"/>
+        </div>
+        <!-- Navigator -->
+        <ul id='Navigator'>
+          <li id = "Nav_Home">
+              <p id="Txt_home">Home</p>
+              <img id= "Line_home" class="Line" src="images/header/line.png" />
+              <a id = "Hot_home" class="Hot" href="./index.html"></a>
+          </li>
+          <li id = "Nav_Video">
+            <p id="Txt_video">Video</p>
+            <img id= "Line_video" class="Line"src="images/header/line.png" />
+            <a id= "Hot_video" class="Hot" href="./video.html"></a>
+          <li>
+          <li id = "Nav_Audio">
+            <p id="Txt_audio">Audio</p>
+            <img id= "Line_audio" class="Line"src="images/header/line.png" />
+            <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
+          </li>
+          <li id = "Nav_Image">
+            <p id="Txt_image">Image</p>
+            <img id= "Line_image" class="Line" src="images/header/line.png"/>
+            <a id= "Hot_image" class="Hot" href="./image.html"></a>
+          <li>
+        </ul>
+        <!-- Search -->
+        <div id = 'Search'>
+          <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
+          <div id = 'User'>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
+            <p id="User_circle1" class="paragraph">○</p>
+            <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
+            <p id="User_circle2" class="paragraph">○</p>
+            <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
+          </div>
+          <img id="Search_bgd" src="images/header/Search_bgd.png"/>
+          <a id="search" href ="./search.html"><img id="Search_icon" src="images/header/Search_icon.png"/></a>
+        </div>
+        <!-- Login -->
+        <div id="Login">
+          <div id="Login_containt" style="display:none;">
+          <img id="Login_bgd" src="images/header/Login_bgd.png">
+          <!-- Logo -->
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
+          <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
-              <form id="Input" action="action_page.php">
-                  <p id="email_txt">E-mail Address</p>
-                  <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
-                  <input id="email_input" type="email" name="E-mail" value=""/>
+          <form id="Input" action="action_page.php">
+              <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-                  <p id="pwd_txt">Password</p>
-                  <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
-                  <input id="pwd_input" type="password" name="pwd" value=""/>
-              </form> 
-              <!-- Login -->
-              <a id="Login_button" class="shape" href="#">
-                <img id="Login_button_img" class="button " src="images/header/button.png"/>
-                <p id="Login_button_txt" class="text">LOGIN</p>
-              </a>
-              <!-- Sign up -->
-              <a id="Face_button" class="shape" href="#">
-                <img id="Login_button_img" class="button " src="images/header/button.png"/>
-                <p id="Login_button_txt" class="text">FACE LOGIN</p>
-              </a>
-            </div>
-            <div id="Login_body" style="display:none;">
-              </div>
-            </div>
-      </div>
+              <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
+          </form> 
+          <!-- Login -->
+          <a id="Login_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <p id="Login_button_txt" class="text">LOGIN</p>
+          </a>
+          <!-- Sign up -->
+          <a id="Face_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
+          </a>
+        </div>
+        <div id="Login_body" style="display:none;">
+          </div>
+        </div>
+  </div>
 
       <div id="Display_image">
           <p id="Image_txt" class="h2">Image</p>
@@ -107,6 +107,24 @@
           <p id="Image_dislike_num" class="h2">4</p>
           <a href="#"><img id="Image_collect_icon" class="shape" src="images/video_display/u56.png"/></a>
           <p id="Image_collect_txt" class="h2">Collect</p>
+      </div>
+
+      <div id="Download_page">
+          <img id="Download_bgd" src="images/edit/u94.png"/>
+          <a href="#"><img id="Download_close" src="images/edit/close.png"/></a>
+          <p id="Download_title" class="h2">Download Image</p>
+
+          <p id="Download_choice0" class="paragraph">JPEG</p>
+          <p id="Download_choice1" class="paragraph">JPG</p>
+          <p id="Download_choice2" class="paragraph">PNG</p>
+          <p id="Download_choice3" class="paragraph">BMP</p>
+          <p id="Download_choice4" class="paragraph">GIF</p>
+          
+          <a href="#"><p id="Download_address0" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address1" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address2" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address3" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address4" class="paragraph">Download Address</p></a>
       </div>
 
       <div id="Display_author">
@@ -191,9 +209,9 @@
         <div id="blank"></div>
         <!-- Footer -->
         <div id = "Footer">
-          <a href="#"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
-          <a href="#"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
-          <a href="#"><p id="Footer_txt_3" class="paragraph">Join us</p></a>
+          <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+          <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+          <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
           <img id="Footer_logo" src="images/header/logo_footer.png"/>
           <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
           <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>

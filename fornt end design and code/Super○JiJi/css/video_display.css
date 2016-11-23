@@ -427,6 +427,121 @@
   width:96px;
   word-wrap:break-word;
 }
+#Download_page {
+  visibility: hidden;
+  position:fixed;
+  left:50%;
+  margin-left:-260px;
+  top:50%;
+  margin-top:-171px;
+  z-index: 11;
+}
+#Download_bgd {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:520px;
+  height:342px;
+}
+#Download_close {
+  position:absolute;
+  left:470px;
+  top:10px;
+  width:40px;
+  height:40px;
+}
+#Download_title {
+  position:absolute;
+  left:43px;
+  top:12px;
+  width:287px;
+  height:28px;
+}
+#Download_choice0 {
+  position:absolute;
+  left:80px;
+  top:80px;
+  width:42px;
+  height:23px;
+  font-size:20px;
+}
+#Download_choice1 {
+  position:absolute;
+  left:80px;
+  top:120px;
+  width:78px;
+  height:23px;
+  font-size:20px;
+}
+#Download_choice2 {
+  position:absolute;
+  left:81px;
+  top:160px;
+  width:41px;
+  height:23px;
+  font-size:20px;
+}
+#Download_choice3 {
+  position:absolute;
+  left:80px;
+  top:200px;
+  width:32px;
+  height:23px;
+  font-size:20px;
+}
+#Download_choice4 {
+  position:absolute;
+  left:80px;
+  top:240px;
+  width:44px;
+  height:23px;
+  font-size:20px;
+}
+#Download_address0 {
+  position:absolute;
+  left:222px;
+  top:80px;
+  width:168px;
+  height:23px;
+  font-size:20px;
+  text-decoration:underline;
+}
+#Download_address1 {
+  position:absolute;
+  left:222px;
+  top:120px;
+  width:168px;
+  height:23px;
+  font-size:20px;
+  text-decoration:underline;
+}
+#Download_address2 {
+  position:absolute;
+  left:222px;
+  top:160px;
+  width:168px;
+  height:23px;
+  font-size:20px;
+  text-decoration:underline;
+}
+#Download_address3 {
+  position:absolute;
+  left:222px;
+  top:200px;
+  width:168px;
+  height:23px;
+  font-size:20px;
+  text-decoration:underline;
+}
+#Download_address4 {
+  position:absolute;
+  left:222px;
+  top:240px;
+  width:168px;
+  height:23px;
+  font-size:20px;
+  text-decoration:underline;
+}
 #blank {
   position: relative;
   height: 80px

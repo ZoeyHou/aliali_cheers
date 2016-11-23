@@ -49,6 +49,7 @@
   text-align:left;
 }
 #reset_npwd_hint {
+  visibility: hidden;
   position:absolute;
   left:467px;
   top:150px;
@@ -79,6 +80,7 @@
   text-align:left;
 }
 #reset_rpwd_hint {
+  visibility: hidden;
   position:absolute;
   left:467px;
   top:262px;

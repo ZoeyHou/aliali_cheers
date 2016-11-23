@@ -45,7 +45,7 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
@@ -146,31 +146,45 @@
       <div id = "Display0" class="video_display">
         <p class="Title">Video</p>
         <a class="More" href="video.html" style="text-decoration:underline;">more</a>
-
         <ul id = "display_detail0" class="display">
+          {% for video in video_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ video.cover.url }}">
+              <p>{{ video.title }}</p>
+              <a href="/playpage/{{ video.video }}"></a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
       <!-- Audio showing -->
       <div id = "Display1" class="video_display">
         <p class="Title">Audio</p>
         <a class="More" href="audio.html" style="text-decoration:underline;">more</a>
-        
         <ul id="display_detail1" class="display">
+          <li id="item0">
+            <img src="images/home/photo_1.jpg">
+            <p>Gates</p>
+            <a href="audio_display.html"></a>
+          </li>
         </ul>
       </div>
       <!-- Image showing -->
       <div id = "Display2" class="video_display">
         <p class="Title">Image</p>
         <a class="More" href="image.html" style="text-decoration:underline;">more</a>
-
         <ul id="display_detail2" class="display">
+          <li id="item0">
+            <img src="images/home/photo_1.jpg">
+            <p>Gates</p>
+            <a href="image_display.html"></a>
+          </li>
         </ul>
       </div>
-            <!-- Footer -->
+      <!-- Footer -->
       <div id = "Footer">
-        <a href="#"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
-        <a href="#"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
-        <a href="#"><p id="Footer_txt_3" class="paragraph">Join us</p></a>
+        <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+        <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+        <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
         <img id="Footer_logo" src="images/header/logo_footer.png"/>
         <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
         <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
@@ -184,4 +198,10 @@
 <script type="text/javascript">
 	$('#photo').slider();
 </script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
 </html>

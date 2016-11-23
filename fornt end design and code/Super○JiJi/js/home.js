@@ -3,46 +3,6 @@
 	var index=document.getElementById("Line_home");
 	index.id = "Line_this";
 	$("#Line_this").animate({left: '-4px'}, 500); 
-
-	var txt = '{ "item" : [' +
-	'{ "item_img":"images/home/photo_1.jpg" , "item_title":"Gates" , "item_link":"#"},' +
-	'{ "item_img":"images/home/photo_2.png" , "item_title":"Bush", "item_link":"#" },' +
-	'{ "item_img":"images/home/photo_4.jpg" , "item_title":"Bush", "item_link":"#" },' +
-	'{ "item_img":"images/home/photo_1.jpg" , "item_title":"Gates" , "item_link":"#"},' +
-	'{ "item_img":"images/home/photo_2.png" , "item_title":"Bush", "item_link":"#" },' +
-	'{ "item_img":"images/home/photo_4.jpg" , "item_title":"Bush", "item_link":"#" },' +
-	'{ "item_img":"images/home/photo_1.jpg" , "item_title":"Gates" , "item_link":"#"},' +
-	'{ "item_img":"images/home/photo_3.jpg" , "item_title":"Carter", "item_link":"#"} ]}';
-	var obj = eval ("(" + txt + ")");
-	var k;
-	var v= new Array();
-	v[0] = document.getElementById("video_display");
-	v[1] = document.getElementById("audio_display");
-	v[2] = document.getElementById("image_display");
-
-	for(var t = 0; t < 3; ++t){
-		k = 0;
-		for (var i = 0; i < 8; ++i){
-			var li=document.createElement('li');
-			li.id="item"+k;
-
-			var image=document.createElement("img");
-			image.src=obj.item[k].item_img;
-			li.appendChild(image);
-
-			var title=document.createElement("p");
-			var title_txt=document.createTextNode(obj.item[k].item_title);
-			title.appendChild(title_txt);
-			li.appendChild(title);
-
-			var hot=document.createElement('a');
-			hot.href=obj.item[k].item_link;
-			li.appendChild(hot);
-
-			v[t].appendChild(li);
-			k++;
-		}
-	}
 });
 
 $.fn.slider = function () {  // 控件的实现

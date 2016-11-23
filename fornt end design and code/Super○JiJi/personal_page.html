@@ -11,7 +11,7 @@
   <script type="text/javascript" src="js/personal_page.js"></script>
 </head>
   <body>
-   <div id='header'>
+  <div id='header'>
         <!-- Logo -->
         <div id='logo'>
           <p id="Logo_title1">Super</p>
@@ -45,7 +45,7 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
@@ -100,7 +100,7 @@
       <div id="Video_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Video</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="uploaded_video.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
@@ -133,7 +133,7 @@
       <div id="Image_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Image</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="uploaded_image.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
@@ -166,7 +166,7 @@
       <div id="Audio_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Audio</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="uploaded_audio.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
@@ -197,17 +197,17 @@
       </div>
 
       <!-- Footer -->
-      <div id = "Footer">
-        <p id="Footer_txt_1" class="paragraph">Contact us</p>
-        <p id="Footer_txt_2" class="paragraph">About this website.</p>
-        <p id="Footer_txt_3" class="paragraph">Join us</p>
-        <img id="Footer_logo" src="images/header/logo_footer.png"/>
-        <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
-        <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
-        <img id="slice_1" class="slice" src="images/header/slice.png"/>
-        <img id="slice_2" class="slice" src="images/header/slice.png"/>
-        <img id="slice_3" class="slice" src="images/header/slice.png"/>
-        <img id="slice_4" class="slice" src="images/header/slice.png"/>
-      </div>
+        <div id = "Footer">
+          <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+          <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+          <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+          <img id="Footer_logo" src="images/header/logo_footer.png"/>
+          <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+          <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+          <img id="slice_1" class="slice" src="images/header/slice.png"/>
+          <img id="slice_2" class="slice" src="images/header/slice.png"/>
+          <img id="slice_3" class="slice" src="images/header/slice.png"/>
+          <img id="slice_4" class="slice" src="images/header/slice.png"/>
+        </div>
   </body>
 </html>

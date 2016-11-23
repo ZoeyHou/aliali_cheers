@@ -12,7 +12,7 @@
 </head>
   <body>
     <div id="base" class="">
-    <div id='header'>
+  <div id='header'>
         <!-- Logo -->
         <div id='logo'>
           <p id="Logo_title1">Super</p>
@@ -46,7 +46,7 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
@@ -87,7 +87,7 @@
         <div id="Login_body" style="display:none;">
           </div>
         </div>
-    </div>
+  </div>
 
       <div id="Display_image">
         <p id="Image_txt" class="h2">GIPFEL</p>
@@ -106,6 +106,24 @@
           <a href="#"><img id="Image_collect_icon" class="shape" src="images/video_display/u56.png"/></a>
           <p id="Image_collect_txt" class="h2">Collect</p>
         </div>
+      </div>
+
+      <div id="Download_page">
+          <img id="Download_bgd" src="images/edit/u94.png"/>
+          <a href="#"><img id="Download_close" src="images/edit/close.png"/></a>
+          <p id="Download_title" class="h2">Download Video</p>
+
+          <p id="Download_choice0" class="paragraph">MP4</p>
+          <p id="Download_choice1" class="paragraph">MPEG-4</p>
+          <p id="Download_choice2" class="paragraph">3GP</p>
+          <p id="Download_choice3" class="paragraph">AVI</p>
+          <p id="Download_choice4" class="paragraph">MKV</p>
+          
+          <a href="#"><p id="Download_address0" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address1" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address2" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address3" class="paragraph">Download Address</p></a>
+          <a href="#"><p id="Download_address4" class="paragraph">Download Address</p></a>
       </div>
 
       <div id="Display_discription">
@@ -195,12 +213,13 @@
             <p class="paragraph Comments_time" data-label="Time">11:48</p>
           </li>
         </ul>
+
         <div id="blank"></div>
         <!-- Footer -->
         <div id = "Footer">
-          <a href="#"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
-          <a href="#"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
-          <a href="#"><p id="Footer_txt_3" class="paragraph">Join us</p></a>
+          <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+          <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+          <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
           <img id="Footer_logo" src="images/header/logo_footer.png"/>
           <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
           <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>

@@ -12,11 +12,11 @@
 </head>
   <body>
     <div id="base" class="">
-
-      <div id='header'>
+  <div id='header'>
         <!-- Logo -->
         <div id='logo'>
-          <p id="Logo_title">Super&nbsp; JiJi</p>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
           <img id="Logo_circle" src="images/header/logo_header.png"/>
         </div>
         <!-- Navigator -->
@@ -46,7 +46,7 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="personal_page.html" ><p id="User_name" class="paragraph">Username</p></a>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
@@ -60,15 +60,18 @@
           <div id="Login_containt" style="display:none;">
           <img id="Login_bgd" src="images/header/Login_bgd.png">
           <!-- Logo -->
-          <p id="Login_logo_title">Super&nbsp; JiJi</p>
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
           <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
           <form id="Input" action="action_page.php">
-              <input id="email_input" type="email" name="E-mail" value=""/>
               <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <input id="pwd_input" type="password" name="pwd" value=""/>
               <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
           </form> 
           <!-- Login -->
           <a id="Login_button" class="shape" href="#">
@@ -76,20 +79,20 @@
             <p id="Login_button_txt" class="text">LOGIN</p>
           </a>
           <!-- Sign up -->
-          <a id="Signup_button" class="shape" href="#">
+          <a id="Face_button" class="shape" href="#">
             <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">SIGN UP</p>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
           </a>
         </div>
         <div id="Login_body" style="display:none;">
           </div>
         </div>
-      </div>
+  </div>
 
       <div id="Search">
         <input id="Search_area" class="ax_text_field" type="text" value=""/>
         <img id="Search_icon_bgd" src="images/search/u57.png"/>
-        <img id="Search_icon_img" src="images/search/search_icon_u59.png"/>
+        <a href="#"><img id="Search_icon_img" src="images/search/search_icon_u59.png"/></a>
       </div>
 
       <div id="Search_navigator">
@@ -173,21 +176,76 @@
                 <input id="cata_video_fashion_bt" type="checkbox" value="checkbox"/>
               </li>
             </ul>
-            <div id="update_bt" class="shape">
+            <a id="update_bt" class="shape" href="#">
               <img id="update_bt_bgd" src="images/search/u111.png"/>
               <p id="update_bt_txt">Update</p>
-            </div>
+            </a>
           </div>
           <ul id="Video_content" class="Content">
             <li id="item0">
-              <img src="images/home/photo_1.jpg"/>
-              <p id="Content_title">Title</p>
-              <p id="Content_discription">Discription</p>
-              <p id="Content_date">2016.11.6</p>
-              <p id="Content_name">UserName</p>
-              <p id="Content_time">21:55</p>
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item1">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item0">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item1">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item0" class="last">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
             </li>
           </ul>
+          <div id="blank"></div>
+          <div id = "Footer">
+              <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+              <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+              <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+              <img id="Footer_logo" src="images/header/logo_footer.png"/>
+              <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+              <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+              <img id="slice_1" class="slice" src="images/header/slice.png"/>
+              <img id="slice_2" class="slice" src="images/header/slice.png"/>
+              <img id="slice_3" class="slice" src="images/header/slice.png"/>
+              <img id="slice_4" class="slice" src="images/header/slice.png"/>
+          </div>
         </div>
 
         <div id="Content_audio">
@@ -242,21 +300,46 @@
                 <input id="cata_audio_others_bt" type="checkbox" value="checkbox"/>
               </li>
             </ul>
-            <div id="update_bt" class="shape">
+            <a id="update_bt" class="shape" href="#">
               <img id="update_bt_bgd" src="images/search/u111.png"/>
               <p id="update_bt_txt">Update</p>
-            </div>
+            </a>
           </div>
           <ul id="Audio_content" class="Content">
             <li id="item0">
-              <img src="images/home/photo_1.jpg"/>
-              <p id="Content_title">Title</p>
-              <p id="Content_discription">Discription</p>
-              <p id="Content_date">2016.11.6</p>
-              <p id="Content_name">UserName</p>
-              <p id="Content_time">21:55</p>
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item1">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
             </li>
           </ul>
+          <div id="blank"></div>
+          <div id = "Footer">
+              <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+              <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+              <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+              <img id="Footer_logo" src="images/header/logo_footer.png"/>
+              <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+              <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+              <img id="slice_1" class="slice" src="images/header/slice.png"/>
+              <img id="slice_2" class="slice" src="images/header/slice.png"/>
+              <img id="slice_3" class="slice" src="images/header/slice.png"/>
+              <img id="slice_4" class="slice" src="images/header/slice.png"/>
+          </div>
         </div>
 
         <div id="Content_image">
@@ -318,40 +401,88 @@
                 <label for="cata_image_tech_bt"><p>Tech&amp;Science</p></label>
                 <input id="cata_image_tech_bt" type="checkbox" value="checkbox"/>
               </li>
+
             </ul>
-            <div id="update_bt" class="shape">
+            <a id="update_bt" class="shape" href="#">
               <img id="update_bt_bgd" src="images/search/u111.png"/>
               <p id="update_bt_txt">Update</p>
-            </div>
+            </a>
           </div>
 
           <ul id="Image_content" class="Content">
             <li id="item0">
-              <img src="images/home/photo_1.jpg"/>
-              <p id="Content_title">Title</p>
-              <p id="Content_discription">Discription</p>
-              <p id="Content_date">2016.11.6</p>
-              <p id="Content_name">UserName</p>
-              <p id="Content_time">21:55</p>
-            </li>
-          </ul>
-        </div>
-
-        <div id="Content_user">
-          <ul id="User_content" class="Content">
-            <div id="forUser">
-              <li id="item0">
+              <a class="item" href="video_display.html">
                 <img src="images/home/photo_1.jpg"/>
                 <p id="Content_title">Title</p>
                 <p id="Content_discription">Discription</p>
                 <p id="Content_date">2016.11.6</p>
                 <p id="Content_name">UserName</p>
                 <p id="Content_time">21:55</p>
-              </li>
-            </div>
+              </a>
+            </li>
+            <li id="item1">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
           </ul>
+          <div id="blank"></div>
+          <div id = "Footer">
+              <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+              <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+              <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+              <img id="Footer_logo" src="images/header/logo_footer.png"/>
+              <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+              <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+              <img id="slice_1" class="slice" src="images/header/slice.png"/>
+              <img id="slice_2" class="slice" src="images/header/slice.png"/>
+              <img id="slice_3" class="slice" src="images/header/slice.png"/>
+              <img id="slice_4" class="slice" src="images/header/slice.png"/>
+          </div>
         </div>
 
+        <div id="Content_user">
+          <ul id="User_content" class="Content">
+            <li id="item0">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+            <li id="item1">
+              <a class="item" href="video_display.html">
+                <img src="images/home/photo_1.jpg"/>
+                <p id="Content_title">Title</p>
+                <p id="Content_discription">Discription</p>
+                <p id="Content_date">2016.11.6</p>
+                <p id="Content_name">UserName</p>
+                <p id="Content_time">21:55</p>
+              </a>
+            </li>
+          </ul>
+          <div id="blank"></div>
+          <div id = "Footer">
+              <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+              <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+              <a href="about.html"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+              <img id="Footer_logo" src="images/header/logo_footer.png"/>
+              <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+              <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+              <img id="slice_1" class="slice" src="images/header/slice.png"/>
+              <img id="slice_2" class="slice" src="images/header/slice.png"/>
+              <img id="slice_3" class="slice" src="images/header/slice.png"/>
+              <img id="slice_4" class="slice" src="images/header/slice.png"/>
+          </div>
+        </div>
       </div>
     </div>
   </body>

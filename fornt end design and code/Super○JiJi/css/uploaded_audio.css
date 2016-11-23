@@ -1,145 +1,13 @@
-﻿.Photo_display {
-  position: relative;
-}
-#photo {
-  position:absolute;
-  left:136px;
-  top:70px;
-  width:1168px;
-  height:510px;
-  overflow:hidden;
-}
-#photo img{
-  width:1170px;
-  height:510px;
-}
-.slider {
-  width:1168px;
-  height:510px;
-  overflow: hidden;
-  margin: 100px auto;
-  }
-
-.slider ul {
-  list-style: none;
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-.slider ul li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  list-style: none;
-  font-size: 0;
-}
-
-.slideitem {
-  position: relative;
-}
-#next {
-  position:absolute;
-  left:1264px;
-  top:440px;
-  width:40px;
-  height:40px;
-  opacity:0.5;
-  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
-  font-weight:700;
-  font-style:normal;
-  font-size:20px;
-  color:#FFFFFF;
-  z-index: 9;
-}
-#pre {
-  position:absolute;
-  left:136px;
-  top:440px;
-  width:40px;
-  height:40px;
-  opacity:0.5;
-  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
-  font-weight:700;
-  font-style:normal;
-  font-size:20px;
-  color:#FFFFFF;
-  z-index: 8;
-}
-.photo_nav_bgd {
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:40px;
-  height:40px;
-}
-.photo_nav_txt {
-  position:absolute;
-  left:14px;
-  top:-10px;
-  width:36px;
-  word-wrap:break-word;
-}
-#mark {
-  position:absolute;
-  left:1214px;
-  top:652px;
-  width:90px;
-  height:28px;
-  overflow:hidden;
-  z-index: 8;
-}
-#mark li{
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:90px;
-  height:28px;
-  -ms-overflow-x:hidden;
-  overflow-x:hidden;
-  -ms-overflow-y:hidden;
-  overflow-y:hidden;
-  background-image:none;
-}
-.mark_item{
-  position: absolute;
-  top:10px;
-  width:10px;
-  height:10px;
-}
-#marker1 {
-  left:10px;
-}
-#marker2 {
-  left:30px;
-}
-#marker3 {
-  left:50px;
-}
-#marker4 {
-  left:70px;
-}
-.display_detail {
-  position: relative;
-  top:770px;
-}
-.audio_display {
+﻿.audio_display {
   position: relative;
   left:132px;
   height:610px;
   width:1150px;
   border-top: #000000 solid 2px;
 }
-#Footer{
-  position: relative;
-  left:293px;
-  width:854px;
-  border-top: #888888 solid 1px;
-}
 .Title {
   position:absolute;
   top:-45px;
-  width:53px;
   height:22px;
   font-family:'CenturyGothic', 'Century Gothic';
   font-weight:400;
@@ -164,7 +32,6 @@
   left:75px;
   top:20px;
   width:1000px;
-  height:530px;
 }
 .display li{
   position: relative;
@@ -251,4 +118,18 @@
   width:412px;
   height:28px;
   color:#666666;
+}
+#Uploaded {
+  position: relative;
+  top:200px;
+}
+#blank {
+  position: relative;
+  height: 50px;
+}
+#Footer{
+  position: relative;
+  left:95px;
+  width:854px;
+  border-top: #888888 solid 1px;
 }

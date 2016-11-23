@@ -23,6 +23,25 @@
   	$("#Nav_Image").mouseout(function(){
     	$("#Line_image").animate({left: '-100px'}, 500);
   	});
+
+  $("#email_input").focus(function(){
+    document.getElementById("email_txt").style.visibility="hidden";
+  });
+  $("#email_input").blur(function(){
+    if(document.getElementById("email_input").value.length == 0){
+      document.getElementById("email_txt").style.visibility="visible";
+    }
+  });
+
+  $("#pwd_input").focus(function(){
+    document.getElementById("pwd_txt").style.visibility="hidden";
+  });
+  $("#pwd_input").blur(function(){
+    if(document.getElementById("pwd_input").value.length == 0){
+      document.getElementById("pwd_txt").style.visibility="visible";
+    }
+  });
+
 	$("#Search_login").click(function(){
 		$("#Login_containt").fadeIn(1000);
     $("#Login_body").fadeIn(1000);
@@ -37,7 +56,7 @@
     document.getElementById("Search_login").style.visibility="hidden";
     document.getElementById("User").style.visibility="visible";
   });
-  $("#Signup_button").click(function(){
+  $("#Face_button").click(function(){
     $("#Login_body").fadeOut(1000);
     $("#Login_containt").fadeOut(1000);
     document.getElementById("Search_login").style.visibility="hidden";

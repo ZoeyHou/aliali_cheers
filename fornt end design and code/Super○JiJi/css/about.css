@@ -1,0 +1,93 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:relative;
+  left:-80px;
+  width:1260px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#base {
+  position:relative;
+  z-index:0;
+  top: 200px;
+  height: 1150px;
+}
+#About_bgd {
+  position:absolute;
+  left:110px;
+  width:1200px;
+  height:1050px;
+}
+#About_title {
+  position:absolute;
+  left:140px;
+  top:-58px;
+  width:198px;
+  height:28px;
+}
+#About_web_title {
+  position:absolute;
+  left:196px;
+  top:50px;
+  width:222px;
+  height:28px;
+}
+#About_web_txt {
+  position:absolute;
+  left:311px;
+  top:127px;
+  width:900px;
+  height:23px;
+  font-size:20px;
+}
+#About_us_title {
+  position:absolute;
+  left:196px;
+  top:222px;
+  width:113px;
+  height:28px;
+}
+#About_us_work {
+  position:absolute;
+  left:450px;
+  top:270px;
+  width:231px;
+  height:230px;
+  font-size:20px;
+  text-align:right;
+}
+#About_us_people {
+  position:absolute;
+  left:726px;
+  top:270px;
+  width:325px;
+  height:230px;
+  font-size:20px;
+}
+#About_contact_title {
+  position:absolute;
+  left:196px;
+  top:920px;
+  width:133px;
+  height:28px;
+}
+#About_contact_txt {
+  position:absolute;
+  left:311px;
+  top:977px;
+  width:800px;
+  height:23px;
+  font-size:20px;
+}
+#blank {
+  position: relative;
+  height: 150px;
+}
+#Footer{
+  position:relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}
