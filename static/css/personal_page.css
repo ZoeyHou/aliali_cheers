@@ -12,38 +12,42 @@
   position:absolute;
   z-index:0;
 }
+#Person {
+  position: relative;
+  top: 200px;
+  height: 550px;
+}
 #Person_bgd {
   position:absolute;
   left:110px;
-  top:200px;
   width:1200px;
   height:300px;
 }
 #Person_title {
   position:absolute;
   left:140px;
-  top:142px;
+  top:-58px;
   width:166px;
   height:28px;
 }
 #Person_img {
   position:absolute;
   left:240px;
-  top:260px;
+  top:60px;
   width:150px;
   height:160px;
 }
 #Person_name {
   position:absolute;
   left:510px;
-  top:240px;
+  top:20px;
   width:120px;
   height:37px;
 }
 #Person_discription {
   position:absolute;
   left:510px;
-  top:287px;
+  top:87px;
   width:530px;
   height:115px;
   font-size:20px;
@@ -51,23 +55,15 @@
 #Person_edit {
   position:absolute;
   left:1191px;
-  top:222px;
+  top:22px;
   width:39px;
   height:18px;
   font-size:16px;
   color:#003366;
 }
-#Video_upload{
-  position: absolute;
-  top: 532px;
-}
-#Image_upload {
-  position:absolute;
-  top:832px;
-}
-#Audio_upload{
-  position: absolute;
-  top: 1140px;
+.uploaded {
+  position: relative;
+  height: 300px;
 }
 .title {
   position:absolute;
@@ -150,9 +146,8 @@
   height:140px;
 }
 #Footer{
-  position:absolute;
+  position:relative;
   left:293px;
-  top:1480px;
   width:854px;
   border-top: #888888 solid 1px;
 }

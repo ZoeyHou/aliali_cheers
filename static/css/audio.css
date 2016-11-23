@@ -1,4 +1,7 @@
-﻿#photo {
+﻿.Photo_display {
+  position: relative;
+}
+#photo {
   position:absolute;
   left:136px;
   top:70px;
@@ -116,49 +119,23 @@
 #marker4 {
   left:70px;
 }
-#Music {
-  position:absolute;
-  left:132px;
+.display_detail {
+  position: relative;
   top:770px;
-  width:1150px;
-  border-top: #000000 solid 2px;
 }
-#Audio_book {
-  position:absolute;
+.audio_display {
+  position: relative;
   left:132px;
-  top:1390px;
+  height:610px;
   width:1150px;
   border-top: #000000 solid 2px;
 }
-#Talkshow {
-  position:absolute;
-  left:132px;
-  top:2010px;
-  width:1150px;
-  border-top: #000000 solid 2px;
+#Footer{
+  position: relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
 }
-#Entertainment {
-  position:absolute;
-  left:132px;
-  top:2630px;
-  width:1150px;
-  border-top: #000000 solid 2px;
-}
-#News {
-  position:absolute;
-  left:132px;
-  top:3250px;
-  width:1150px;
-  border-top: #000000 solid 2px;
-}
-#Others {
-  position:absolute;
-  left:132px;
-  top:3870px;
-  width:1150px;
-  border-top: #000000 solid 2px;
-}
-
 .Title {
   position:absolute;
   top:-45px;
@@ -285,11 +262,4 @@
   width:412px;
   height:28px;
   color:#666666;
-}
-#Footer{
-  position:absolute;
-  left:293px;
-  top:4490px;
-  width:854px;
-  border-top: #888888 solid 1px;
 }

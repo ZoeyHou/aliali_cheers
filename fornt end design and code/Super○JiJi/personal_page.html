@@ -11,11 +11,11 @@
   <script type="text/javascript" src="js/personal_page.js"></script>
 </head>
   <body>
-    
-      <div id='header'>
+   <div id='header'>
         <!-- Logo -->
         <div id='logo'>
-          <p id="Logo_title">Super&nbsp; JiJi</p>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
           <img id="Logo_circle" src="images/header/logo_header.png"/>
         </div>
         <!-- Navigator -->
@@ -59,15 +59,18 @@
           <div id="Login_containt" style="display:none;">
           <img id="Login_bgd" src="images/header/Login_bgd.png">
           <!-- Logo -->
-          <p id="Login_logo_title">Super&nbsp; JiJi</p>
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
           <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
           <form id="Input" action="action_page.php">
-              <input id="email_input" type="email" name="E-mail" value=""/>
               <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <input id="pwd_input" type="password" name="pwd" value=""/>
               <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
           </form> 
           <!-- Login -->
           <a id="Login_button" class="shape" href="#">
@@ -75,9 +78,9 @@
             <p id="Login_button_txt" class="text">LOGIN</p>
           </a>
           <!-- Sign up -->
-          <a id="Signup_button" class="shape" href="#">
+          <a id="Face_button" class="shape" href="#">
             <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">SIGN UP</p>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
           </a>
         </div>
         <div id="Login_body" style="display:none;">
@@ -94,103 +97,105 @@
         <a href="edit.html"><p id="Person_edit" class="paragraph" style="text-decoration:underline;">Edit</p></a>
       </div>
 
-      <div id="Video_upload">
+      <div id="Video_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Video</p>
-        <p class="h2 more" style="text-decoration:underline;">More</p>
+        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
            <a href="#"></a>
            <p class="paragraph recommand_name">SCHW</p>
          </li>
-        <li id="item1">
-          <img class="recommand_img" src="images/home/photo_3.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Maritime</p>
-        </li>
-        <li id="item2">
-          <img class="recommand_img" src="images/video_display/u96.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Gipfel</p>
-        </li>
-        <li id="item3">
-          <img class="recommand_img" src="images/video_display/u98.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Weite</p>
-        </li>
-        <li id="item4">
-          <img class="recommand_img" src="images/video_display/u100.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Schwane</p>
-        </li>
-      </ul>
-    </div>
-    <div id="Image_upload">
+          <li id="item1">
+            <img class="recommand_img" src="images/home/photo_3.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Maritime</p>
+          </li>
+          <li id="item2">
+            <img class="recommand_img" src="images/video_display/u96.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Gipfel</p>
+          </li>
+          <li id="item3">
+            <img class="recommand_img" src="images/video_display/u98.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Weite</p>
+          </li>
+          <li id="item4">
+            <img class="recommand_img" src="images/video_display/u100.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Schwane</p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="Image_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Image</p>
-        <p class="h2 more" style="text-decoration:underline;">More</p>
+        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
            <a href="#"></a>
            <p class="paragraph recommand_name">SCHW</p>
-         </li>
-        <li id="item1">
-          <img class="recommand_img" src="images/home/photo_3.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Maritime</p>
-        </li>
-        <li id="item2">
-          <img class="recommand_img" src="images/video_display/u96.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Gipfel</p>
-        </li>
-        <li id="item3">
-          <img class="recommand_img" src="images/video_display/u98.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Weite</p>
-        </li>
-        <li id="item4">
-          <img class="recommand_img" src="images/video_display/u100.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Schwane</p>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li id="item1">
+            <img class="recommand_img" src="images/home/photo_3.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Maritime</p>
+          </li>
+          <li id="item2">
+            <img class="recommand_img" src="images/video_display/u96.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Gipfel</p>
+          </li>
+          <li id="item3">
+            <img class="recommand_img" src="images/video_display/u98.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Weite</p>
+          </li>
+          <li id="item4">
+            <img class="recommand_img" src="images/video_display/u100.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Schwane</p>
+          </li>
+        </ul>
+      </div>
 
-    <div id="Audio_upload">
+      <div id="Audio_upload" class="uploaded">
         <img class="bgd" src="images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Audio</p>
-        <p class="h2 more" style="text-decoration:underline;">More</p>
+        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           <li id="item0">
            <img class="recommand_img" src="images/home/photo_1.jpg"/>
            <a href="#"></a>
            <p class="paragraph recommand_name">SCHW</p>
          </li>
-        <li id="item1">
-          <img class="recommand_img" src="images/home/photo_3.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Maritime</p>
-        </li>
-        <li id="item2">
-          <img class="recommand_img" src="images/video_display/u96.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Gipfel</p>
-        </li>
-        <li id="item3">
-          <img class="recommand_img" src="images/video_display/u98.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Weite</p>
-        </li>
-        <li id="item4">
-          <img class="recommand_img" src="images/video_display/u100.jpg"/>
-          <a href="#"></a>
-          <p class="paragraph recommand_name">Schwane</p>
-        </li>
-      </ul>
-    </div>
+          <li id="item1">
+            <img class="recommand_img" src="images/home/photo_3.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Maritime</p>
+          </li>
+          <li id="item2">
+            <img class="recommand_img" src="images/video_display/u96.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Gipfel</p>
+          </li>
+          <li id="item3">
+            <img class="recommand_img" src="images/video_display/u98.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Weite</p>
+          </li>
+          <li id="item4">
+            <img class="recommand_img" src="images/video_display/u100.jpg"/>
+            <a href="#"></a>
+            <p class="paragraph recommand_name">Schwane</p>
+          </li>
+        </ul>
+      </div>
+
       <!-- Footer -->
       <div id = "Footer">
         <p id="Footer_txt_1" class="paragraph">Contact us</p>

@@ -17,7 +17,8 @@ def return_hello(req):
 
 def index(req):
     username = req.COOKIES.get('username', '')
-    return render_to_response('Webpages/index.html', {'username': username})
+    video_list = Video.objects.all()[:8]
+    return render_to_response('Webpages/index.html', {'username': username, "video_list": video_list})
 
 
 #audio展示页面，对应url /audio
@@ -66,7 +67,7 @@ def playpage(req, video_name):
     username = req.COOKIES.get('username', '')
     video = Video.objects.filter(video=video_name)[0]
     comments = video.Video_Comment.all()
-    return render_to_response('Webpages/video_diaplay.html',
+    return render_to_response('Webpages/video_display.html',
                               {'username': username, 'video': video, 'comments': comments})
 
 

@@ -12,24 +12,28 @@
   position:absolute;
   z-index:0;
 }
+#Audio {
+  position: relative;
+  top: 200px;
+  height: 1000px
+}
 #Audio_bgd {
   position:absolute;
   left:110px;
-  top:200px;
   width:1200px;
   height:690px;
 }
 #Download_icon {
   position:absolute;
   left:406px;
-  top:440px;
+  top:240px;
   width:30px;
   height:30px;
 }
 #Download_txt {
   position:absolute;
   left:446px;
-  top:429px;
+  top:229px;
   width:87px;
   height:21px;
   font-size:18px;
@@ -38,14 +42,14 @@
 #Like_icon {
   position:absolute;
   left:606px;
-  top:440px;
+  top:240px;
   width:30px;
   height:30px;
 }
 #Like_txt {
   position:absolute;
   left:646px;
-  top:429px;
+  top:229px;
   width:37px;
   height:21px;
   font-size:18px;
@@ -54,7 +58,7 @@
 #Like_num {
   position:absolute;
   left:692px;
-  top:429px;
+  top:229px;
   width:29px;
   height:21px;
   font-size:18px;
@@ -62,14 +66,14 @@
 #Dislike_icon {
   position:absolute;
   left:786px;
-  top:445px;
+  top:245px;
   width:30px;
   height:30px;
 }
 #Dislike_txt {
   position:absolute;
   left:836px;
-  top:429px;
+  top:229px;
   width:59px;
   height:21px;
   font-size:18px;
@@ -78,7 +82,7 @@
 #Dislike_num {
   position:absolute;
   left:906px;
-  top:429px;
+  top:229px;
   width:11px;
   height:21px;
   font-size:18px;
@@ -86,14 +90,14 @@
 #Collect_icon {
   position:absolute;
   left:976px;
-  top:445px;
+  top:245px;
   width:25px;
   height:25px;
 }
 #Collect_txt {
   position:absolute;
   left:1016px;
-  top:429px;
+  top:229px;
   width:61px;
   height:21px;
   font-size:18px;
@@ -102,30 +106,28 @@
 #Audio_title {
   position:absolute;
   left:140px;
-  top:142px;
+  top:-58px;
   width:90px;
   height:28px;
 }
 #Audio_cover {
   position:absolute;
   left:200px;
-  top:260px;
+  top:60px;
   width:150px;
   height:160px;
 }
 #Audio_lyric {
   position:absolute;
-  left:470px;
-  top:480px;
-  width:530px;
-  height:201px;
-  font-size:20px;
-  word-wrap:break-word;
+  left:410px;
+  top:300px;
+  width:667px;
+  height:370px;
 }
 #Audio_player {
   position:absolute;
   left:410px;
-  top:260px;
+  top:60px;
   width:662px;
   height:160px;
   font-family:'STHeitiSC-Light', 'Heiti SC Light', 'Heiti SC';
@@ -135,66 +137,64 @@
 }
 #Display_author {
   position: relative;
-  top: 170px;
+  height: 300px;
 }
 #Author_bgd {
   position:absolute;
   left:110px;
-  top:810px;
   width:1200px;
   height:190px;
 }
 #Author_txt {
   position:absolute;
   left:130px;
-  top:752px;
+  top:-58px;
   width:80px;
   height:28px;
 }
 #Author_img {
   position:absolute;
   left:140px;
-  top:835px;
+  top:25px;
   width:140px;
   height:140px;
 }
 #Author_name {
   position:absolute;
   left:320px;
-  top:822px;
+  top:12px;
   width:90px;
   height:28px;
 }
 #Author_discription {
   position:absolute;
   left:320px;
-  top:870px;
+  top:60px;
   width:930px;
   height:54px;
   font-size:16px;
 }
 #Display_recommand {
   position: relative;
-  top: 170px;
+  height: 300px;
 }
 #Recommand_bgd {
   position:absolute;
   left:110px;
-  top:1080px;
   width:1200px;
   height:210px;
 }
 #Recommand_title {
   position:absolute;
   left:130px;
-  top:1022px;
+  top:-58px;
   width:202px;
   height:28px;
 }
 #item0{
   position: absolute;
   left:140px;
-  top:1105px;
+  top:25px;
 }
 #recommand a {
   position:absolute;
@@ -225,40 +225,43 @@
 #item1 {
   position:absolute;
   left:375px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item2 {
   position:absolute;
   left:610px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item3 {
   position:absolute;
   left:846px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #item4 {
   position:absolute;
   left:1080px;
-  top:1105px;
+  top:25px;
   width:200px;
   height:140px;
 }
 #Display_comments {
-  position:absolute;
-  left:110px;
-  top:1750px;
+  position:relative;
   width:1200px;
-  height:450px;
+}
+#Display_comments li{
+    left:110px;
+}
+.comments{
+  position: relative;
 }
 .Comments_bgd {
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:1200px;
@@ -332,32 +335,24 @@
 }
 #Write_comment {
   position: relative;
-  top: 170px;
+  height: 200px;
 }
 #Comment_bgd {
   position:absolute;
   left:110px;
-  top:1380px;
   width:1200px;
   height:150px;
 }
 #Comment_input {
   position:absolute;
   left:269px;
-  top:1408px;
-  width:841px;
-  height:95px;
-}
-#u149_input {
-  position:absolute;
-  left:0px;
-  top:0px;
+  top:28px;
   width:841px;
   height:95px;
   font-family:'ArialMT', 'Arial';
   font-weight:400;
   font-style:normal;
-  font-size:13px;
+  font-size:16px;
   text-decoration:none;
   color:#000000;
   text-align:left;
@@ -367,19 +362,19 @@
 #Comment_title{
   position: absolute;
   left: 140px;
-  top:1320px;
+  top:-58px;
 }
 #Comment_img {
   position:absolute;
   left:135px;
-  top:1400px;
+  top:20px;
   width:90px;
   height:91px;
 }
 #Comment_name {
   position:absolute;
   left:146px;
-  top:1481px;
+  top:100px;
   width:68px;
   height:21px;
   font-size:18px;
@@ -387,7 +382,7 @@
 #Comment_send {
   position:absolute;
   left:1170px;
-  top:1440px;
+  top:60px;
   width:100px;
   height:30px;
   font-size:16px;
@@ -405,4 +400,14 @@
   top:-9px;
   width:96px;
   word-wrap:break-word;
+}
+#blank {
+  position: relative;
+  height: 80px
+}
+#Footer{
+  position: relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
 }

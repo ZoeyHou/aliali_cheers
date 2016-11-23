@@ -13,11 +13,22 @@
   z-index:0;
 }
 #header{
-  position:absolute;
+  position:relative;
 }
-#Logo_title {
+#Logo_title1 {
   position:absolute;
   left:80px;
+  top:8px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+}
+#Logo_title2 {
+  position:absolute;
+  left:280px;
   top:8px;
   width:318px;
   height:53px;
@@ -174,9 +185,21 @@ ul{
   margin-top:-170px;
   z-index:11;
 }
-#Login_logo_title {
+#Login_logo_title1 {
   position:absolute;
   left:94px;
+  top:-10px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+  color:#FFFFFF;
+}
+#Login_logo_title2 {
+  position:absolute;
+  left:294px;
   top:-10px;
   width:318px;
   height:53px;
@@ -194,7 +217,12 @@ ul{
   height:40px;
   color:#FFFFFF;
 }
-#Input p{
+#email_txt{
+  position: absolute;
+  left: 78px;
+  top: 110px;
+  width:370px;
+  height:30px;
   font-family:'Consolas', 'Consolas';
   font-weight:400;
   font-style:normal;
@@ -202,12 +230,16 @@ ul{
   color:#EEEEEE;
   text-align:left;
 }
-#email_txt{
+#sign_txt{
   position: absolute;
-  left: 78px;
-  top: 110px;
-  width:370px;
-  height:30px;
+  left: 455px;
+  top: 130px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:150;
+  font-style:normal;
+  font-size:14px;
+  color:#EEEEEE;
+  text-align:left;
 }
 #pwd_txt{
   position: absolute;
@@ -215,6 +247,23 @@ ul{
   top: 175px;
   width:370px;
   height:30px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#EEEEEE;
+  text-align:left;
+}
+#forget_txt{
+  position: absolute;
+  left: 455px;
+  top: 190px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:150;
+  font-style:normal;
+  font-size:14px;
+  color:#EEEEEE;
+  text-align:left;
 }
 #email_input {
   position:absolute;
@@ -222,7 +271,7 @@ ul{
   top:125px;
   width:370px;
   height:30px;
-  background-color:#333333;
+  background-color:transparent;
   font-family:'CenturyGothic', 'Century Gothic';
   font-weight:400;
   font-style:normal;
@@ -240,7 +289,7 @@ ul{
   top:190px;
   width:370px;
   height:30px;
-  background-color:#333333;
+  background-color:transparent;
   font-family:'CenturyGothic', 'Century Gothic';
   font-weight:400;
   font-style:normal;
@@ -260,7 +309,7 @@ ul{
   height:30px;
   opacity:0.899999976158142;
 }
-#Signup_button {
+#Face_button {
   position:absolute;
   left:279px;
   top:270px;

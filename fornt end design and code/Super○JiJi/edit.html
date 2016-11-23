@@ -13,10 +13,11 @@
   <body>
     <div id="base" class="">
 
-  <div id='header'>
+    <div id='header'>
         <!-- Logo -->
         <div id='logo'>
-          <p id="Logo_title">Super&nbsp; JiJi</p>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
           <img id="Logo_circle" src="images/header/logo_header.png"/>
         </div>
         <!-- Navigator -->
@@ -60,15 +61,18 @@
           <div id="Login_containt" style="display:none;">
           <img id="Login_bgd" src="images/header/Login_bgd.png">
           <!-- Logo -->
-          <p id="Login_logo_title">Super&nbsp; JiJi</p>
+          <p id="Login_logo_title1">Super</p>
+          <p id="Login_logo_title2">JiJi</p>
           <img id="Login_logo_circle" src="images/header/logo_login.png"/>
 
           <form id="Input" action="action_page.php">
-              <input id="email_input" type="email" name="E-mail" value=""/>
               <p id="email_txt">E-mail Address</p>
+              <a href="signup.html"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+              <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <input id="pwd_input" type="password" name="pwd" value=""/>
               <p id="pwd_txt">Password</p>
+              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+              <input id="pwd_input" type="password" name="pwd" value=""/>
           </form> 
           <!-- Login -->
           <a id="Login_button" class="shape" href="#">
@@ -76,24 +80,21 @@
             <p id="Login_button_txt" class="text">LOGIN</p>
           </a>
           <!-- Sign up -->
-          <a id="Signup_button" class="shape" href="#">
+          <a id="Face_button" class="shape" href="#">
             <img id="Login_button_img" class="button " src="images/header/button.png"/>
-            <p id="Login_button_txt" class="text">SIGN UP</p>
+            <p id="Login_button_txt" class="text">FACE LOGIN</p>
           </a>
         </div>
         <div id="Login_body" style="display:none;">
           </div>
         </div>
-  </div>
+    </div>
       
       <div id="Edit">
         <img id="Edit_bgd" src="images/edit/u0.png"/>
-        <p id="Edit_title" class="h2">Personal Page</p>
-        <img id="Edit_img" src="images/edit/u60.png"/>
-        <div id="Edit_update" class="shape">
-          <img id="Edit_update_bt" class="img " src="images/edit/u62.png"/>
-          <p id="Edit_update_txt" class="text">Update</p>
-        </div>
+        <p id="Edit_title" class="h2">Personal Page Edit</p>
+        <a href="#"><img id="Edit_img" src="images/edit/u60.png"/></a>
+
         <p id="Edit_name_txt" class="h2">Username:</p>
 
         <div id="Edit_name" class="ax_text_field">
@@ -105,8 +106,14 @@
         <div id="Edit_discription" class="ax_text_area">
           <textarea id="Edit_discription_input">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</textarea>
         </div>
-      </div>
 
+        <div id="Edit_update" class="shape">
+          <img id="Edit_update_bt" class="img " src="images/edit/u62.png"/>
+          <p id="Edit_update_txt" class="text">Update</p>
+          <a id="Edit_update_link" href="personal_page.html">
+        </div>
+      </div>
+      <div id="blank"></div>
        <!-- Footer -->
       <div id = "Footer">
         <p id="Footer_txt_1" class="paragraph">Contact us</p>

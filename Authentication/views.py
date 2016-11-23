@@ -27,6 +27,8 @@ def register(req):
             response.set_cookie('username', username, 3600)
             return response
 
+    return render_to_response("Authentication/signup.html")
+
 #登录
 def login(req):
     if req.method == 'POST':

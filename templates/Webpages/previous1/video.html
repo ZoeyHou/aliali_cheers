@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video</title>
+	<meta charset='utf-8'/>
+  <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
+  <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/video.css">
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/video.js"></script>
+</head>
+<body>
+	 <div id='header'>
+        <!-- Logo -->
+        <div id='logo'>
+          <p id="Logo_title">Super&nbsp; JiJi</p>
+          <img id="Logo_circle" src="/static/images/header/logo_header.png"/>
+        </div>
+        <!-- Navigator -->
+        <ul id='Navigator'>
+          <li id = "Nav_Home">
+              <p id="Txt_home">Home</p>
+              <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
+              <a id = "Hot_home" class="Hot" href="./index.html"></a>
+          </li>
+          <li id = "Nav_Video">
+            <p id="Txt_video">Video</p>
+            <img id= "Line_video" class="Line"src="/static/images/header/line.png" />
+            <a id= "Hot_video" class="Hot" href="./video.html"></a>
+          <li>
+          <li id = "Nav_Audio">
+            <p id="Txt_audio">Audio</p>
+            <img id= "Line_audio" class="Line"src="/static/images/header/line.png" />
+            <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
+          </li>
+          <li id = "Nav_Image">
+            <p id="Txt_image">Image</p>
+            <img id= "Line_image" class="Line" src="/static/images/header/line.png"/>
+            <a id= "Hot_image" class="Hot" href="./image.html"></a>
+          <li>
+        </ul>
+        <!-- Search -->
+        <div id = 'Search'>
+          <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
+          <div id = 'User'>
+            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
+            <p id="User_circle1" class="paragraph">○</p>
+            <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
+            <p id="User_circle2" class="paragraph">○</p>
+            <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
+          </div>
+          <img id="Search_bgd" src="/static/images/header/Search_bgd.png"/>
+          <a id="search" href ="./search.html"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
+        </div>
+        <!-- Login -->
+        <div id="Login">
+          <div id="Login_containt" style="display:none;">
+          <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
+          <!-- Logo -->
+          <p id="Login_logo_title">Super&nbsp; JiJi</p>
+          <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
+
+          <form id="Input" action="action_page.php">
+              <input id="email_input" type="email" name="E-mail" value=""/>
+              <p id="email_txt">E-mail Address</p>
+
+              <input id="pwd_input" type="password" name="pwd" value=""/>
+              <p id="pwd_txt">Password</p>
+          </form> 
+          <!-- Login -->
+          <a id="Login_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+            <p id="Login_button_txt" class="text">LOGIN</p>
+          </a>
+          <!-- Sign up -->
+          <a id="Signup_button" class="shape" href="#">
+            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+            <p id="Login_button_txt" class="text">SIGN UP</p>
+          </a>
+        </div>
+        <div id="Login_body" style="display:none;">
+          </div>
+        </div>
+  </div>
+  <!-- Photo -->
+	<div id='photo'>
+		<ul>
+			<li id='li1'><a href='#'><img src='/static/images/home/photo_1.jpg'/></a></li>
+			<li id='li2'><a href='#'><img src='/static/images/home/photo_2.png'/></a></li>
+			<li id='li3'><a href='#'><img src='/static/images/home/photo_3.jpg'/></a></li>
+			<li id='li4'><a href='#'><img src='/static/images/home/photo_4.jpg'/></a></li>
+		</ul>
+	</div>
+  <!-- next -->
+  <a id="next" href="#">
+    <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
+    <p class="photo_nav_txt">&gt;</p>
+  </a>
+
+  <!-- pre -->
+  <a id="pre" href="#">
+    <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
+    <p class="photo_nav_txt">&lt;</p>
+  </a>
+
+  <!-- mark -->
+  <div id="mark">
+    <ul>
+      <li id="markli4">
+        <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u128.png"/></a>
+      </li>
+      <li id="markli3">
+        <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u128.png"/></a>
+        <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+      </li>
+      <li id="markli2">
+        <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u128.png"/></a>
+        <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+      </li>
+      <li id="markli1">
+        <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u128.png"/></a>
+        <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+        <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+      </li>
+    </ul>
+  </div>
+
+      <div id = "Animation">
+        <p class="Title">Animation</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+
+        <ul id = "animation_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Music">
+        <p class="Title">Music</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="music_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Gaming">
+        <p class="Title">Gaming</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="gaming_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Tech">
+        <p class="Title">Tech&amp;Science</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="tech_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Entertainment">
+        <p class="Title">Entertainment</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="entertainment_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "TV">
+        <p class="Title">Movies&amp;TV</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="TV_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Life">
+        <p class="Title">Daily life</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="life_display" class="display">
+        </ul>
+      </div>
+
+      <div id = "Fashion">
+        <p class="Title">Fashion</p>
+        <a class="More" href="search.html" style="text-decoration:underline;">more</a>
+        <ul id="fashion_display" class="display">
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div id = "Footer">
+        <p id="Footer_txt_1" class="paragraph">Contact us</p>
+        <p id="Footer_txt_2" class="paragraph">About this website.</p>
+        <p id="Footer_txt_3" class="paragraph">Join us</p>
+        <img id="Footer_logo" src="/static/images/header/logo_footer.png"/>
+        <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+        <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+        <img id="slice_1" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_2" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
+      </div>
+</body>
+<script type="text/javascript">
+	$('#photo').slider();
+</script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
+</html>
