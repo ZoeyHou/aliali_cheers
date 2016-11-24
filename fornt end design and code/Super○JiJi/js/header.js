@@ -47,24 +47,45 @@
     $("#Login_body").fadeIn(1000);
 	});
   $("#Login_body").click(function(){
+    document.getElementById("Face_login_page").style.visibility="hidden";
     $("#Login_body").fadeOut(1000);
     $("#Login_containt").fadeOut(1000);
   });
   $("#Login_button").click(function(){
-    $("#Login_body").fadeOut(1000);
-    $("#Login_containt").fadeOut(1000);
-    document.getElementById("Search_login").style.visibility="hidden";
-    document.getElementById("User").style.visibility="visible";
+    $.post("/login/", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
+    if(ret=='T'){
+      document.getElementById("Face_login_page").style.visibility="hidden";
+      document.getElementById("Search_login").style.visibility="hidden";
+      document.getElementById("User_name").innerHTML = document.cookie.split("=")[1]
+      document.getElementById("User").style.visibility="visible";
+      $("#Login_body").fadeOut(1000);
+      $("#Login_containt").fadeOut(1000);
+    }else{
+      alert("Oops!! Password is Wrong.");
+    }
   });
+  });
+
   $("#Face_button").click(function(){
+    document.getElementById("Face_login_page").style.visibility="visible";
+  });
+
+  $("#Face_login_close").click(function(){
+    document.getElementById("Face_login_page").style.visibility="hidden";
+  });
+
+  $("#Face_login_button").click(function(){
+    document.getElementById("Face_login_page").style.visibility="hidden";
     $("#Login_body").fadeOut(1000);
     $("#Login_containt").fadeOut(1000);
     document.getElementById("Search_login").style.visibility="hidden";
     document.getElementById("User").style.visibility="visible";
   });
   $("#User_logout").click(function(){
+    $.post("/login/logout", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
     document.getElementById("Search_login").style.visibility="visible";
-    document.getElementById("User").style.visibility="hidden";
+      document.getElementById("User").style.visibility="hidden";
+  });
   });
 });
 

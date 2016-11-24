@@ -15,7 +15,7 @@
 #Edit {
   position: relative;
   top: 200px;
-  height: 570px;
+  height: 660px;
 }
 #Edit_bgd {
   position:absolute;
@@ -159,7 +159,7 @@
 }
 #blank {
   position: relative;
-  height: 200px;
+  height: 150px;
 }
 #Footer{
   position:relative;

@@ -22,4 +22,8 @@
 	$("#Image_collect_icon").click(function(){
 		alert("Collect this video.")
 	});
+
+	$(".Comments_like_img").click(function(){
+		alert("Like this comment.")
+	});
 });
