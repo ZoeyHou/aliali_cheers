@@ -49,6 +49,7 @@
   text-align:left;
 }
 #forget_email_hint {
+  visibility: hidden;
   position:absolute;
   left:467px;
   top:150px;

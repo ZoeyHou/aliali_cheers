@@ -3,12 +3,12 @@
 <head>
   <title>Personal page</title>
   <meta charset='utf-8'/>
-  <link href="css/styles.css" type="text/css" rel="stylesheet"/>
-  <link href="css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="css/personal_page.css">
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/header.js"></script>
-  <script type="text/javascript" src="js/personal_page.js"></script>
+  <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
+  <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/personal_page.css">
+  <script type="text/javascript" src="/static/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/personal_page.js"></script>
 </head>
   <body>
    <div id='header'>
@@ -16,28 +16,28 @@
         <div id='logo'>
           <p id="Logo_title1">Super</p>
           <p id="Logo_title2">JiJi</p>
-          <img id="Logo_circle" src="images/header/logo_header.png"/>
+          <img id="Logo_circle" src="/static/images/header/logo_header.png"/>
         </div>
         <!-- Navigator -->
         <ul id='Navigator'>
           <li id = "Nav_Home">
               <p id="Txt_home">Home</p>
-              <img id= "Line_home" class="Line" src="images/header/line.png" />
+              <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
               <a id = "Hot_home" class="Hot" href="./index.html"></a>
           </li>
           <li id = "Nav_Video">
             <p id="Txt_video">Video</p>
-            <img id= "Line_video" class="Line"src="images/header/line.png" />
+            <img id= "Line_video" class="Line"src="/static/images/header/line.png" />
             <a id= "Hot_video" class="Hot" href="./video.html"></a>
           <li>
           <li id = "Nav_Audio">
             <p id="Txt_audio">Audio</p>
-            <img id= "Line_audio" class="Line"src="images/header/line.png" />
+            <img id= "Line_audio" class="Line"src="/static/images/header/line.png" />
             <a id= "Hot_audio" class="Hot" href="./audio.html"></a>
           </li>
           <li id = "Nav_Image">
             <p id="Txt_image">Image</p>
-            <img id= "Line_image" class="Line" src="images/header/line.png"/>
+            <img id= "Line_image" class="Line" src="/static/images/header/line.png"/>
             <a id= "Hot_image" class="Hot" href="./image.html"></a>
           <li>
         </ul>
@@ -51,17 +51,17 @@
             <p id="User_circle2" class="paragraph">○</p>
             <a href="upload.html"><p id="User_upload" class="paragraph">Upload</p></a>
           </div>
-          <img id="Search_bgd" src="images/header/Search_bgd.png"/>
-          <a id="search" href ="./search.html"><img id="Search_icon" src="images/header/Search_icon.png"/></a>
+          <img id="Search_bgd" src="/static/images/header/Search_bgd.png"/>
+          <a id="search" href ="./search.html"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
         </div>
         <!-- Login -->
         <div id="Login">
           <div id="Login_containt" style="display:none;">
-          <img id="Login_bgd" src="images/header/Login_bgd.png">
+          <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
           <!-- Logo -->
           <p id="Login_logo_title1">Super</p>
           <p id="Login_logo_title2">JiJi</p>
-          <img id="Login_logo_circle" src="images/header/logo_login.png"/>
+          <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
 
           <form id="Input" action="action_page.php">
               <p id="email_txt">E-mail Address</p>
@@ -74,12 +74,12 @@
           </form> 
           <!-- Login -->
           <a id="Login_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
             <p id="Login_button_txt" class="text">LOGIN</p>
           </a>
           <!-- Sign up -->
           <a id="Face_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="images/header/button.png"/>
+            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
             <p id="Login_button_txt" class="text">FACE LOGIN</p>
           </a>
         </div>
@@ -89,110 +89,56 @@
   </div>
 
       <div id="Person">
-        <img id="Person_bgd" src="images/personal_page/u0.png"/>
+        <img id="Person_bgd" src="/static/images/personal_page/u0.png"/>
         <p id="Person_title" class="h2">Personal Page</p>
-        <img id="Person_img" class="image" src="images/video_display/image_u129.jpg"/>
+        <img id="Person_img" class="image" src="/static/images/video_display/image_u129.jpg"/>
         <p id="Person_name" class="h1">Starboy</p>
         <p id="Person_discription" class="paragraph">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</p>
-        <a href="edit.html"><p id="Person_edit" class="paragraph" style="text-decoration:underline;">Edit</p></a>
+        <a href="/edit_info"><p id="Person_edit" class="paragraph" style="text-decoration:underline;">Edit</p></a>
       </div>
 
       <div id="Video_upload" class="uploaded">
-        <img class="bgd" src="images/video_display/u86.png"/>
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Video</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
-          <li id="item0">
-           <img class="recommand_img" src="images/home/photo_1.jpg"/>
-           <a href="#"></a>
-           <p class="paragraph recommand_name">SCHW</p>
-         </li>
-          <li id="item1">
-            <img class="recommand_img" src="images/home/photo_3.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Maritime</p>
-          </li>
-          <li id="item2">
-            <img class="recommand_img" src="images/video_display/u96.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Gipfel</p>
-          </li>
-          <li id="item3">
-            <img class="recommand_img" src="images/video_display/u98.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Weite</p>
-          </li>
-          <li id="item4">
-            <img class="recommand_img" src="images/video_display/u100.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Schwane</p>
-          </li>
+            {% for v in video_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ v.cover.url }}"/>
+               <a href="/playpage/{{ v.video }}"></a>
+               <p class="paragraph recommand_name">{{ v.title }}</p>
+             </li>
+            {% endfor %}
         </ul>
       </div>
 
       <div id="Image_upload" class="uploaded">
-        <img class="bgd" src="images/video_display/u86.png"/>
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Image</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
-          <li id="item0">
-           <img class="recommand_img" src="images/home/photo_1.jpg"/>
-           <a href="#"></a>
-           <p class="paragraph recommand_name">SCHW</p>
-          </li>
-          <li id="item1">
-            <img class="recommand_img" src="images/home/photo_3.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Maritime</p>
-          </li>
-          <li id="item2">
-            <img class="recommand_img" src="images/video_display/u96.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Gipfel</p>
-          </li>
-          <li id="item3">
-            <img class="recommand_img" src="images/video_display/u98.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Weite</p>
-          </li>
-          <li id="item4">
-            <img class="recommand_img" src="images/video_display/u100.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Schwane</p>
-          </li>
+            {% for i in image_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ i.cover.url }}"/>
+               <a href="/picture_display/{{ i.picture }}"></a>
+               <p class="paragraph recommand_name">{{ i.title }}</p>
+             </li>
+            {% endfor %}
         </ul>
       </div>
 
       <div id="Audio_upload" class="uploaded">
-        <img class="bgd" src="images/video_display/u86.png"/>
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Audio</p>
-        <a href="search.html"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
-          <li id="item0">
-           <img class="recommand_img" src="images/home/photo_1.jpg"/>
-           <a href="#"></a>
-           <p class="paragraph recommand_name">SCHW</p>
-         </li>
-          <li id="item1">
-            <img class="recommand_img" src="images/home/photo_3.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Maritime</p>
-          </li>
-          <li id="item2">
-            <img class="recommand_img" src="images/video_display/u96.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Gipfel</p>
-          </li>
-          <li id="item3">
-            <img class="recommand_img" src="images/video_display/u98.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Weite</p>
-          </li>
-          <li id="item4">
-            <img class="recommand_img" src="images/video_display/u100.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Schwane</p>
-          </li>
+          {% for a in audio_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ a.cover.url }}"/>
+               <a href="/audio_playpage/{{ a.audio }}"></a>
+               <p class="paragraph recommand_name">{{ a.title }}</p>
+             </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -201,13 +147,13 @@
         <p id="Footer_txt_1" class="paragraph">Contact us</p>
         <p id="Footer_txt_2" class="paragraph">About this website.</p>
         <p id="Footer_txt_3" class="paragraph">Join us</p>
-        <img id="Footer_logo" src="images/header/logo_footer.png"/>
+        <img id="Footer_logo" src="/static/images/header/logo_footer.png"/>
         <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
         <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
-        <img id="slice_1" class="slice" src="images/header/slice.png"/>
-        <img id="slice_2" class="slice" src="images/header/slice.png"/>
-        <img id="slice_3" class="slice" src="images/header/slice.png"/>
-        <img id="slice_4" class="slice" src="images/header/slice.png"/>
+        <img id="slice_1" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_2" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
   </body>
 </html>

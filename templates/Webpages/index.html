@@ -11,7 +11,7 @@
   <script type="text/javascript" src="/static/js/home.js"></script>
 </head>
 <body>
-	<div id='header'>
+  <div id='header'>
         <!-- Logo -->
         <div id='logo'>
           <p id="Logo_title1">Super</p>
@@ -23,7 +23,7 @@
           <li id = "Nav_Home">
               <p id="Txt_home">Home</p>
               <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
-              <a id = "Hot_home" class="Hot" href="/"></a>
+              <a id = "Hot_home" class="Hot" href="./index.html"></a>
           </li>
           <li id = "Nav_Video">
             <p id="Txt_video">Video</p>
@@ -45,7 +45,7 @@
         <div id = 'Search'>
           <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
           <div id = 'User'>
-            <a href="personal_page.html" ><p id="User_name" class="paragraph">{{ username }}</p></a>
+            <a href="/personal_page/{{ username }}" ><p id="User_name" class="paragraph">{{ username }}</p></a>
             <p id="User_circle1" class="paragraph">○</p>
             <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
             <p id="User_circle2" class="paragraph">○</p>
@@ -57,33 +57,39 @@
         <!-- Login -->
         <div id="Login">
           <div id="Login_containt" style="display:none;">
-          <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
-          <!-- Logo -->
-          <p id="Login_logo_title1">Super</p>
-          <p id="Login_logo_title2">JiJi</p>
-          <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
+            <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
+            <!-- Logo -->
+            <p id="Login_logo_title1">Super</p>
+            <p id="Login_logo_title2">JiJi</p>
+            <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
 
-          <form id="Input" action="action_page.php">
-              <p id="email_txt">E-mail Address</p>
-              <a href="/register"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
-              <input id="email_input" type="email" name="E-mail" value=""/>
+            <form id="Input" action="action_page.php">
+                <p id="email_txt">E-mail Address</p>
+                <a href="/login/register/"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+                <input id="email_input" type="email" name="E-mail" value=""/>
 
-              <p id="pwd_txt">Password</p>
-              <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
-              <input id="pwd_input" type="password" name="pwd" value=""/>
-          </form> 
-          <!-- Login -->
-          <a id="Login_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
-            <p id="Login_button_txt" class="text">LOGIN</p>
-          </a>
-          <!-- Sign up -->
-          <a id="Face_button" class="shape" href="#">
-            <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
-            <p id="Login_button_txt" class="text">FACE LOGIN</p>
-          </a>
-        </div>
-        <div id="Login_body" style="display:none;">
+                <p id="pwd_txt">Password</p>
+                <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+                <input id="pwd_input" type="password" name="pwd" value=""/>
+            </form> 
+            <!-- Login -->
+            <a id="Login_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">LOGIN</p>
+            </a>
+            <!-- Sign up -->
+            <a id="Face_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">FACE LOGIN</p>
+            </a>
+          </div>
+          <div id="Login_body" style="display:none;">
+          </div>
+          <div id="Face_login_page">
+            <img id="Face_login_bgd" src="/static/images/edit/u94.png"/>
+            <a href="#"><img id="Face_login_close" src="/static/images/edit/close.png"/></a>
+            <p id="Face_login_txt" class="paragraph">这里放面部识别登陆的部分</p>
+            <a href="#"><p id="Face_login_button">Login</p></a>
           </div>
         </div>
   </div>
@@ -145,35 +151,50 @@
       <!-- Video showing -->
       <div id = "Display0" class="video_display">
         <p class="Title">Video</p>
-        <a class="More" href="video.html" style="text-decoration:underline;">more</a>
-
+        <a class="More" href="/video" style="text-decoration:underline;">more</a>
         <ul id = "display_detail0" class="display">
-            {% for video in video_list %}
-            <li id="item{{ forloop.counter0 }}"><img src="{{ video.cover.url }}"><p>{{ video.title }}</p><a href="/playpage/{{ video.video }}"></a></li>
-            {% endfor %}
+          {% for video in video_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ video.cover.url }}">
+              <p>{{ video.title }}</p>
+              <a href="/playpage/{{ video.video }}"></a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
       <!-- Audio showing -->
       <div id = "Display1" class="video_display">
         <p class="Title">Audio</p>
-        <a class="More" href="audio.html" style="text-decoration:underline;">more</a>
-        
+        <a class="More" href="/audio" style="text-decoration:underline;">more</a>
         <ul id="display_detail1" class="display">
+          {% for audio in audio_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ audio.cover.url }}">
+              <p>{{ audio.title }}</p>
+              <a href="/audio_playpage/{{ audio.audio }}"></a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
       <!-- Image showing -->
       <div id = "Display2" class="video_display">
         <p class="Title">Image</p>
-        <a class="More" href="image.html" style="text-decoration:underline;">more</a>
-
+        <a class="More" href="/gallery" style="text-decoration:underline;">more</a>
         <ul id="display_detail2" class="display">
+          {% for picture in picture_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ picture.cover.url }}">
+              <p>{{ picture.title }}</p>
+              <a href="/picture_display/{{ picture.picture }}"></a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
-            <!-- Footer -->
+      <!-- Footer -->
       <div id = "Footer">
-        <a href="#"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
-        <a href="#"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
-        <a href="#"><p id="Footer_txt_3" class="paragraph">Join us</p></a>
+        <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+        <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+        <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
         <img id="Footer_logo" src="/static/images/header/logo_footer.png"/>
         <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
         <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>

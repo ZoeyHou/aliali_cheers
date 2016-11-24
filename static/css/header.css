@@ -118,8 +118,8 @@ ul{
 }
 #User_name {
   position:absolute;
-  left:1117px;
-  width:67px;
+  left:817px;
+  width:367px;
   height:16px;
   font-size:14px;
   text-align:right;
@@ -254,6 +254,44 @@ ul{
   color:#EEEEEE;
   text-align:left;
 }
+#Face_login_page {
+  visibility: hidden;
+  position:fixed;
+  left:50%;
+  margin-left:-260px;
+  top:50%;
+  margin-top:-171px;
+  z-index: 15;
+}
+#Face_login_bgd {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:520px;
+  height:342px;
+}
+#Face_login_close {
+  position:absolute;
+  left:470px;
+  top:10px;
+  width:40px;
+  height:40px;
+}
+#Face_login_button {
+  position:absolute;
+  background-color: #FFFFFF;
+  left:250px;
+  top:150px;
+  width:40px;
+  height:16px;
+}
+#Face_login_txt {
+  position:absolute;
+  left:150px;
+  top:220px;
+  width:235px;
+  height:13px;
+}
 #forget_txt{
   position: absolute;
   left: 455px;
@@ -351,7 +389,7 @@ ul{
 #Footer_txt_3 {
   position:absolute;
   left:248px;
-  width:43px;
+  width:143px;
   text-decoration:underline;
 }
 #Footer_logo {
