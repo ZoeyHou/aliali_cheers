@@ -93,7 +93,7 @@
       document.getElementById("User").style.visibility="hidden";
     });
   });
-  $(document).ready(function(){
+
   var pos = 0, up_url = "http://127.0.0.1:8000/login/recog_login";
   var canvas = document.createElement("canvas");
   canvas.setAttribute('width', 320);
@@ -161,7 +161,6 @@ jQuery("#webcam").webcam({
    }
 });
 
-});
 });
 
 

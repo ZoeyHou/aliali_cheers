@@ -1,0 +1,172 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:relative;
+  left:-80px;
+  width:1260px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#base {
+  position:relative;
+  top: 200px;
+  height: 1050px;
+  z-index:0;
+}
+#Signup_bgd {
+  position:absolute;
+  left:110px;
+  width:1200px;
+  height:860px;
+}
+#Signup_title {
+  position:absolute;
+  left:140px;
+  top:-58px;
+  width:89px;
+  height:28px;
+}
+#Signup_camera {
+  position:absolute;
+  left:190px;
+  top:180px;
+  width:600px;
+  height:400px;
+  font-size:28px;
+  color:#999999;
+  z-index: 5px;
+}
+#Signup_bt {
+  position:absolute;
+  left:600px;
+  top:760px;
+  width:220px;
+  height:50px;
+  font-size:24px;
+}
+#Signup_bt_bgd {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:220px;
+  height:50px;
+}
+#Signup_bt_txt {
+  position:absolute;
+  left:2px;
+  top:-9px;
+  width:216px;
+  word-wrap:break-word;
+}
+#Signup_hint {
+  position:absolute;
+  left:190px;
+  top:100px;
+  width:505px;
+  height:23px;
+  font-size:20px;
+}
+#Photo_img_1 {
+  position:absolute;
+  left:940px;
+  top:83px;
+  width:240px;
+  height:160px;
+  font-size:28px;
+  color:#999999;
+}
+#Photo_img_2 {
+  position:absolute;
+  left:940px;
+  top:314px;
+  width:240px;
+  height:160px;
+  font-size:28px;
+  color:#999999;
+}
+#Photo_img_3 {
+  position:absolute;
+  left:940px;
+  top:545px;
+  width:240px;
+  height:160px;
+  font-size:28px;
+  color:#999999;
+}
+#Photo_txt_1 {
+  position:absolute;
+  left:940px;
+  top:30px;
+  width:70px;
+  height:23px;
+  font-size:20px;
+}
+#Photo_txt_2 {
+  position:absolute;
+  left:940px;
+  top:261px;
+  width:70px;
+  height:23px;
+  font-size:20px;
+}
+#Photo_txt_3 {
+  position:absolute;
+  left:940px;
+  top:492px;
+  width:70px;
+  height:23px;
+  font-size:20px;
+}
+#Photo_delete_1 {
+  position:absolute;
+  left:1135px;
+  top:233px;
+  width:45px;
+  height:18px;
+  font-size:16px;
+  text-decoration:underline;
+}
+#Photo_delete_2 {
+  position:absolute;
+  left:1135px;
+  top:464px;
+  width:45px;
+  height:18px;
+  font-size:16px;
+  text-decoration:underline;
+}
+#Photo_delete_3 {
+  position:absolute;
+  left:1135px;
+  top:695px;
+  width:45px;
+  height:18px;
+  font-size:16px;
+  text-decoration:underline;
+}
+#Take_photo {
+  position:absolute;
+  left:420px;
+  top:620px;
+  width:140px;
+  height:40px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  text-decoration:none;
+  color:#000000;
+  background-color: #FFFFFF;
+  text-align:center;
+}
+#blank {
+  position: relative;
+  height: 150px;
+}
+#Footer{
+  position:relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}

@@ -1,19 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Upload</title>
+  <title>Sign up</title>
   <meta charset='utf-8'/>
   <link href="css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="css/upload.css">
+  <link rel="stylesheet" type="text/css" href="css/signup2.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
-  <script type="text/javascript" src="js/upload.js"></script>
+  <script type="text/javascript" src="js/signup2.js"></script>
   <script src="js/jquery.webcam.min.js"></script>
 </head>
   <body>
-    <div id="base" class="">
-
   <div id='header'>
         <!-- Logo -->
         <div id='logo'>
@@ -101,84 +99,34 @@
           </div>
         </div>
   </div>
+    <div id="base" class="">
+      <img id="Signup_bgd" src="images/upload/u56.png"/>
+      <p id="Signup_title" class="h2">Sign up</p>
 
-      <div id="Upload">
-        <img id="upload_bgd" class="ax_shape" src="images/upload/u56.png"/>
-        <p id="upload_title" class="h2">Upload</p>
-
-        <a id="upload_cover" class="shape" href="#">
-          <img id="upload_cover_img" src="images/upload/u60.png"/>
-          <p id="upload_cover_txt1">+</p>
-          <p id="upload_cover_txt2">Cover</p>
-        </a>
-
-        <p id="File_txt" class="h2">File:</p>
-        <input id="File_input" class="ax_text_field" type="file" value=""/>
-
-        <p id="Title_txt" class="h2">Title:</p>
-        <input id="Title_input" class="ax_text_field" type="text" value=""/>
-        <p id="Title_hint" class="paragraph">Title cannot be none!</p>
-
-        <p id="Discription_txt" class="h2">Discription:</p>
-        <textarea id="Discription_input" class="ax_text_area"></textarea>
-
-        <p id="Type_txt" class="h2">Type:</p>
-        <select id="Type_input" class="ax_droplist">
-          <option selected value="Video">Video</option>
-          <option value="Audio">Audio</option>
-          <option value="Image">Image</option>
-        </select>
-
-        <p id="Catagory_txt" class="h2">Catagory:</p>
-
-
-        <div id="Catagory_input" >
-              <select id="Catagory_video" class="ax_droplist">
-                <option selected value="Animation">Animation</option>
-                <option value="Music">Music</option>
-                <option value="Gaming">Gaming</option>
-                <option value="Tech&amp;Science">Tech&amp;Science</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Movies&amp;TV">Movies&amp;TV</option>
-                <option value="Daily life">Daily life</option>
-                <option value="Fashion">Fashion</option>
-              </select>
-              <select id="Catagory_audio" class="ax_droplist">
-                <option selected value="Music">Music</option>
-                <option value="Audio_book">Audio_book</option>
-                <option value="Talkshow">Talkshow</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="News">News</option>
-                <option value="Others">Others</option>
-              </select>
-              <select id="Catagory_image" class="ax_droplist">
-                <option selected value="Natural scene">Natural scene</option>
-                <option value="Animal">Animal</option>
-                <option value="Sports">Sports</option>
-                <option value="Foods">Foods</option>
-                <option value="Ideas">Ideas</option>
-                <option value="Wallpaper">Wallpaper</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Tech&amp;Science">Tech&amp;Science</option>
-              </select>
-        </div>
-
-        <a id="Upload_bt" class="shape" href="index.html">
-          <img id="Upload_bt_bgd" class="img " src="images/edit/u62.png"/>
-          <p id="Upload_bt_txt" class="text">Upload</p>
-        </a>
+      <p id="Signup_hint" class="paragraph">3 photos are required to be taken for Face Login function</p>
+      <div id="Signup_camera">
+          <div id="webcam2"></div>
       </div>
+      <button id="Take_photo">Take photo</button>
 
-      <div id="Upload_image">
-        <img id="Upload_image_bgd" src="images/edit/u94.png"/>
-        <a href="#"><img id="Upload_image_close" src="images/edit/close.png"/></a>
-        <img id="Upload_image_img" src="images/edit/u98.png"/>
-        <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
-        <input id="Upload_image_file" type="file" value=""/>
-      </div>
-      
-      <div id="blank"></div>
-      <!-- Footer -->
+      <img id="Photo_img_1" src="images/upload/u60.png"/>
+      <p id="Photo_txt_1" class="paragraph">Photo 1</p>
+      <a href="#"><p id="Photo_delete_1" class="paragraph">delete</p></a>
+
+      <img id="Photo_img_2" src="images/upload/u60.png"/>
+      <p id="Photo_txt_2" class="paragraph">Photo 2</p>
+      <a href="#"><p id="Photo_delete_2" class="paragraph">delete</p></a>
+
+      <img id="Photo_img_3" src="images/upload/u60.png"/>
+      <p id="Photo_txt_3" class="paragraph">Photo 3</p>
+      <a href="#"><p id="Photo_delete_3" class="paragraph">delete</p></a>
+
+      <a id="Signup_bt" class="shape" href="index.html">
+        <img id="Signup_bt_bgd" src="images/edit/u62.png"/>
+        <p id="Signup_bt_txt">Sign up</p>
+      </a>
+    </div>
+    <div id="blank"></div>
       <div id = "Footer">
           <a href="about.html"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
           <a href="about.html"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
@@ -190,12 +138,14 @@
           <img id="slice_2" class="slice" src="images/header/slice.png"/>
           <img id="slice_3" class="slice" src="images/header/slice.png"/>
           <img id="slice_4" class="slice" src="images/header/slice.png"/>
-        </div>
-    </div>
+      </div>
   </body>
 <script type="text/javascript">
   $("#capture_btn").click(function(){
       webcam.capture();
+  });
+  $("#Take_photo").click(function(){
+      webcam2.capture();
   });
 </script>
 </html>
