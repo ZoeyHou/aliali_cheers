@@ -11,7 +11,7 @@
 #base {
   position:relative;
   top: 200px;
-  height: 570px;
+  height: 640px;
   z-index:0;
 }
 #Reset_bgd {
@@ -49,6 +49,7 @@
   text-align:left;
 }
 #reset_npwd_hint {
+  visibility: hidden;
   position:absolute;
   left:467px;
   top:150px;
@@ -79,6 +80,7 @@
   text-align:left;
 }
 #reset_rpwd_hint {
+  visibility: hidden;
   position:absolute;
   left:467px;
   top:262px;
@@ -111,7 +113,7 @@
 }
 #blank {
   position: relative;
-  height: 200px;
+  height: 150px;
 }
 #Footer{
   position:relative;

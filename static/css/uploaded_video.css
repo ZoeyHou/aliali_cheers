@@ -1,0 +1,87 @@
+﻿.Title {
+  position:absolute;
+  top:-45px;
+  height:22px;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:18px;
+}
+.More {
+  position:absolute;
+  left:1189px;
+  top:-24px;
+  width:41px;
+  height:20px;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  color: #000000;
+  text-decoration:underline;
+}
+.display {
+  position:relative;
+  left:30px;
+  top:26px;
+  width:1190px;
+}
+#item0{
+  position: relative;
+  left:0px;
+}
+#item1{
+  position: relative;
+  left:310px;
+}
+#item2{
+  position: relative;
+  left:620px;
+}
+#item3{
+  position: relative;
+  left:930px;
+  height: 270px;
+}
+.display img {
+  position:absolute;
+  width:260px;
+  height:200px;
+}
+.display p{
+  position:absolute;
+  top:210px;
+  width:260px;
+  height:17px;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:14px;
+  text-align:center;
+}
+.display a{
+  position:absolute;
+  top:0px;
+  width:260px;
+  height:200px;
+}
+.display a:hover{
+  background-color: #333333;
+  opacity: 0.3;
+}
+.last {
+  height: 300px;
+}
+#Uploaded {
+  position: relative;
+  top:200px;
+  left:100px;
+  width:1240px;
+  border-top: #000000 solid 2px;
+}
+#Footer{
+  position: relative;
+  left:193px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}

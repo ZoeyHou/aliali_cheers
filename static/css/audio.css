@@ -167,25 +167,14 @@
   height:530px;
 }
 .display li{
+  position: relative;
+  height: 130px;
+}
+.item {
+  position: relative;
   width:1000px;
   height:110px;
   border: #CCCCCC solid 1px;
-}
-#item0{
-  position: absolute;
-  top: 0px;
-}
-#item1{
-  position: absolute;
-  top: 130px;
-}
-#item2{
-  position: absolute;
-  top: 260px;
-}
-#item3{
-  position: absolute;
-  top: 390px;
 }
 #item_cover {
   position:absolute;
