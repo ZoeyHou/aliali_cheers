@@ -1,0 +1,397 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:relative;
+  left:-80px;
+  width:1260px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#header{
+  position:relative;
+}
+#Logo_title1 {
+  position:absolute;
+  left:80px;
+  top:8px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+}
+#Logo_title2 {
+  position:absolute;
+  left:280px;
+  top:8px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+}
+#Logo_circle {
+  position:absolute;
+  left:232px;
+  top:64px;
+  width:40px;
+  height:40px;
+}
+#Navigator p{
+  position: absolute;
+  font-family:'Consolas', 'Consolas';
+  font-weight:300;
+  font-style:normal;
+  font-size:20px;
+  top:-13px;
+  height:23px;
+  color:#666666;
+}
+ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+#Nav_Home {
+  position:absolute;
+  left:444px;
+}
+.Line {
+  position:absolute;
+  left:-104px;
+  top:30px;
+  width:100px;
+  height:2px;
+}
+.Line_this{
+  position:absolute;
+  left:-4px;
+  top:30px;
+  width:100px;
+  height:2px;
+}
+#Navigator li{
+  position: absolute;
+  top:77px;
+  width: 100px;
+  height: 33px;
+  overflow:hidden;
+}
+#Navigator a{
+  position: absolute;
+  top:0px;
+  width: 100px;
+  height: 33px;
+  overflow:hidden;
+}
+#Nav_Video {
+  position:absolute;
+  left:564px;
+}
+#Nav_Audio {
+  position:absolute;
+  left:684px;
+}
+#Nav_Image {
+  position:absolute;
+  left:804px;
+}
+#Search_login {
+  position:absolute;
+  left:1263px;
+  top:26px;
+  width:36px;
+  height:16px;
+  font-size:14px;
+}
+#User{
+  position: absolute;
+  visibility: hidden;
+  top:26px;
+}
+#User_name {
+  position:absolute;
+  left:1117px;
+  width:67px;
+  height:16px;
+  font-size:14px;
+  text-align:right;
+}
+#User_circle1 {
+  position:absolute;
+  left:1186px;
+  width:45px;
+  height:16px;
+  font-size:14px;
+}
+#User_logout {
+  position:absolute;
+  left:1197px;
+  width:9px;
+  height:16px;
+  font-size:14px;
+}
+#User_circle2 {
+  position:absolute;
+  left:1244px;
+  width:9px;
+  height:16px;
+  font-size:14px;s
+}
+#User_upload {
+  position:absolute;
+  left:1253px;
+  width:46px;
+  height:16px;
+  font-size:14px;
+}
+#Search_icon {
+  position:absolute;
+  left:1309px;
+  top:35px;
+  width:31px;
+  height:29px;
+}
+#Search_bgd {
+  position:absolute;
+  left:1309px;
+  top:35px;
+  width:31px;
+  height:29px;
+}
+#Login_body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+  z-index: 10;
+}
+#Login_containt {
+  position:fixed;
+  left:50%;
+  margin-left:-260px;
+  top:50%;
+  margin-top:-170px;
+  z-index:11;
+}
+#Login_logo_title1 {
+  position:absolute;
+  left:94px;
+  top:-10px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+  color:#FFFFFF;
+}
+#Login_logo_title2 {
+  position:absolute;
+  left:294px;
+  top:-10px;
+  width:318px;
+  height:53px;
+  font-family:'PTMono-Bold', 'PT Mono Bold', 'PT Mono';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+  color:#FFFFFF;
+}
+#Login_logo_circle {
+  position:absolute;
+  left:246px;
+  top:46px;
+  width:40px;
+  height:40px;
+  color:#FFFFFF;
+}
+#email_txt{
+  position: absolute;
+  left: 78px;
+  top: 110px;
+  width:370px;
+  height:30px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#EEEEEE;
+  text-align:left;
+}
+#sign_txt{
+  position: absolute;
+  left: 455px;
+  top: 130px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:150;
+  font-style:normal;
+  font-size:14px;
+  color:#EEEEEE;
+  text-align:left;
+}
+#pwd_txt{
+  position: absolute;
+  left: 78px;
+  top: 175px;
+  width:370px;
+  height:30px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#EEEEEE;
+  text-align:left;
+}
+#forget_txt{
+  position: absolute;
+  left: 455px;
+  top: 190px;
+  font-family:'Consolas', 'Consolas';
+  font-weight:150;
+  font-style:normal;
+  font-size:14px;
+  color:#EEEEEE;
+  text-align:left;
+}
+#email_input {
+  position:absolute;
+  left:68px;
+  top:125px;
+  width:370px;
+  height:30px;
+  background-color:transparent;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  text-decoration:none;
+  color:#FFFFFF;
+  text-align:left;
+  border-color:transparent;
+  outline-style:none;
+  border-bottom: #FFFFFF solid 1px;
+}
+#pwd_input {
+  position:absolute;
+  left:68px;
+  top:190px;
+  width:370px;
+  height:30px;
+  background-color:transparent;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  text-decoration:none;
+  color:#FFFFFF;
+  text-align:left;
+  border-color:transparent;
+  outline-style:none;
+  border-bottom: #FFFFFF solid 1px;
+}
+#Login_button {
+  position:absolute;
+  left:127px;
+  top:270px;
+  width:100px;
+  height:30px;
+  opacity:0.899999976158142;
+}
+#Face_button {
+  position:absolute;
+  left:279px;
+  top:270px;
+  width:100px;
+  height:30px;
+  opacity:0.899999976158142;
+}
+#Login_button_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100px;
+  height:30px;
+}
+#Login_button_txt {
+  position:absolute;
+  left:2px;
+  top:-5px;
+  width:96px;
+  word-wrap:break-word;
+}
+#Footer p{
+  top:5px;
+  height:15px;
+  color:#666666;
+}
+#Footer_txt_1 {
+  position:absolute;
+  left:14px;
+  width:64px;
+  text-decoration:underline;
+}
+#Footer_txt_2 {
+  position:absolute;
+  left:104px;
+  width:112px;
+  text-decoration:underline;
+}
+#Footer_txt_3 {
+  position:absolute;
+  left:248px;
+  width:143px;
+  text-decoration:underline;
+}
+#Footer_logo {
+  position:absolute;
+  left:324px;
+  top:15px;
+  width:25px;
+  height:25px;
+}
+#Footer_txt_4 {
+  position:absolute;
+  left:365px;
+  width:174px;
+}
+#Footer_txt_5 {
+  position:absolute;
+  left:564px;
+  width:276px;
+}
+.slice{
+  width:30px;
+  height:32px;
+}
+#slice_1 {
+  position:absolute;
+  left:64px;
+  top:10px;
+}
+#slice_2 {
+  position:absolute;
+  left:524px;
+  top:10px;
+}
+#slice_3 {
+  position:absolute;
+  left:204px;
+  top:10px;
+}
+#slice_4 {
+  position:absolute;
+  left:274px;
+  top:10px;
+}
