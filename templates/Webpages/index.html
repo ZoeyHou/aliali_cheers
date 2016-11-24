@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/js/header.js"></script>
   <script type="text/javascript" src="/static/js/home.js"></script>
+  <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
   <div id='header'>
@@ -23,16 +24,16 @@
           <li id = "Nav_Home">
               <p id="Txt_home">Home</p>
               <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
-              <a id = "Hot_home" class="Hot" href="./index.html"></a>
+              <a id = "Hot_home" class="Hot" href="/"></a>
           </li>
           <li id = "Nav_Video">
             <p id="Txt_video">Video</p>
-            <img id= "Line_video" class="Line"src="/static/images/header/line.png" />
+            <img id= "Line_video" class="Line" src="/static/images/header/line.png" />
             <a id= "Hot_video" class="Hot" href="/video"></a>
           <li>
           <li id = "Nav_Audio">
             <p id="Txt_audio">Audio</p>
-            <img id= "Line_audio" class="Line"src="/static/images/header/line.png" />
+            <img id= "Line_audio" class="Line" src="/static/images/header/line.png" />
             <a id= "Hot_audio" class="Hot" href="/audio"></a>
           </li>
           <li id = "Nav_Image">
@@ -69,7 +70,7 @@
                 <input id="email_input" type="email" name="E-mail" value=""/>
 
                 <p id="pwd_txt">Password</p>
-                <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+                <a href="/forget"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
                 <input id="pwd_input" type="password" name="pwd" value=""/>
             </form> 
             <!-- Login -->
@@ -85,11 +86,16 @@
           </div>
           <div id="Login_body" style="display:none;">
           </div>
-          <div id="Face_login_page">
-            <img id="Face_login_bgd" src="/static/images/edit/u94.png"/>
+          <div id="Face_login_bgd" style="visibility:hidden;">
+            <img id="Face_login_bgd_img" src="/static/images/edit/u94.png"/>
             <a href="#"><img id="Face_login_close" src="/static/images/edit/close.png"/></a>
-            <p id="Face_login_txt" class="paragraph">这里放面部识别登陆的部分</p>
-            <a href="#"><p id="Face_login_button">Login</p></a>
+          </div>
+          <div id="Face_login_page" style="visibility:hidden;">
+            <p id="face_email_txt">E-mail</p>
+            <input id="username" type="text">
+            <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
+            <div id="webcam"></div>
           </div>
         </div>
   </div>
@@ -206,7 +212,10 @@
   </div>
 </body>
 <script type="text/javascript">
-	$('#photo').slider();
+  $('#photo').slider();
+  $("#capture_btn").click(function(){
+      webcam.capture();
+  });
 </script>
 {% if username %}
     <script>

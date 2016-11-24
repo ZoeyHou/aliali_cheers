@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Video</title>
+	<title>Home</title>
 	<meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/video.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/home.css">
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/video.js"></script>
-  <script src="/static/js/jquery.webcam.min.js"></script>
+  <script type="text/javascript" src="/static/js/home.js"></script>
 </head>
 <body>
-	<div id='header'>
+  <div id='header'>
         <!-- Logo -->
         <div id='logo'>
           <p id="Logo_title1">Super</p>
@@ -24,16 +23,16 @@
           <li id = "Nav_Home">
               <p id="Txt_home">Home</p>
               <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
-              <a id = "Hot_home" class="Hot" href="/"></a>
+              <a id = "Hot_home" class="Hot" href="./index.html"></a>
           </li>
           <li id = "Nav_Video">
             <p id="Txt_video">Video</p>
-            <img id= "Line_video" class="Line" src="/static/images/header/line.png" />
+            <img id= "Line_video" class="Line"src="/static/images/header/line.png" />
             <a id= "Hot_video" class="Hot" href="/video"></a>
           <li>
           <li id = "Nav_Audio">
             <p id="Txt_audio">Audio</p>
-            <img id= "Line_audio" class="Line" src="/static/images/header/line.png" />
+            <img id= "Line_audio" class="Line"src="/static/images/header/line.png" />
             <a id= "Hot_audio" class="Hot" href="/audio"></a>
           </li>
           <li id = "Nav_Image">
@@ -70,7 +69,7 @@
                 <input id="email_input" type="email" name="E-mail" value=""/>
 
                 <p id="pwd_txt">Password</p>
-                <a href="/forget"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+                <a href="forget.html"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
                 <input id="pwd_input" type="password" name="pwd" value=""/>
             </form> 
             <!-- Login -->
@@ -86,19 +85,15 @@
           </div>
           <div id="Login_body" style="display:none;">
           </div>
-          <div id="Face_login_bgd" style="visibility:hidden;">
-            <img id="Face_login_bgd_img" src="/static/images/edit/u94.png"/>
+          <div id="Face_login_page">
+            <img id="Face_login_bgd" src="/static/images/edit/u94.png"/>
             <a href="#"><img id="Face_login_close" src="/static/images/edit/close.png"/></a>
-          </div>
-          <div id="Face_login_page" style="visibility:hidden;">
-            <p id="face_email_txt">E-mail</p>
-            <input id="username" type="text">
-            <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
-            <div id="webcam"></div>
+            <p id="Face_login_txt" class="paragraph">这里放面部识别登陆的部分</p>
+            <a href="#"><p id="Face_login_button">Login</p></a>
           </div>
         </div>
   </div>
+  
   <div class="Photo_display">
     <!-- Photo -->
   	<div id='photo'>
@@ -153,24 +148,48 @@
   </div>
 
   <div class="display_detail">
-      {% for k, v in video_list.items %}
-      <div id = "Video{{ forloop.counter0 }}" class="video_display">
-        <p class="Title">{{ k }}</p>
-        <a class="More" href="/search" style="text-decoration:underline;">more</a>
-        <ul id = "display_detail{{ forloop.counter0 }}" class="display">
-            {% for video in v %}
-                <li id="item{{ forloop.counter0 }}">
-                    <img src="{{ video.cover.url }}">
-                    <p>{{ video.title }}</p>
-                    <a href="/playpage/{{ video.video }}"></a>
-                </li>
-            {% endfor %}
+      <!-- Video showing -->
+      <div id = "Display0" class="video_display">
+        <p class="Title">Video</p>
+        <a class="More" href="/video" style="text-decoration:underline;">more</a>
+        <ul id = "display_detail0" class="display">
+          {% for video in video_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ video.cover.url }}">
+              <p>{{ video.title }}</p>
+              <a href="/playpage/{{ video.video }}"></a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
-      {% endfor %}
-
-
-
+      <!-- Audio showing -->
+      <div id = "Display1" class="video_display">
+        <p class="Title">Audio</p>
+        <a class="More" href="/audio" style="text-decoration:underline;">more</a>
+        <ul id="display_detail1" class="display">
+          {% for audio in audio_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ audio.cover.url }}">
+              <p>{{ audio.title }}</p>
+              <a href="/audio_playpage/{{ audio.audio }}"></a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- Image showing -->
+      <div id = "Display2" class="video_display">
+        <p class="Title">Image</p>
+        <a class="More" href="/gallery" style="text-decoration:underline;">more</a>
+        <ul id="display_detail2" class="display">
+          {% for picture in picture_list %}
+            <li id="item{{ forloop.counter0 }}">
+              <img src="{{ picture.cover.url }}">
+              <p>{{ picture.title }}</p>
+              <a href="/picture_display/{{ picture.picture }}"></a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
       <!-- Footer -->
       <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
@@ -184,13 +203,10 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
-    </div>
+  </div>
 </body>
 <script type="text/javascript">
-  $('#photo').slider();
-  $("#capture_btn").click(function(){
-      webcam.capture();
-  });
+	$('#photo').slider();
 </script>
 {% if username %}
     <script>

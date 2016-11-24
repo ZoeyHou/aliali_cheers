@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Reset Password</title>
+  <title>Sign up</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/signup2.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/reset.js"></script>
+  <script type="text/javascript" src="/static/js/signup2.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
@@ -99,26 +99,33 @@
           </div>
         </div>
   </div>
-    
     <div id="base" class="">
+      <img id="Signup_bgd" src="/static/images/upload/u56.png"/>
+      <p id="Signup_title" class="h2">Sign up</p>
 
-      <img id="Reset_bgd" src="/static/images/video_display/u0.png"/>
-      <p id="Reset_txt" class="h2">Reset password</p>
+      <p id="Signup_hint" class="paragraph">3 photos are required to be taken for Face Login function</p>
+      <div id="Signup_camera">
+          <div id="webcam2"></div>
+      </div>
+      <button id="Take_photo">Take photo</button>
 
-      <p id="reset_npwd_txt" class="h2">New Password:</p>
-      <input id="reset_npwd_input" class="ax_text_field" type="password" value=""/>
-      <p id="reset_npwd_hint" class="paragraph">Password is too short!</p>
+      <img id="Photo_img_1" src="/static/images/upload/u60.png"/>
+      <p id="Photo_txt_1" class="paragraph">Photo 1</p>
+      <a href="#"><p id="Photo_delete_1" class="paragraph">delete</p></a>
 
-      <p id="reset_rpwd_txt" class="h2">Reenter Password:</p>
-      <input id="reset_rpwd_input" class="ax_text_field" type="password" value=""/>
-      <p id="reset_rpwd_hint" class="paragraph">Different passwords!</p>
+      <img id="Photo_img_2" src="/static/images/upload/u60.png"/>
+      <p id="Photo_txt_2" class="paragraph">Photo 2</p>
+      <a href="#"><p id="Photo_delete_2" class="paragraph">delete</p></a>
 
-      <a id="reset_bt" class="shape" href="/">
-        <img id="reset_bt_img" class="img " src="/static/images/edit/u62.png"/>
-        <p id="reset_bt_txt">Change</p>
+      <img id="Photo_img_3" src="/static/images/upload/u60.png"/>
+      <p id="Photo_txt_3" class="paragraph">Photo 3</p>
+      <a href="#"><p id="Photo_delete_3" class="paragraph">delete</p></a>
+
+      <a id="Signup_bt" class="shape" href="/">
+        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
+        <p id="Signup_bt_txt">Sign up</p>
       </a>
     </div>
-
     <div id="blank"></div>
     <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
@@ -137,11 +144,8 @@
   $("#capture_btn").click(function(){
       webcam.capture();
   });
+  $("#Take_photo").click(function(){
+      webcam.capture();
+  });
 </script>
-{% if username %}
-    <script>
-        document.getElementById("Search_login").style.visibility="hidden";
-        document.getElementById("User").style.visibility="visible";
-    </script>
-{% endif %}
 </html>
