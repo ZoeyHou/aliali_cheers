@@ -30,6 +30,13 @@
       document.getElementById("signup_rpwd_hint").style.visibility="visible";
     }
   });
+
+    $("#signup_img").click(function(){
+    document.getElementById("Upload_image").style.visibility="visible";
+  });
+  $("#Upload_image_close").click(function(){
+    document.getElementById("Upload_image").style.visibility="hidden";
+  });
 });
 
 
