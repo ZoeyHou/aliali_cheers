@@ -8,10 +8,6 @@
   margin-right:auto;
   text-align:left;
 }
-#base {
-  position:absolute;
-  z-index:0;
-}
 #header{
   position:relative;
 }
@@ -258,15 +254,23 @@ ul{
   visibility: hidden;
   position:fixed;
   left:50%;
+  margin-left:-210px;
+  top:50%;
+  margin-top:-121px;
+  z-index: 12;
+}
+#Face_login_bgd {
+  visibility: hidden;
+  position:fixed;
+  left:50%;
   margin-left:-260px;
   top:50%;
   margin-top:-171px;
-  z-index: 15;
+  width:520px;
+  height:342px;
+  z-index: 11;
 }
-#Face_login_bgd {
-  position:absolute;
-  left:0px;
-  top:0px;
+#Face_login_bgd_img {
   width:520px;
   height:342px;
 }
@@ -277,20 +281,23 @@ ul{
   width:40px;
   height:40px;
 }
-#Face_login_button {
-  position:absolute;
-  background-color: #FFFFFF;
-  left:250px;
-  top:150px;
-  width:40px;
-  height:16px;
+#webcam{ 
+  float: left; 
 }
-#Face_login_txt {
-  position:absolute;
-  left:150px;
-  top:220px;
-  width:235px;
-  height:13px;
+#username {
+  position: absolute;
+  top: 50px;
+  left: 330px;
+}
+#capture_btn {
+  position: absolute;
+  top: 100px;
+  left: 350px;
+}
+#Face_login_button {
+  position: absolute;
+  top:150px;
+  left: 350px;
 }
 #forget_txt{
   position: absolute;

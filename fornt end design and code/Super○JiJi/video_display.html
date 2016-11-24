@@ -9,6 +9,7 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/header.js"></script>
   <script type="text/javascript" src="js/video_display.js"></script>
+  <script src="js/jquery.webcam.min.js"></script>
 </head>
   <body>
   <div id='header'>
@@ -85,11 +86,15 @@
           </div>
           <div id="Login_body" style="display:none;">
           </div>
-          <div id="Face_login_page">
-            <img id="Face_login_bgd" src="images/edit/u94.png"/>
+          <div id="Face_login_bgd">
+            <img id="Face_login_bgd_img" src="images/edit/u94.png"/>
             <a href="#"><img id="Face_login_close" src="images/edit/close.png"/></a>
-            <p id="Face_login_txt" class="paragraph">这里放面部识别登陆的部分</p>
-            <a href="#"><p id="Face_login_button">Login</p></a>
+          </div>
+          <div id="Face_login_page">
+            <input id="username" type="text">
+            <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login</button>
+            <div id="webcam"></div>
           </div>
         </div>
   </div>
@@ -237,4 +242,9 @@
       </div>
     </div>
   </body>
+<script type="text/javascript">
+  $("#capture_btn").click(function(){
+      webcam.capture();
+  });
+</script>
 </html>
