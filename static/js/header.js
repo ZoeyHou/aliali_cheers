@@ -95,13 +95,13 @@ $(document).ready(function(){
     document.getElementById("User").style.visibility="visible";
   });
   $("#User_logout").click(function(){
-    $.post("/login/logout", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
+    $.post("/login/logout/", {username: $("#email_input").val(), password: $("#pwd_input").val()}, function(ret){
     document.getElementById("Search_login").style.visibility="visible";
     document.getElementById("User").style.visibility="hidden";
   });
   });
 
-var pos = 0, up_url = "http://127.0.0.1:8000/login/recog_login";
+var pos = 0, up_url = "/login/recog_login/";
   var canvas = document.createElement("canvas");
   canvas.setAttribute('width', 320);
   canvas.setAttribute('height', 240);

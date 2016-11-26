@@ -12,18 +12,26 @@ import face_recog as fr
 # 注册
 def register(req):
     if req.method == "POST":
-            username = req.POST.get('username', '')
+            print req
+            username = req.POST.get('user', '')
             password = req.POST.get('password', '')
+            avatar = req.FILES.get('avatar', '')
+            discription = req.POST.get('discription', '')
+            email = req.POST.get('email', '')
             try:
             #将表单写入数据库
                 user = User()
                 user.username = username
                 user.password = password
+                user.avatar = avatar
+                user.discription = discription
+                user.email = email
                 user.save()
-            except:
-                return HttpResponse('F')
+            except Exception, e:
+                print Exception, ":", e
+                return HttpResponse(e)
 
-            response = HttpResponse('T')
+            response = HttpResponseRedirect('/login/recog_register/')
             response.set_cookie('username', username, 3600)
             return response
 
@@ -75,7 +83,7 @@ def recog_register(req):
 
         fr.face_regist(user)
     else:
-        return render_to_response('Authentication/recog_register.html')
+        return render_to_response('Authentication/signup2.html')
 
 #人脸识别登录
 def recog_login(req):

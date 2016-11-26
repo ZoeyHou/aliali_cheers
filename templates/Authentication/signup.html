@@ -109,28 +109,28 @@
       </a>
 
       <p id="signup_email_txt" class="h2">E-mail:</p>
-      <input id="signup_email_input" class="ax_text_field" type="text" value=""/>
+      <input id="signup_email_input" class="ax_text_field" type="text" name="email" value=""/>
       <p id="signup_email_hint" class="paragraph">E-mail cannot be none!</p>
 
       <p id="signup_usr_txt" class="h2">Username:</p>
-      <input id="signup_usr_input" class="ax_text_field" type="text" value=""/>
+      <input id="signup_usr_input" class="ax_text_field" type="text" name="user" value=""/>
       <p id="signup_usr_hint" class="paragraph">Username cannot be none!</p>
 
       <p id="signup_pwd_txt" class="h2">Password:</p>
-      <input id="signup_pwd_input" class="ax_text_field" type="text" value=""/>
+      <input id="signup_pwd_input" name="password" type="password" class="ax_text_field" type="text" value=""/>
       <p id="signup_pwd_hint" class="paragraph">Password is too short!</p>
 
       <p id="signup_rpwd_txt" class="h2">Reenter Password:</p>
-      <input id="signup_rpwd_input" class="ax_text_field" type="text" value=""/>
+      <input id="signup_rpwd_input" type="password" class="ax_text_field" type="text" value=""/>
       <p id="signup_rpwd_hint" class="paragraph">Different passwords!</p>
 
       <p id="signup_dis_txt" class="h2">Discription:</p>
-      <textarea id="signup_dis_input" class="ax_text_area"></textarea>
+      <textarea id="signup_dis_input" class="ax_text_area" name="discription"></textarea>
 
-      <a id="Signup_bt" class="shape" href="/">
+      <button id="Signup_bt" class="shape" >
         <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
         <p id="Signup_bt_txt">Next</p>
-      </a>
+      </button>
     </div>
 
       <div id="Upload_image">
@@ -138,7 +138,7 @@
         <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
         <img id="Upload_image_img" src="/static/images/edit/u98.png"/>
         <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
-        <input id="Upload_image_file" type="file" value=""/>
+        <input id="Upload_image_file" type="file" name="avatar" value=""/>
       </div>
 
     <div id="blank"></div>

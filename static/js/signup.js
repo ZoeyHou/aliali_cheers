@@ -37,6 +37,35 @@
   $("#Upload_image_close").click(function(){
     document.getElementById("Upload_image").style.visibility="hidden";
   });
+  $("#Signup_bt").click(function(){
+    var signup_url = "/login/register/"
+    var email = $("#signup_email_input");
+    var user = $("#signup_usr_input");
+    var password = $("#signup_pwd_input");
+    var reenter_password = $("#signup_rpwd_input");
+    var avatar = $("#Upload_image_file");
+    var discription = $("#signup_dis_input");
+
+    var form = document.createElement('form');
+    form.id="signup_form";
+    form.action=signup_url;
+    form.method='post';
+    form.name="signup_form";
+    form.enctype="multipart/form-data";;
+
+    form.appendChild(email[0]);//在form中追加input表单
+    form.appendChild(user[0]);
+    form.appendChild(password[0]);
+    form.appendChild(avatar[0]);
+    form.appendChild(discription[0]);
+
+    if(password.val()!=reenter_password.val()){
+      alert("The passwords entering twice are different");
+    }else{
+      alert(form)
+      form.submit();
+    }
+  });
 });
 
 
