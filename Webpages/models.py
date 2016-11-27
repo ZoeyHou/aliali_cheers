@@ -16,7 +16,7 @@ class Video(models.Model):
     barrage = models.FileField(upload_to='barrages/', null=True, default=None)
     upload_time = models.DateField('上传时间', auto_now=True)
     title = models.CharField(max_length=512)
-    cover = models.ImageField(upload_to='videos/cover/')
+    cover = models.ImageField(upload_to='videos/cover/', null=True)
     catagory = models.ForeignKey(Catagory, related_name='Catagory_Video')
     discription = models.TextField(max_length=2048)
     like = models.IntegerField(default=0)

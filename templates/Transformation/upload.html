@@ -113,60 +113,37 @@
         </a>
 
         <p id="File_txt" class="h2">File:</p>
-        <input id="File_input" class="ax_text_field" type="file" value=""/>
+        <input id="File_input" name="upload_file" class="ax_text_field" type="file" value=""/>
 
         <p id="Title_txt" class="h2">Title:</p>
-        <input id="Title_input" class="ax_text_field" type="text" value=""/>
+        <input id="Title_input" name="title" class="ax_text_field" type="text" value=""/>
         <p id="Title_hint" class="paragraph">Title cannot be none!</p>
 
         <p id="Discription_txt" class="h2">Discription:</p>
-        <textarea id="Discription_input" class="ax_text_area"></textarea>
+        <textarea id="Discription_input" name="discription" class="ax_text_area"></textarea>
 
         <p id="Type_txt" class="h2">Type:</p>
-        <select id="Type_input" class="ax_droplist">
+        <select id="Type_input" name="file_type" class="ax_droplist">
           <option selected value="Video">Video</option>
           <option value="Audio">Audio</option>
           <option value="Image">Image</option>
         </select>
 
         <p id="Catagory_txt" class="h2">Catagory:</p>
+          <select id="Catagory_input" name="catagory" class="ax_droplist">
+            {% for item in catagory_list %}
+                {% if forloop.counter == 1 %}
+                    <option selected value="{{ item.catagory_name }}">{{ item.catagory_name }}</option>
+                {% else %}
+                    <option value="{{ item.catagory_name }}">{{ item.catagory_name }}</option>
+                {% endif %}
+            {% endfor %}
+          </select>
 
-
-        <div id="Catagory_input" >
-              <select id="Catagory_video" class="ax_droplist">
-                <option selected value="Animation">Animation</option>
-                <option value="Music">Music</option>
-                <option value="Gaming">Gaming</option>
-                <option value="Tech&amp;Science">Tech&amp;Science</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Movies&amp;TV">Movies&amp;TV</option>
-                <option value="Daily life">Daily life</option>
-                <option value="Fashion">Fashion</option>
-              </select>
-              <select id="Catagory_audio" class="ax_droplist">
-                <option selected value="Music">Music</option>
-                <option value="Audio_book">Audio_book</option>
-                <option value="Talkshow">Talkshow</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="News">News</option>
-                <option value="Others">Others</option>
-              </select>
-              <select id="Catagory_image" class="ax_droplist">
-                <option selected value="Natural scene">Natural scene</option>
-                <option value="Animal">Animal</option>
-                <option value="Sports">Sports</option>
-                <option value="Foods">Foods</option>
-                <option value="Ideas">Ideas</option>
-                <option value="Wallpaper">Wallpaper</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Tech&amp;Science">Tech&amp;Science</option>
-              </select>
-        </div>
-
-        <a id="Upload_bt" class="shape" href="/">
+        <button id="Upload_bt" class="shape">
           <img id="Upload_bt_bgd" class="img " src="/static/images/edit/u62.png"/>
           <p id="Upload_bt_txt" class="text">Upload</p>
-        </a>
+        </button>
       </div>
 
       <div id="Upload_image">
@@ -174,7 +151,7 @@
         <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
         <img id="Upload_image_img" src="/static/images/edit/u98.png"/>
         <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
-        <input id="Upload_image_file" type="file" value=""/>
+        <input id="Upload_image_file" name="discript_img" type="file" value=""/>
       </div>
       
       <div id="blank"></div>

@@ -112,7 +112,7 @@ def gallery(req):
                                                       "picture_list": picture_list})
 
 def picture_display(req, pic_name):
-    username = req.POST.get("username", '')
+    username = req.COOKIES.get("username", '')
     picture = Picture.objects.filter(picture=pic_name)[0]
     comments = picture.Picture_Comment.all()
 
@@ -164,7 +164,6 @@ def barrage(req, video_name):
         if v.barrage:
             content = barr_file.read()
             barr_file.seek(0, 0)
-            print content
             ret = json.loads(content)
             ret['ckplayer'][0].append(j)
             ret['ckplayer'][1].append(s)

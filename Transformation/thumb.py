@@ -1,32 +1,42 @@
-#coding:utf-8
-import Image  
+# coding:utf-8
+import Image
 import os
-   
-def make_thumb(path, thumb_path, w, h):  
-	"""生成缩略图"""  
-	img = Image.open(path)  
-	width, height = img.size  
-	# 裁剪图片成正方形  
-	if width > height:  
-		delta = (width - height) / 2  
-		box = (delta, 0, width - delta, height)  
-		region = img.crop(box)  
-	elif height > width:  
-		delta = (height - width) / 2  
-		box = (0, delta, width, height - delta)  
-		region = img.crop(box)  
-	else:  
-		region = img  
+from mutagen import File
 
-	thumb = region.resize((w, h), Image.ANTIALIAS)  
+def get_audio_cover(audio_file, cover_path):
+    audio = File(audio_file)  # mutagen can automatically detect format and type of tags
+    audio_tags = audio.tags.get('APIC:', '')
+    if audio_tags:
+        artwork = audio_tags.data  # access APIC frame and grab the image
+        with open(cover_path, "wb") as cover:
+            cover.write(artwork)
+        return True
+    else:
+        return False
 
-	thumb.save(thumb_path, quality=70)
 
-def make_video_thumb(file_path, out_d_rate, out_file):
-	command = "ffmpeg -ss 00:00:01 -i {0} -frames:v 1 -s {1}  {2}".format(file_path, out_d_rate, out_file)
-	os.system(command)
-  
+def make_thumb(image, thumb_path, w=260, h=200):
+    """生成缩略图"""
+    img = Image.open(image)
+    width, height = img.size
+    # 裁剪图片成正方形
+    if width > height:
+        delta = (width - height) / 2
+        box = (delta, 0, width - delta, height)
+        region = img.crop(box)
+    elif height > width:
+        delta = (height - width) / 2
+        box = (0, delta, width, height - delta)
+        region = img.crop(box)
+    else:
+        region = img
 
-if __name__ == '__main__':
-	make_thumb('1.jpg', '2.jpg', 260, 200)
-	make_video_thumb('123.mp4', '260*200', 'test.jpg')
+    thumb = region.resize((w, h), Image.ANTIALIAS)
+
+    thumb.save(thumb_path, quality=70)
+
+
+def make_video_thumb(file_path, out_file, out_d_rate='260*200'):
+    command = "ffmpeg -ss 00:00:01 -i {0} -frames:v 1 -s {1}  {2}".format(file_path, out_d_rate, out_file)
+    os.system(command)
+
