@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^personal_page/(.+)/(.+)$', views.more_upload, name='more_upload'),
     url(r'^playpage/(.+)/$', views.playpage, name='playpage'),
     url(r'^playpage/(.+)/barrage$', views.barrage, name='barrage'),
+    url(r'^like_collect/$', views.like_and_collect, name='like_and_collect'),
     url(r'^personal_page/(.+)/$', views.personal_page, name='personal_page'),
     url(r'^edit_info/$', views.edit_info, name='edit_info'),
     url(r'^search/$', views.search, name='search'),

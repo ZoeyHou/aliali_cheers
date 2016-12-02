@@ -29,8 +29,7 @@ class Video_Comment(models.Model):
     video = models.ForeignKey(Video, related_name="Video_Comment")
     user = models.ForeignKey(User, related_name="VUser_Comment")
     content = models.TextField(max_length=4096)
-    create_time = models.TimeField('发布时间', auto_now=True)
-    like = models.IntegerField(default=0)
+    create_time = models.DateTimeField('发布时间', auto_now=True)
 
 class Audio(models.Model):
     user = models.ForeignKey(User, related_name='User_Audio')
@@ -47,12 +46,13 @@ class Audio(models.Model):
     def __unicode__(self):
         return self.audio.url.split('/')[-1]
 
+
 class Audio_Comment(models.Model):
     audio = models.ForeignKey(Audio, related_name="Audio_Comment")
     user = models.ForeignKey(User, related_name="AUser_Comment")
     content = models.TextField(max_length=4096)
-    create_time = models.TimeField('发布时间', auto_now=True)
-    like = models.IntegerField(default=0)
+    create_time = models.DateTimeField('发布时间', auto_now=True)
+
 
 class Picture(models.Model):
     user = models.ForeignKey(User, related_name='User_Picture')
@@ -68,9 +68,30 @@ class Picture(models.Model):
     def __unicode__(self):
         return self.picture.url.split('/')[-1]
 
+
 class Picture_Comment(models.Model):
     picture = models.ForeignKey(Picture, related_name="Picture_Comment")
     user = models.ForeignKey(User, related_name="PUser_Comment")
     content = models.TextField(max_length=4096)
-    create_time = models.TimeField('发布时间', auto_now=True)
-    like = models.IntegerField(default=0)
+    create_time = models.DateTimeField('发布时间', auto_now=True)
+
+
+class Like_Item(models.Model):
+    user = models.ForeignKey(User, related_name="Like_User")
+    picture = models.ForeignKey(Picture, related_name="Like_Picture", blank=True, null=True)
+    video = models.ForeignKey(Video, related_name="Like_Video", blank=True, null=True)
+    audio = models.ForeignKey(Audio, related_name="Like_Audio", blank=True, null=True)
+
+
+class Dislike_Item(models.Model):
+    user = models.ForeignKey(User, related_name="Dislike_User")
+    picture = models.ForeignKey(Picture, related_name="Dislike_Picture", blank=True, null=True)
+    video = models.ForeignKey(Video, related_name="Dislike_Video", blank=True, null=True)
+    audio = models.ForeignKey(Audio, related_name="Dislike_Audio", blank=True, null=True)
+
+
+class Collect_Item(models.Model):
+    user = models.ForeignKey(User, related_name="Collect_User")
+    picture = models.ForeignKey(Picture, related_name="Collect_Picture", blank=True, null=True)
+    video = models.ForeignKey(Video, related_name="Collect_Video", blank=True, null=True)
+    audio = models.ForeignKey(Audio, related_name="Collect_Audio", blank=True, null=True)

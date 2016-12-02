@@ -3,9 +3,11 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.conf import settings
+from django.db.models import Q
 
 from Authentication.models import User
 from Webpages.models import Video, Audio, Picture
+from Webpages.models import Like_Item, Dislike_Item, Collect_Item
 from Webpages.models import Catagory
 
 import json
@@ -27,7 +29,7 @@ def index(req):
                                                       'picture_list': picture_list})
 
 
-#个人主页，对应url /personal_page
+# 个人主页，对应url /personal_page
 def personal_page(req, page_username):
     username = req.COOKIES.get("username", '')
     page_user = User.objects.get(username=page_username)
@@ -42,6 +44,7 @@ def personal_page(req, page_username):
                                                                   'image_list': image_list})
     else:
         return HttpResponse("Not_login")
+
 
 def edit_info(req):
     username = req.COOKIES.get("username", '')
@@ -77,7 +80,7 @@ def search(req):
     return render_to_response("Webpages/search.html", {"username": username})
 
 
-#audio展示页面，对应url /audio
+# audio展示页面，对应url /audio
 def audio(req):
     username = req.COOKIES.get('username', '')
 
@@ -86,8 +89,9 @@ def audio(req):
     for i in range(len(catagories)):
         audio_list[catagories[i].catagory_name] = Audio.objects.filter(catagory=catagories[i])[:8]
 
-    return render_to_response('Webpages/audio.html', {'username':username,
+    return render_to_response('Webpages/audio.html', {'username': username,
                                                       'audio_list': audio_list})
+
 
 def audio_playpage(req, audio_name):
     username = req.COOKIES.get('username', '')
@@ -95,6 +99,7 @@ def audio_playpage(req, audio_name):
     comments = audio.Audio_Comment.all()
     return render_to_response('Webpages/audio_display.html',
                               {'username': username, 'audio': audio, 'comments': comments})
+
 
 def audio_lyric(req, audio_name):
     return render_to_response('Webpages/lyric.html')
@@ -110,6 +115,7 @@ def gallery(req):
 
     return render_to_response('Webpages/image.html', {'username': username,
                                                       "picture_list": picture_list})
+
 
 def picture_display(req, pic_name):
     username = req.COOKIES.get("username", '')
@@ -137,10 +143,17 @@ def video(req):
 # 播放页面 对应url playpage/(.+)/
 def playpage(req, video_name):
     username = req.COOKIES.get('username', '')
-    video = Video.objects.filter(video=video_name)[0]
-    comments = video.Video_Comment.all()
+    v = Video.objects.filter(video=video_name)[0]
+    comments = v.Video_Comment.all()
+    recommand_list = Video.objects.filter(~Q(video=v.video) & Q(catagory=v.catagory))[:5]
+    if username:
+        user = User.objects.get(username=username)
+        return render_to_response('Webpages/video_display.html',
+                                  {'username': username, 'carrent_user': user,
+                                   'video': v, 'comments': comments, "recommand_list": recommand_list})
     return render_to_response('Webpages/video_display.html',
-                              {'username': username, 'video': video, 'comments': comments})
+                              {'username': username, 'video': v, 'comments': comments,
+                               "recommand_list": recommand_list})
 
 
 # 响应弹幕请求的函数，对应url /playpage/(.+)/barrage$
@@ -188,6 +201,50 @@ def barrage(req, video_name):
         barr_file.close()
 
     return HttpResponse(json_ret)
+
+
+def like_and_collect(req):
+    username = req.COOKIES.get("username", '')
+
+    if req.method == "POST" and username:
+        user = User.objects.get(username=username)
+        req_type = req.POST['type']
+
+        if req_type == 'video_like':
+            vn = req.POST['video_name']
+            v = Video.objects.get(video=vn)
+            if not Like_Item.objects.filter(user=user, video=v):
+                v.like += 1
+                v.save()
+                LikeItem = Like_Item(user=user, video=v)
+                LikeItem.save()
+                return HttpResponse("T")
+            else:
+                return HttpResponse("F")
+
+        elif req_type == 'video_dislike':
+            vn = req.POST['video_name']
+            v = Video.objects.get(video=vn)
+            if not Dislike_Item.objects.filter(user=user, video=v):
+                v.dislike += 1
+                v.save()
+                DislikeItem = Dislike_Item(user=user, video=v)
+                DislikeItem.save()
+                return HttpResponse("T")
+            else:
+                return HttpResponse("F")
+
+        elif req_type == "video_collect":
+            vn = req.POST['video_name']
+            v = Video.objects.get(video=vn)
+            if not Collect_Item.objects.filter(user=user, video=v):
+                v.save()
+                CollectItem = Collect_Item(user=user, video=v)
+                CollectItem.save()
+                return HttpResponse("T")
+            else:
+                return HttpResponse("F")
+
 
 def about_us(req):
     username = req.COOKIES.get("username", '')
