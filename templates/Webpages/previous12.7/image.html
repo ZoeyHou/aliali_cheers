@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Audio</title>
+	<title>Image</title>
 	<meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/audio.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/image.css">
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/audio.js"></script>
+  <script type="text/javascript" src="/static/js/image.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
@@ -94,11 +94,12 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
-  <!-- Photo -->
+  
   <div class="Photo_display">
     <!-- Photo -->
     <div id='photo'>
@@ -153,28 +154,18 @@
   </div>
 
   <div class="display_detail">
-      {% for k, a in audio_list.items %}
-      <div id = "Audio{{ forloop.counter0 }}" class="audio_display">
+      {% for k, p in picture_list.items %}
+      <div id = "Image{{ forloop.counter0 }}"  class="image_display">
         <p class="Title">{{ k }}</p>
-        <a class="More" href="#" style="text-decoration:underline;">more</a>
-        <ul id="display_detail0" class="display">
-        {% for audio in a %}
-          <li>
-            <div class="item">
-              <img id="item_cover" src="{{ audio.cover.url }}"/>
-              <div id="item_change">
-                <img id="item_change_img" src="/static/images/audio/up.png"/>
-              </div>
-              <p id="item_rank">{{ forloop.counter }}</p>
-              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="/audio_playpage/{{ audio.audio }}">
-                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
-              </a>
-              <p id="item_title">{{ audio.title }}</p>
-              <p id="item_singer">The chainsmokers Featuring Halsey</p>
-            </div>
+        <a class="More" href="/search" style="text-decoration:underline;">more</a>
+        <ul id = "display_detail{{ forloop.counter0 }}" class="display">
+          {% for picture in p %}
+          <li id="item{{ forloop.counter0 }}">
+            <img src="{{ picture.cover.url }}">
+            <p>{{ picture.title }}</p>
+            <a href="/picture_display/{{ picture.picture }}"></a>
           </li>
-        {% endfor %}
+          {% endfor %}
         </ul>
       </div>
       {% endfor %}

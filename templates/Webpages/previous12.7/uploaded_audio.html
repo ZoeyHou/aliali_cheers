@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Audio</title>
+	<title>Uploaded Audio</title>
 	<meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/audio.css">
-	<script type="text/javascript" src="/static/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/audio.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/css/uploaded_audio.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="js/uploaded_audio.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
@@ -94,92 +94,77 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
-  <!-- Photo -->
-  <div class="Photo_display">
-    <!-- Photo -->
-    <div id='photo'>
-      <ul>
-        <li id='li1'><a href='#'><img src='/static/images/home/photo_1.jpg'/></a></li>
-        <li id='li2'><a href='#'><img src='/static/images/home/photo_2.png'/></a></li>
-        <li id='li3'><a href='#'><img src='/static/images/home/photo_3.jpg'/></a></li>
-        <li id='li4'><a href='#'><img src='/static/images/home/photo_4.jpg'/></a></li>
-      </ul>
-    </div>
-    <!-- next -->
-    <a id="next" href="#">
-      <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
-      <p class="photo_nav_txt">&gt;</p>
-    </a>
 
-    <!-- pre -->
-    <a id="pre" href="#">
-      <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
-      <p class="photo_nav_txt">&lt;</p>
-    </a>
-
-    <!-- mark -->
-    <div id="mark">
-      <ul>
-        <li id="markli4">
-          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u128.png"/></a>
-        </li>
-        <li id="markli3">
-          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u128.png"/></a>
-          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
-        </li>
-        <li id="markli2">
-          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u128.png"/></a>
-          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
-        </li>
-        <li id="markli1">
-          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u128.png"/></a>
-          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
-          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="display_detail">
-      {% for k, a in audio_list.items %}
-      <div id = "Audio{{ forloop.counter0 }}" class="audio_display">
-        <p class="Title">{{ k }}</p>
-        <a class="More" href="#" style="text-decoration:underline;">more</a>
-        <ul id="display_detail0" class="display">
-        {% for audio in a %}
+  <div id="Uploaded" class="audio_display">
+        <p class="Title">Uploaded audio</p>
+        <ul id = "display_detail" class="display">
           <li>
             <div class="item">
-              <img id="item_cover" src="{{ audio.cover.url }}"/>
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
               <div id="item_change">
                 <img id="item_change_img" src="/static/images/audio/up.png"/>
               </div>
-              <p id="item_rank">{{ forloop.counter }}</p>
+              <p id="item_rank">1</p>
               <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="/audio_playpage/{{ audio.audio }}">
+              <a href="audio_display.html">
                 <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
               </a>
-              <p id="item_title">{{ audio.title }}</p>
+              <p id="item_title">Closer</p>
               <p id="item_singer">The chainsmokers Featuring Halsey</p>
             </div>
           </li>
-        {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-
-      <!-- Footer -->
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
+          </li>
+          <!-- Footer -->
+          <div id="blank"></div>
       <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
@@ -192,10 +177,12 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
+        </ul>
     </div>
+
+      
 </body>
 <script type="text/javascript">
-  $('#photo').slider();
   $("#capture_btn").click(function(){
       webcam.capture();
   });

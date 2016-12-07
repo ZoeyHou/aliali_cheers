@@ -1,14 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Sign up</title>
+  <title>Personal page</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/personal_page.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
@@ -94,62 +93,68 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
-    <div id="base">
-      <p id="Signup_txt" class="h2">Sign up</p>
-      <img id="Signup_bgd" src="/static/images/video_display/u0.png"/>
 
-      <a id="signup_img" class="shape" href="#">
-        <p id="signup_img_txt">+</p>
-        <img id="signup_img_bgd" src="/static/images/upload/u60.png"/>
-      </a>
-
-      <p id="signup_email_txt" class="h2">E-mail:</p>
-      <input id="signup_email_input" class="ax_text_field" type="text" name="email" value=""/>
-      <p id="signup_email_hint" class="paragraph">E-mail cannot be none!</p>
-
-      <p id="signup_usr_txt" class="h2">Username:</p>
-      <input id="signup_usr_input" class="ax_text_field" type="text" name="user" value=""/>
-      <p id="signup_usr_hint" class="paragraph">Username cannot be none!</p>
-
-      <p id="signup_pwd_txt" class="h2">Password:</p>
-      <input id="signup_pwd_input" name="password" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_pwd_hint" class="paragraph">Password is too short!</p>
-
-      <p id="signup_rpwd_txt" class="h2">Reenter Password:</p>
-      <input id="signup_rpwd_input" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_rpwd_hint" class="paragraph">Different passwords!</p>
-
-      <p id="signup_dis_txt" class="h2">Discription:</p>
-      <textarea id="signup_dis_input" class="ax_text_area" name="discription"></textarea>
-
-      <button id="Signup_bt" class="shape" >
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Next</p>
-      </button>
-    </div>
-
-    <div id="Upload_image">
-      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
-      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
-    </div>
-      <div id = "Upload_image_content">
-        <img id="preview" src="/static/images/edit/u98.png" width="250" height="250" style="display: block; width: 250px; height: 250px;">
-        <input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
-        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
-        <select id="filter_select">
-          <option selected value="Filter0">None</option>
-          <option value="Filter1">Filter1</option>
-          <option value="Filter2">Filter2</option>
-        </select>
-        <button id="filter_btn">Apply</button>
+      <div id="Person">
+        <img id="Person_bgd" src="/static/images/personal_page/u0.png"/>
+        <p id="Person_title" class="h2">Personal Page</p>
+        <img id="Person_img" class="image" src="/static/images/video_display/image_u129.jpg"/>
+        <p id="Person_name" class="h1">Starboy</p>
+        <p id="Person_discription" class="paragraph">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</p>
+        <a href="/edit_info"><p id="Person_edit" class="paragraph" style="text-decoration:underline;">Edit</p></a>
       </div>
-    
-    <div id="blank"></div>
-    <div id = "Footer">
+
+      <div id="Video_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Video</p>
+        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for v in video_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ v.cover.url }}"/>
+               <a href="/playpage/{{ v.video }}"></a>
+               <p class="paragraph recommand_name">{{ v.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Image_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Image</p>
+        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for i in image_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ i.cover.url }}"/>
+               <a href="/picture_display/{{ i.picture }}"></a>
+               <p class="paragraph recommand_name">{{ i.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Audio_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Audio</p>
+        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+          {% for a in audio_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ a.cover.url }}"/>
+               <a href="/audio_playpage/{{ a.audio }}"></a>
+               <p class="paragraph recommand_name">{{ a.title }}</p>
+             </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>

@@ -96,7 +96,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -122,13 +121,21 @@
         <textarea id="Edit_discription_input" class="ax_text_area">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</textarea>
       </div>
 
-      <div id="Upload_image">
-        <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
-        <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
-        <img id="Upload_image_img" src="/static/images/edit/u98.png"/>
-        <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
-        <input id="Upload_image_file" type="file" value=""/>
-      </div>
+    <div id="Upload_image">
+      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
+      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
+    </div>
+      <div id = "Upload_image_content">
+        <img id="preview" src="/static/images/edit/u98.png" width="250" height="250" style="display: block; width: 250px; height: 250px;">
+        <input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
+        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
+        <select id="filter_select">
+          <option selected value="Filter0">None</option>
+          <option value="Filter1">Filter1</option>
+          <option value="Filter2">Filter2</option>
+        </select>
+        <button id="filter_btn">Apply</button>
+      </div>s
 
       <div id="blank"></div>
        <!-- Footer -->

@@ -93,7 +93,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -141,6 +140,51 @@
       <div id="Audio_upload" class="uploaded">
         <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Uploaded Audio</p>
+        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+          {% for a in audio_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ a.cover.url }}"/>
+               <a href="/audio_playpage/{{ a.audio }}"></a>
+               <p class="paragraph recommand_name">{{ a.title }}</p>
+             </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Video_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Video</p>
+        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for v in video_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ v.cover.url }}"/>
+               <a href="/playpage/{{ v.video }}"></a>
+               <p class="paragraph recommand_name">{{ v.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Image_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Image</p>
+        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for i in image_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ i.cover.url }}"/>
+               <a href="/picture_display/{{ i.picture }}"></a>
+               <p class="paragraph recommand_name">{{ i.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Audio_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Audio</p>
         <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           {% for a in audio_list %}

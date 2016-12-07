@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Sign up</title>
+  <title>About</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/about.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup.js"></script>
+  <script type="text/javascript" src="/static/js/about.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
@@ -94,62 +94,59 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
-    <div id="base">
-      <p id="Signup_txt" class="h2">Sign up</p>
-      <img id="Signup_bgd" src="/static/images/video_display/u0.png"/>
-
-      <a id="signup_img" class="shape" href="#">
-        <p id="signup_img_txt">+</p>
-        <img id="signup_img_bgd" src="/static/images/upload/u60.png"/>
-      </a>
-
-      <p id="signup_email_txt" class="h2">E-mail:</p>
-      <input id="signup_email_input" class="ax_text_field" type="text" name="email" value=""/>
-      <p id="signup_email_hint" class="paragraph">E-mail cannot be none!</p>
-
-      <p id="signup_usr_txt" class="h2">Username:</p>
-      <input id="signup_usr_input" class="ax_text_field" type="text" name="user" value=""/>
-      <p id="signup_usr_hint" class="paragraph">Username cannot be none!</p>
-
-      <p id="signup_pwd_txt" class="h2">Password:</p>
-      <input id="signup_pwd_input" name="password" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_pwd_hint" class="paragraph">Password is too short!</p>
-
-      <p id="signup_rpwd_txt" class="h2">Reenter Password:</p>
-      <input id="signup_rpwd_input" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_rpwd_hint" class="paragraph">Different passwords!</p>
-
-      <p id="signup_dis_txt" class="h2">Discription:</p>
-      <textarea id="signup_dis_input" class="ax_text_area" name="discription"></textarea>
-
-      <button id="Signup_bt" class="shape" >
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Next</p>
-      </button>
-    </div>
-
-    <div id="Upload_image">
-      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
-      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
-    </div>
-      <div id = "Upload_image_content">
-        <img id="preview" src="/static/images/edit/u98.png" width="250" height="250" style="display: block; width: 250px; height: 250px;">
-        <input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
-        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
-        <select id="filter_select">
-          <option selected value="Filter0">None</option>
-          <option value="Filter1">Filter1</option>
-          <option value="Filter2">Filter2</option>
-        </select>
-        <button id="filter_btn">Apply</button>
-      </div>
     
+    <div id="base">
+
+      <img id="About_bgd" src="/static/images/video_display/u0.png"/>
+      <p id="About_title" class="h2">About everything</p>
+
+      <p id="About_web_title" class="h2">About this website:</p>
+      <p id="About_web_txt" class="paragraph">A multimedia website, being able to upload, download, play video, audio and view images.</p>
+
+      <p id="About_us_title" class="h2">About us:</p>
+      <div id="About_us_work" class="paragraph">
+        <p>Integration:</p>
+        <p>Website Design:</p>
+        <p>Front-End:</p>
+        <p>Back-End:</p>
+        <p>Interaction:</p>
+        <p>Face recognition(login):</p>
+        <p>Image&amp;Video Processing:</p>
+        <p>Player:</p>
+        <p>Barrage:</p>
+        <p>Web Camera:</p>
+      </div>
+      <div id="About_us_people" class="paragraph">
+          <p>Zikang Xiong</p>
+          <p>Chuyi Hou</p>
+          <p>Chuyi Hou</p>
+          <p>Zikang Xiong</p>
+          <p>Zikang Xiong</p>
+          <p>Zhe Chen, Hanya Zhang, Zhihao Liu</p>
+          <p>Hanya Zhang</p>
+          <p>Ruibo Dingyang</p>
+          <p>Ruibo Dingyang</p>
+          <p>Shuai Yang</p>
+        </div>
+      </div>
+
+      <p id="About_contact_title" class="h2">Contact us:</p>
+      <div id="About_contact_txt" class="paragraph">
+        <p>Feel free to contact us, send emails if you are interested in us or our website.</p>
+        <p>E-mail Address: 619195275@qq.com</p>
+        <p>Github: https://github.com/caffett/aliali_cheers</p>
+        <p>Address: No.4, Section 2, North Jianshe Road, Chengdu, Sichuan, China 610054</p>
+        <p>International Elite Class, School of Information and Software Engineering</p>
+      </div>
+    </div>
+
     <div id="blank"></div>
-    <div id = "Footer">
+            <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>

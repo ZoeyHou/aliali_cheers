@@ -96,7 +96,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -107,9 +106,9 @@
         <p id="upload_title" class="h2">Upload</p>
 
         <a id="upload_cover" class="shape" href="#">
-          <img id="upload_cover_img" src="/static/images/upload/u60.png"/>
           <p id="upload_cover_txt1">+</p>
           <p id="upload_cover_txt2">Cover</p>
+          <img id="upload_cover_img" src="/static/images/upload/u60.png"/>
         </a>
 
         <p id="File_txt" class="h2">File:</p>
@@ -141,17 +140,25 @@
           </select>
 
         <button id="Upload_bt" class="shape">
-          <img id="Upload_bt_bgd" class="img " src="/static/images/edit/u62.png"/>
+          
           <p id="Upload_bt_txt" class="text">Upload</p>
         </button>
       </div>
 
-      <div id="Upload_image">
-        <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
-        <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
-        <img id="Upload_image_img" src="/static/images/edit/u98.png"/>
-        <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
-        <input id="Upload_image_file" name="discript_img" type="file" value=""/>
+    <div id="Upload_image">
+      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
+      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
+    </div>
+      <div id = "Upload_image_content">
+        <img id="preview" src="/static/images/edit/u98.png" width="250" height="200" style="display: block; width: 250px; height: 200px;">
+        <input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
+        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
+        <select id="filter_select">
+          <option selected value="Filter0">None</option>
+          <option value="Filter1">Filter1</option>
+          <option value="Filter2">Filter2</option>
+        </select>
+        <button id="filter_btn">Apply</button>
       </div>
       
       <div id="blank"></div>

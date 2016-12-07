@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Sign up</title>
+  <title>Personal page</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/edit.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup.js"></script>
+  <script type="text/javascript" src="/static/js/edit.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
+    <div id="base" class="">
+
   <div id='header'>
         <!-- Logo -->
         <div id='logo'>
@@ -94,62 +96,43 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
-    <div id="base">
-      <p id="Signup_txt" class="h2">Sign up</p>
-      <img id="Signup_bgd" src="/static/images/video_display/u0.png"/>
+      
+      <div id="Edit">
 
-      <a id="signup_img" class="shape" href="#">
-        <p id="signup_img_txt">+</p>
-        <img id="signup_img_bgd" src="/static/images/upload/u60.png"/>
-      </a>
+        <img id="Edit_bgd" src="/static/images/edit/u0.png"/>
+        <p id="Edit_title" class="h2">Personal Page Edit</p>
+        <a href="#"><img id="Edit_img" src="/static/images/edit/u60.png"/></a>
+        
+        <a href="personal_page.html" id= "Edit_update">
+            <img id="Edit_update_bt" src="/static/images/edit/u62.png"/>
+            <p id="Edit_update_txt">Update</p>
+        </a>
+        
+        <p id="Edit_name_txt" class="h2">Username:</p>
 
-      <p id="signup_email_txt" class="h2">E-mail:</p>
-      <input id="signup_email_input" class="ax_text_field" type="text" name="email" value=""/>
-      <p id="signup_email_hint" class="paragraph">E-mail cannot be none!</p>
+        <input id="Edit_name_input" class="ax_text_field" type="text" value="Starboy"/>
 
-      <p id="signup_usr_txt" class="h2">Username:</p>
-      <input id="signup_usr_input" class="ax_text_field" type="text" name="user" value=""/>
-      <p id="signup_usr_hint" class="paragraph">Username cannot be none!</p>
+        <p id="Edit_discription_txt" class="h2">Discription:</p>
 
-      <p id="signup_pwd_txt" class="h2">Password:</p>
-      <input id="signup_pwd_input" name="password" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_pwd_hint" class="paragraph">Password is too short!</p>
-
-      <p id="signup_rpwd_txt" class="h2">Reenter Password:</p>
-      <input id="signup_rpwd_input" type="password" class="ax_text_field" type="text" value=""/>
-      <p id="signup_rpwd_hint" class="paragraph">Different passwords!</p>
-
-      <p id="signup_dis_txt" class="h2">Discription:</p>
-      <textarea id="signup_dis_input" class="ax_text_area" name="discription"></textarea>
-
-      <button id="Signup_bt" class="shape" >
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Next</p>
-      </button>
-    </div>
-
-    <div id="Upload_image">
-      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
-      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
-    </div>
-      <div id = "Upload_image_content">
-        <img id="preview" src="/static/images/edit/u98.png" width="250" height="250" style="display: block; width: 250px; height: 250px;">
-        <input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
-        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
-        <select id="filter_select">
-          <option selected value="Filter0">None</option>
-          <option value="Filter1">Filter1</option>
-          <option value="Filter2">Filter2</option>
-        </select>
-        <button id="filter_btn">Apply</button>
+        <textarea id="Edit_discription_input" class="ax_text_area">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</textarea>
       </div>
-    
-    <div id="blank"></div>
-    <div id = "Footer">
+
+      <div id="Upload_image">
+        <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
+        <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
+        <img id="Upload_image_img" src="/static/images/edit/u98.png"/>
+        <p id="Upload_image_txt" class="paragraph">左边放头像，右边放一些处理图片的工具</p>
+        <input id="Upload_image_file" type="file" value=""/>
+      </div>
+
+      <div id="blank"></div>
+       <!-- Footer -->
+      <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
@@ -161,6 +144,7 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
+    </div>
   </body>
 <script type="text/javascript">
   $("#capture_btn").click(function(){

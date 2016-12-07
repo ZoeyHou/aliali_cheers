@@ -100,7 +100,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -108,23 +107,23 @@
 
       <div id="Audio">
         <img id="Audio_bgd" src="/static/images/audio_display/u0.png"/>
-        <a href="#"><img id="Download_icon" src="/static/images/video_display/u58.png"/></a>
-        <p id="Download_txt" class="h2">Download</p>
-        <a href="#"><img id="Like_icon" class="ax_image" src="/static/images/video_display/u62.png"/></a>
-        <p id="Like_txt" class="h2">Like</p>
-        <p id="Like_num" class="h2">111</p>
-        <a href="#"><img id="Dislike_icon" class="ax_image" src="/static/images/video_display/u68.png"/></a>
-        <p id="Dislike_txt" class="h2">Dislike</p>
-        <p id="Dislike_num" class="h2">4</p>
-        <a href="#"><img id="Collect_icon" src="/static/images/video_display/u56.png"/></a>
-        <p id="Collect_txt" class="h2">Collect</p>
+        <div id="Audio_icon">
+          <a href="#"><img id="Download_icon" src="/static/images/video_display/u58.png"/></a>
+          <p id="Download_txt" class="h2">Download</p>
+          <a href="#"><img id="Like_icon" class="ax_image" src="/static/images/video_display/u62.png"/></a>
+          <p id="Like_txt" class="h2">Like</p>
+          <p id="Like_num" class="h2">111</p>
+          <a href="#"><img id="Dislike_icon" class="ax_image" src="/static/images/video_display/u68.png"/></a>
+          <p id="Dislike_txt" class="h2">Dislike</p>
+          <p id="Dislike_num" class="h2">4</p>
+          <a href="#"><img id="Collect_icon" src="/static/images/video_display/u56.png"/></a>
+          <p id="Collect_txt" class="h2">Collect</p>
+        </div>
         <p id="Audio_title" class="h2">Starboy</p>
-        <img id="Audio_cover" src="/static/images/video_display/image_u125.jpg"/>
-        <iframe id="Audio_lyric" class="ax_inline_frame" scrolling="auto" frameborder="0" src="/audio_lyric/123"></iframe>
         <div id="Audio_player" class="shape">
-            <div id="amazingaudioplayer-1" style="display:block;position:relative;width:300px;height:164px;margin:0px auto 0px;">
+            <div id="amazingaudioplayer-1" style="display:block;position:relative;width:862px;height:160px;margin:0px auto 0px;">
             <ul class="amazingaudioplayer-audios" style="display:none;">
-                <li data-artist="" data-title="{{ audio.title }}" data-album="" data-info="" data-image="{{ audio.cover.url }}" data-duration="0">
+                <li data-artist="" data-title="{{ audio.title }}" data-album="" data-info="" data-image="" data-duration="0">
                     <div class="amazingaudioplayer-source" data-src="{{ audio.audio.url }}" data-type="audio/mpeg" />
                 </li>
             </ul>
