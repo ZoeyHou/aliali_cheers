@@ -101,7 +101,7 @@ $(document).ready(function(){
   });
   });
 
-    var width=640, height=480;
+    var width=320, height=240;
     var pos = 0, up_url = "/login/recog_login/";
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);
