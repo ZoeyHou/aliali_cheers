@@ -8,136 +8,158 @@
   margin-right:auto;
   text-align:left;
 }
-#base {
-  position:absolute;
-  z-index:0;
-}
-#Audio {
+#Display_image {
   position: relative;
   top: 200px;
-  height: 650px
+  height: 1000px;
 }
-#Audio_bgd {
+#Image_txt {
+  position:absolute;
+  left:140px;
+  top:-58px;
+  width:70px;
+  height:28px;
+}
+#Image_bgd {
   position:absolute;
   left:110px;
   width:1200px;
-  height:340px;
+  height:700px;
 }
-#Audio_icon {
-  position: relative;
-  margin-left: -100px;
-}
-#Download_icon {
+#Image_display {
   position:absolute;
-  left:406px;
-  top:250px;
+  left:150px;
+  top:30px;
+  width:1100px;
+  height:600px;
+}
+#Image_title {
+  position:absolute;
+  left:960px;
+  top:20px;
+  width:101px;
+  height:39px;
+  font-family:'CenturyGothic-Bold', 'Century Gothic Bold', 'Century Gothic';
+  font-weight:700;
+  font-style:normal;
+}
+#icon {
+  position: relative;
+  top:640px;
+  left:50px;
+}
+#Image_download_icon {
+  position:absolute;
+  left:140px;
+  top:10px;
   width:30px;
   height:30px;
 }
-#Download_txt {
+#Image_download_txt {
   position:absolute;
-  left:446px;
-  top:239px;
+  left:180px;
   width:87px;
   height:21px;
   font-size:18px;
   color:#666666;
 }
-#Like_icon {
+#Image_like_icon {
   position:absolute;
-  left:606px;
-  top:250px;
+  left:340px;
+  top:10px;
   width:30px;
   height:30px;
 }
-#Like_txt {
+#Image_like_txt {
   position:absolute;
-  left:646px;
-  top:239px;
+  left:380px;
   width:37px;
   height:21px;
   font-size:18px;
   color:#666666;
 }
-#Like_num {
+#Image_like_num {
   position:absolute;
-  left:692px;
-  top:239px;
+  left:427px;
   width:29px;
   height:21px;
   font-size:18px;
 }
-#Dislike_icon {
+#Image_dislike_icon{
   position:absolute;
-  left:786px;
-  top:255px;
+  left:520px;
+  top:15px;
   width:30px;
   height:30px;
 }
-#Dislike_txt {
+#Image_dislike_txt {
   position:absolute;
-  left:836px;
-  top:239px;
+  left:571px;
   width:59px;
   height:21px;
   font-size:18px;
   color:#666666;
 }
-#Dislike_num {
+#Image_dislike_num {
   position:absolute;
-  left:906px;
-  top:239px;
+  left:640px;
   width:11px;
   height:21px;
   font-size:18px;
 }
-#Collect_icon {
+#Image_collect_icon {
   position:absolute;
-  left:976px;
-  top:255px;
+  left:710px;
+  top:15px;
   width:25px;
   height:25px;
 }
-#Collect_txt {
+#Image_collect_txt {
   position:absolute;
-  left:1016px;
-  top:239px;
+  left:750px;
   width:61px;
   height:21px;
   font-size:18px;
   color:#666666;
 }
-#Audio_title {
+#Display_discription {
+  position: relative;
+  height: 300px;
+}
+#Discription_bgd {
   position:absolute;
-  left:140px;
-  top:-58px;
-  width:90px;
+  left:110px;
+  width:1200px;
+  height:190px;
+}
+#Discription_title {
+  position:absolute;
+  left:130px;
+  top:-60px;
+  width:126px;
   height:28px;
 }
-#Audio_cover {
+#Discription_cover {
   position:absolute;
-  left:200px;
-  top:60px;
-  width:150px;
-  height:160px;
+  left:140px;
+  top:22px;
+  width:140px;
+  height:140px;
 }
-#Audio_lyric {
+#Discription_name {
   position:absolute;
-  left:410px;
-  top:300px;
-  width:667px;
-  height:370px;
+  left:320px;
+  top:10px;
+  width:88px;
+  height:28px;
 }
-#Audio_player {
+#Discription_txt {
   position:absolute;
-  left:260px;
-  top:60px;
-  width:862px;
-  height:160px;
-  font-family:'STHeitiSC-Light', 'Heiti SC Light', 'Heiti SC';
-  font-weight:200;
-  font-style:normal;
-  font-size:36px;
+  left:320px;
+  top:58px;
+  width:930px;
+  height:54px;
+  font-size:16px;
 }
 #Display_author {
   position: relative;
