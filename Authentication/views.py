@@ -83,7 +83,8 @@ def recog_register(req):
 
         fr.face_regist(user)
     else:
-        return render_to_response('Authentication/signup2.html')
+        username = req.COOKIES.get("username", '')
+        return render_to_response('Authentication/signup2.html', {"username": username})
 
 #人脸识别登录
 def recog_login(req):

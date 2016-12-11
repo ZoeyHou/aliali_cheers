@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!--suppress ALL -->
 <html>
 <head>
   <title>Sign up</title>
@@ -147,5 +148,9 @@
   $("#Take_photo").click(function(){
       webcam.capture();
   });
+{% if username %}
+    document.getElementById("Search_login").style.visibility="hidden";
+    document.getElementById("User").style.visibility="visible";
+{% endif %}
 </script>
 </html>
