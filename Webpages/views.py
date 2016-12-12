@@ -1,13 +1,14 @@
 # coding:utf-8
 
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.db.models import Q
 
 from Authentication.models import User
 from Webpages.models import Video, Audio, Picture
 from Webpages.models import Like_Item, Dislike_Item, Collect_Item
+from Webpages.models import Video_Comment, Audio_Comment, Picture_Comment
 from Webpages.models import Catagory
 
 import json
@@ -36,12 +37,18 @@ def personal_page(req, page_username):
     video_list = Video.objects.filter(user__username=page_username)[:5]
     audio_list = Audio.objects.filter(user__username=page_username)[:5]
     image_list = Picture.objects.filter(user__username=page_username)[:5]
+    collect_video_list = page_user.Collect_User.filter(~Q(video=None))[:5]
+    collect_audio_list = page_user.Collect_User.filter(~Q(audio=None))[:5]
+    collect_image_list = page_user.Collect_User.filter(~Q(picture=None))[:5]
     if username:
         return render_to_response('Webpages/personal_page.html', {'username': username,
                                                                   'page_user': page_user,
                                                                   'video_list': video_list,
                                                                   'audio_list': audio_list,
-                                                                  'image_list': image_list})
+                                                                  'image_list': image_list,
+                                                                  "collect_video_list": collect_video_list,
+                                                                  "collect_audio_list": collect_audio_list,
+                                                                  "collect_image_list": collect_image_list,})
     else:
         return HttpResponse("Not_login")
 
@@ -52,7 +59,14 @@ def edit_info(req):
         user = User.objects.get(username=username)
 
     if req.method == "POST":
-        pass
+        discription = req.POST.get('discription', '')
+        avatar = req.FILES.get("avatar", '')
+        user.discription = discription
+        if avatar:
+            user.avatar = avatar
+        user.save()
+        return HttpResponseRedirect("/personal_page/"+username+'/')
+
     else:
         return render_to_response("Webpages/edit.html", {"username": username, "user": user})
 
@@ -75,9 +89,10 @@ def more_upload(req, page_username, type):
 
 def search(req):
     username = req.COOKIES.get("username", '')
+    catagories = Catagory.objects.all()
     if req.method == "POST":
         pass
-    return render_to_response("Webpages/search.html", {"username": username})
+    return render_to_response("Webpages/search.html", {"username": username, "catagories":catagories})
 
 
 # audio展示页面，对应url /audio
@@ -97,8 +112,15 @@ def audio_playpage(req, audio_name):
     username = req.COOKIES.get('username', '')
     audio = Audio.objects.filter(audio=audio_name)[0]
     comments = audio.Audio_Comment.all()
+    recommand_list = Audio.objects.filter(~Q(audio=audio.audio) & Q(catagory=audio.catagory))[:5]
+    if username:
+        user = User.objects.get(username=username)
+        return render_to_response('Webpages/audio_display.html',
+                                  {'username': username, 'current_user': user,
+                                   "audio": audio, 'comments': comments, "recommand_list": recommand_list})
     return render_to_response('Webpages/audio_display.html',
-                              {'username': username, 'audio': audio, 'comments': comments})
+                              {'username': username, "audio": audio, 'comments': comments,
+                               "recommand_list": recommand_list})
 
 
 def audio_lyric(req, audio_name):
@@ -121,10 +143,16 @@ def picture_display(req, pic_name):
     username = req.COOKIES.get("username", '')
     picture = Picture.objects.filter(picture=pic_name)[0]
     comments = picture.Picture_Comment.all()
+    recommand_list = Picture.objects.filter(~Q(picture=picture.picture) & Q(catagory=picture.catagory))[:5]
+    if username:
+        user = User.objects.get(username=username)
+        return render_to_response('Webpages/image_display.html',
+                                  {'username': username, 'current_user': user,
+                                   "picture": picture, 'comments': comments, "recommand_list": recommand_list})
+    return render_to_response('Webpages/image_display.html',
+                              {'username': username, "picture": picture, 'comments': comments,
+                               "recommand_list": recommand_list})
 
-    return render_to_response("Webpages/image_display.html", {"username": username,
-                                                              "picture": picture,
-                                                              "comments": comments})
 
 
 # video展示页面，对应url /video
@@ -149,7 +177,7 @@ def playpage(req, video_name):
     if username:
         user = User.objects.get(username=username)
         return render_to_response('Webpages/video_display.html',
-                                  {'username': username, 'carrent_user': user,
+                                  {'username': username, 'current_user': user,
                                    'video': v, 'comments': comments, "recommand_list": recommand_list})
     return render_to_response('Webpages/video_display.html',
                               {'username': username, 'video': v, 'comments': comments,
@@ -209,41 +237,150 @@ def like_and_collect(req):
     if req.method == "POST" and username:
         user = User.objects.get(username=username)
         req_type = req.POST['type']
+        m_type = req.POST['mtype']
 
-        if req_type == 'video_like':
-            vn = req.POST['video_name']
-            v = Video.objects.get(video=vn)
-            if not Like_Item.objects.filter(user=user, video=v):
-                v.like += 1
-                v.save()
-                LikeItem = Like_Item(user=user, video=v)
-                LikeItem.save()
-                return HttpResponse("T")
-            else:
-                return HttpResponse("F")
+        if req_type == 'like':
+            if m_type == 'video':
+                vn = req.POST['video_name']
+                v = Video.objects.get(video=vn)
+                if not (Like_Item.objects.filter(user=user, video=v)\
+                        or Dislike_Item.objects.filter(user=user, video=v)):
+                    v.like += 1
+                    v.save()
+                    LikeItem = Like_Item(user=user, video=v)
+                    LikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == 'audio':
+                an = req.POST['audio_name']
+                a = Audio.objects.get(audio=an)
+                if not (Like_Item.objects.filter(user=user, audio=a)\
+                        or Dislike_Item.objects.filter(user=user, audio=a)):
+                    a.like += 1
+                    a.save()
+                    LikeItem = Like_Item(user=user, audio=a)
+                    LikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == 'image':
+                pn = req.POST['image_name']
+                p = Picture.objects.get(picture=pn)
+                if not (Like_Item.objects.filter(user=user, picture=p)\
+                        or Dislike_Item.objects.filter(user=user, picture=p)):
+                    p.like += 1
+                    p.save()
+                    LikeItem = Like_Item(user=user, picture=p)
+                    LikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
 
-        elif req_type == 'video_dislike':
-            vn = req.POST['video_name']
-            v = Video.objects.get(video=vn)
-            if not Dislike_Item.objects.filter(user=user, video=v):
-                v.dislike += 1
-                v.save()
-                DislikeItem = Dislike_Item(user=user, video=v)
-                DislikeItem.save()
-                return HttpResponse("T")
-            else:
-                return HttpResponse("F")
+        elif req_type == 'dislike':
+            if m_type == 'video':
+                vn = req.POST['video_name']
+                v = Video.objects.get(video=vn)
+                if not (Dislike_Item.objects.filter(user=user, video=v)\
+                        or Like_Item.objects.filter(user=user, video=v)):
+                    v.dislike += 1
+                    v.save()
+                    DislikeItem = Dislike_Item(user=user, video=v)
+                    DislikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == 'audio':
+                an = req.POST['audio_name']
+                a = Audio.objects.get(audio=an)
+                if not (Dislike_Item.objects.filter(user=user, audio=a)\
+                        or Like_Item.objects.filter(user=user, audio=a)):
+                    a.dislike += 1
+                    a.save()
+                    DislikeItem = Dislike_Item(user=user, audio=a)
+                    DislikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == 'image':
+                pn = req.POST['image_name']
+                p = Picture.objects.get(picture=pn)
+                if not (Dislike_Item.objects.filter(user=user, picture=p)\
+                        or Like_Item.objects.filter(user=user, picture=p)):
+                    p.dislike += 1
+                    p.save()
+                    DislikeItem = Dislike_Item(user=user, picture=p)
+                    DislikeItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
 
-        elif req_type == "video_collect":
-            vn = req.POST['video_name']
-            v = Video.objects.get(video=vn)
-            if not Collect_Item.objects.filter(user=user, video=v):
-                v.save()
-                CollectItem = Collect_Item(user=user, video=v)
-                CollectItem.save()
-                return HttpResponse("T")
-            else:
-                return HttpResponse("F")
+        elif req_type == "collect":
+            if m_type == "video":
+                vn = req.POST['video_name']
+                v = Video.objects.get(video=vn)
+                if not Collect_Item.objects.filter(user=user, video=v):
+                    v.save()
+                    CollectItem = Collect_Item(user=user, video=v)
+                    CollectItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == "audio":
+                an = req.POST['audio_name']
+                a = Audio.objects.get(audio=an)
+                if not Collect_Item.objects.filter(user=user, audio=a):
+                    CollectItem = Collect_Item(user=user, audio=a)
+                    CollectItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == "image":
+                pn = req.POST['image_name']
+                p = Picture.objects.get(picture=pn)
+                if not Collect_Item.objects.filter(user=user, picture=p):
+                    p.save()
+                    CollectItem = Collect_Item(user=user, picture=p)
+                    CollectItem.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+
+        elif req_type == "comment":
+            if m_type == "video":
+                vn = req.POST['video_name']
+                c = req.POST.get("comment_input")
+                if c != '':
+                    v = Video.objects.get(video=vn)
+                    u = User.objects.get(username=username)
+                    vcom = Video_Comment(video=v, user=u, content=c)
+                    vcom.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == "audio":
+                an = req.POST['audio_name']
+                c = req.POST.get("comment_input")
+                if c != '':
+                    a = Audio.objects.get(audio=an)
+                    u = User.objects.get(username=username)
+                    acom = Audio_Comment(audio=a, user=u, content=c)
+                    acom.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+            elif m_type == "image":
+                pn = req.POST['image_name']
+                c = req.POST.get("comment_input")
+                if c != '':
+                    p = Picture.objects.get(picture=pn)
+                    u = User.objects.get(username=username)
+                    pcom = Picture_Comment(picture=p, user=u, content=c)
+                    pcom.save()
+                    return HttpResponse("T")
+                else:
+                    return HttpResponse("F")
+
 
 
 def about_us(req):

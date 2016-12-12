@@ -94,7 +94,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -103,31 +102,16 @@
   <div id="Uploaded">
         <p class="Title">Uploaded Video</p>
         <ul id = "display_detail" class="display">
-          <li id="item0">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+        {% for item in list %}
+            <li id="item{{ forloop.counter0 }}">
+            <img src="{{ item.cover.url }}">
+            <p>{{ item.title }}</p>
+            <a href="/playpage/{{ item.video }}"></a>
           </li>
-          <li id="item1">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item2">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item3">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item0" class="last">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
+        {% endfor %}
+
+          <li id="item3" class="last"></li>
+
         </ul>
         <!-- Footer -->
       <div id = "Footer">

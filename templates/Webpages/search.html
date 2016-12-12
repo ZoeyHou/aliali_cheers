@@ -95,7 +95,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -130,68 +129,16 @@
 
         <div id="Content_video">
           <div id="Video_ca" class="ca">
-            <p id="sort_txt" class="h2">Sorted by:</p>
-            <ul id="Sort">
-              <li id="sort_relevance" class="ax_radio_button">
-                <label for="sort_relevance_bt"><p>Relevance</p></label>
-                <input id="sort_relevance_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_latest" class="ax_radio_button">
-                <label for="sort_latest_bt"><p>Latest First</p></label>
-                <input id="sort_latest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_oldest" class="ax_radio_button">
-                <label for="sort_oldest_bt"><p>Oldest First</p></label>
-                <input id="sort_oldest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_most" class="ax_radio_button">
-                <label for="sort_most_bt"><p>Most Viewed</p></label>
-                <input id="sort_most_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_least" class="ax_radio_button">
-                <label for="sort_least_bt"><p>Least Viewed</p></label>
-                <input id="sort_least_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-            </ul>
+
             <p id="cata_txt" class="h2">Catagory:</p>
             <ul id="Cata">
+            {% for cata in catagories %}
               <li id="cata_video_animation" class="ax_checkbox">
-                <label for="cata_video_animation_bt"><p>Animation</p></label>
+                <label for="cata_video_animation_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input id="cata_video_animation_bt" type="checkbox" value="checkbox"/>
               </li>
-              <li id="cata_video_music" class="ax_checkbox">
-                <label for="cata_video_music_bt"><p>Music</p></label>
-                <input id="cata_video_music_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_game" class="ax_checkbox">
-                <label for="cata_video_game_bt"><p>Gaming</p></label>
-                <input id="cata_video_game_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_tech" class="ax_checkbox">
-                <label for="cata_video_tech_bt"><p>Tech&amp;Science</p></label>
-                <input id="cata_video_tech_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_entertainment" class="ax_checkbox">
-                <label for="cata_video_entertainment_bt"><p>Entertainment</p></label>
-                <input id="cata_video_entertainment_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_TV" class="ax_checkbox">
-                <label for="cata_video_TV_bt"><p>Movies&amp;TV</p></label>
-                <input id="cata_video_TV_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_life" class="ax_checkbox">
-                <label for="cata_video_life_bt"><p>Daily life</p></label>
-                <input id="cata_video_life_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_video_fashion" class="ax_checkbox">
-                <label for="cata_video_fashion_bt"><p>Fashion</p></label>
-                <input id="cata_video_fashion_bt" type="checkbox" value="checkbox"/>
-              </li>
+            {% endfor %}
             </ul>
-            <a id="update_bt" class="shape" href="#">
-              <img id="update_bt_bgd" src="/static/images/search/u111.png"/>
-              <p id="update_bt_txt">Update</p>
-            </a>
           </div>
           <ul id="Video_content" class="Content">
             <li id="item0">
@@ -262,55 +209,15 @@
 
         <div id="Content_audio">
           <div id="Audio_ca" class="ca">
-            <p id="sort_txt" class="h2">Sorted by:</p>
-            <ul id="Sort">
-              <li id="sort_relevance" class="ax_radio_button">
-                <label for="sort_relevance_bt"><p>Relevance</p></label>
-                <input id="sort_relevance_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_latest" class="ax_radio_button">
-                <label for="sort_latest_bt"><p>Latest First</p></label>
-                <input id="sort_latest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_oldest" class="ax_radio_button">
-                <label for="sort_oldest_bt"><p>Oldest First</p></label>
-                <input id="sort_oldest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_most" class="ax_radio_button">
-                <label for="sort_most_bt"><p>Most Viewed</p></label>
-                <input id="sort_most_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_least" class="ax_radio_button">
-                <label for="sort_least_bt"><p>Least Viewed</p></label>
-                <input id="sort_least_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-            </ul>
+
             <p id="cata_txt" class="h2">Catagory:</p>
             <ul id="Cata">
+            {% for cata in catagories %}
               <li id="cata_audio_music" class="ax_checkbox">
-                <label for="cata_audio_music_bt"><p>Music</p></label>
+                <label for="cata_audio_music_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input id="cata_audio_music_bt" type="checkbox" value="checkbox"/>
               </li>
-              <li id="cata_audio_book" class="ax_checkbox">
-                <label for="cata_audio_book_bt"><p>Audio_book</p></label>
-                <input id="cata_audio_book_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_audio_talk" class="ax_checkbox">
-                <label for="cata_audio_talk_bt"><p>Talk_show</p></label>
-                <input id="cata_audio_talk_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_audio_entertainment" class="ax_checkbox">
-                <label for="cata_audio_entertainment_bt"><p>Entertainment</p></label>
-                <input id="cata_audio_entertainment_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_audio_news" class="ax_checkbox">
-                <label for="cata_audio_news_bt"><p>News</p></label>
-                <input id="cata_audio_news_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_audio_others" class="ax_checkbox">
-                <label for="cata_audio_others_bt"><p>Others</p></label>
-                <input id="cata_audio_others_bt" type="checkbox" value="checkbox"/>
-              </li>
+            {% endfor %}
             </ul>
             <a id="update_bt" class="shape" href="#">
               <img id="update_bt_bgd" src="/static/images/search/u111.png"/>
@@ -356,64 +263,14 @@
 
         <div id="Content_image">
           <div id="Image_ca" class="ca">
-            <p id="sort_txt" class="h2">Sorted by:</p>
-            <ul id="Sort">
-              <li id="sort_relevance" class="ax_radio_button">
-                <label for="sort_relevance_bt"><p>Relevance</p></label>
-                <input id="sort_relevance_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_latest" class="ax_radio_button">
-                <label for="sort_latest_bt"><p>Latest First</p></label>
-                <input id="sort_latest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_oldest" class="ax_radio_button">
-                <label for="sort_oldest_bt"><p>Oldest First</p></label>
-                <input id="sort_oldest_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_most" class="ax_radio_button">
-                <label for="sort_most_bt"><p>Most Viewed</p></label>
-                <input id="sort_most_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-              <li id="sort_least" class="ax_radio_button">
-                <label for="sort_least_bt"><p>Least Viewed</p></label>
-                <input id="sort_least_bt" type="radio" value="radio" name="Sort"/>
-              </li>
-            </ul>
             <p id="cata_txt" class="h2">Catagory:</p>
             <ul id="Cata">
+            {% for cata in catagories %}
               <li id="cata_image_natural" class="ax_checkbox">
-                <label for="cata_image_natural_bt"><p>Natural scene</p></label>
+                <label for="cata_image_natural_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input id="cata_image_natural_bt" type="checkbox" value="checkbox"/>
               </li>
-              <li id="cata_image_animal" class="ax_checkbox">
-                <label for="cata_image_animal_bt"><p>Animal</p></label>
-                <input id="cata_image_animal_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_sports" class="ax_checkbox">
-                <label for="cata_image_sports_bt"><p>Sports</p></label>
-                <input id="cata_image_sports_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_foods" class="ax_checkbox">
-                <label for="cata_image_foods_bt"><p>Foods</p></label>
-                <input id="cata_image_foods_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_ideas" class="ax_checkbox">
-                <label for="cata_image_ideas_bt"><p>Ideas</p></label>
-                <input id="cata_image_ideas_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_wallpaper" class="ax_checkbox">
-                <label for="cata_image_wallpaper_bt"><p>Wallpaper</p></label>
-                <input id="cata_image_wallpaper_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_fashion" class="ax_checkbox">
-                <label for="cata_image_fashion_bt"><p>Fashion</p></label>
-                <input id="cata_image_fashion_bt" type="checkbox" value="checkbox"/>
-              </li>
-              <li id="cata_image_tech" class="ax_checkbox">
-                <label for="cata_image_tech_bt"><p>Tech&amp;Science</p></label>
-                <input id="cata_image_tech_bt" type="checkbox" value="checkbox"/>
-              </li>
-
+            {% endfor %}
             </ul>
             <a id="update_bt" class="shape" href="#">
               <img id="update_bt_bgd" src="/static/images/search/u111.png"/>

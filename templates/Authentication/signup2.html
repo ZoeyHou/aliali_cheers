@@ -95,7 +95,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -110,18 +109,36 @@
       </div>
       <button id="Take_photo">Take photo</button>
 
-      <img id="Photo_img_1" src="/static/images/upload/u60.png"/>
-      <p id="Photo_txt_1" class="paragraph">Photo 1</p>
-      <a href="#"><p id="Photo_delete_1" class="paragraph">delete</p></a>
+      <div id="Photo_1" class="Photo_display">
+        <img id="Photo_img_1" src="images/upload/u60.png"/>
+        <p class="Photo_txt paragraph">Photo 1</p>
+        <canvas id="Photo_img_1"></canvas>
+      </div>
 
-      <img id="Photo_img_2" src="/static/images/upload/u60.png"/>
-      <p id="Photo_txt_2" class="paragraph">Photo 2</p>
-      <a href="#"><p id="Photo_delete_2" class="paragraph">delete</p></a>
+      <div id="Photo_2" class="Photo_display">
+        <img id="Photo_img_2" src="images/upload/u60.png"/>
+        <p class="Photo_txt paragraph">Photo 2</p>
+        <canvas id="Photo_img_2"></canvas>
+      </div>
 
-      <img id="Photo_img_3" src="/static/images/upload/u60.png"/>
-      <p id="Photo_txt_3" class="paragraph">Photo 3</p>
-      <a href="#"><p id="Photo_delete_3" class="paragraph">delete</p></a>
+      <div id="Photo_3" class="Photo_display">
+        <img id="Photo_img_3" src="images/upload/u60.png"/>
+        <p class="Photo_txt paragraph">Photo 3</p>
+        <canvas id="Photo_img_3"></canvas>
+      </div>
 
+      <div id="Photo_4" class="Photo_display">
+        <img id="Photo_img_4" src="images/upload/u60.png"/>
+        <p class="Photo_txt paragraph">Photo 4</p>
+        <canvas id="Photo_img_4"></canvas>
+      </div>
+
+      <div id="Photo_5" class="Photo_display">
+        <img id="Photo_img_5" src="images/upload/u60.png"/>
+        <p class="Photo_txt paragraph">Photo 5</p>
+        <canvas id="Photo_img_5"></canvas>
+      </div>
+      
       <a id="Signup_bt" class="shape" href="/">
         <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
         <p id="Signup_bt_txt">Sign up</p>

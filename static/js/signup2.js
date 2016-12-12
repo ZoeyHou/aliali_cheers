@@ -1,14 +1,12 @@
 ﻿$(document).ready(function(){
-  var width=600, height=400;
-    var pos = 0, up_url = "/login/recog_login/";
+   var width=640, height=480;
+    var pos = 0;
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);
     canvas.setAttribute('height', height);
     ctx = canvas.getContext("2d");
     image = ctx.getImageData(0, 0, width, height);
-    var test_count = 0;
-    var test_count1 = 0;
-
+    var photo = 1;
 
 jQuery("#webcam2").webcam({
     width: width,
@@ -36,24 +34,15 @@ jQuery("#webcam2").webcam({
                 img.data[pos + 3] = 0xff;
                 pos += 4;
             }
-            test_count++;
-            if (pos >= 2 * width * height){
-                test_count1++;
-            }
             if (pos >= 4 * width * height) {
                 ctx.putImageData(img, 0, 0);
-                /*
-                这里图片已经扫描完了，调用canvas.toDataURL就可以获取到图片。
                 $.post(up_url, {
                     type: "data",
                     image: canvas.toDataURL("image/jpeg"),
                     username: $("#username").val()
                 }, function (data) {
-                    if(data=="F") alert("没认出来");
-                    else location.reload();
+
                 });
-                */
-                alert("这里图片已经扫描完了，调用canvas.toDataURL就可以获取到图片。");
                 pos = 0;
             } else {
                 image.push(data);
@@ -63,7 +52,6 @@ jQuery("#webcam2").webcam({
     },
 
    onCapture: function () {
-       alert("capture");
         webcam.save();
    },
 
@@ -77,6 +65,31 @@ jQuery("#webcam2").webcam({
    }
 });
 
+  $("#Take_photo").click(function(){
+      webcam.capture();
+      var photoID='Photo_img_'+photo;
+      var Objcanvas=document.getElementById(photoID);
+      var Objctx=Objcanvas.getContext('2d');
+      Objctx.fillStyle='#DDDDDD';
+      Objctx.fillRect(0,0,300,200);
+      photo = photo % 5 +1;
+
+      var imgdata = Objctx.getImageData(0,0,300,200);
+      var Objpixels = imgdata.data;
+      var pixels = image.data;
+      var pos = 0, Objpos = 0;
+      for(var i=0;i<height;++i){
+          for(var j = 0; j < width; ++j){
+              Objpixels[Objpos] = pixels[pos];
+              Objpixels[Objpos+1] = pixels[pos+1];
+              Objpixels[Objpos+2] = pixels[pos+2];
+              Objpixels[Objpos+3] = pixels[pos+3];
+              pos+=4;
+              Objpos+=8;
+          }
+          Objpos+=4*width;
+      }
+    Objctx.putImageData(imgdata,0,0);
+  });
+
 });
-
-

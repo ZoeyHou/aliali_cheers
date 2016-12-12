@@ -96,7 +96,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -168,17 +167,17 @@
             {% endfor %}
         </ul>
       </div>
-    {% if carrent_user %}
+    {% if current_user %}
       <div id="Write_comment">
         <p id="Comment_title" class="h2">Comments</p>
         <img id="Comment_bgd" class="ax_shape" src="/static/images/video_display/u143.png"/>
         <textarea id="Comment_input" class="ax_text_area"></textarea>
-        <img id="Comment_img" class="ax_image" data-label="Image" src="{{ carrent_user.avatar.url }}"/>
+        <img id="Comment_img" class="ax_image" data-label="Image" src="{{ current_user.avatar.url }}"/>
         <p id="Comment_name" class="h2" data-label="name">{{ username }}</p>
-        <a id="Comment_send" href="#" class="shape">
+        <button id="Comment_send" href="#" class="shape">
           <img id="send_button" src="/static/images/video_display/u150.png"/>
           <p id="send_txt" class="text">Send</p>
-        </a>
+        </button>
       </div>
     {% else %}
       <div id="Write_comment">
@@ -203,6 +202,7 @@
           </li>
           {% endfor %}
         </ul>
+      </div>
         <div id="blank"></div>
         <!-- Footer -->
       <div id = "Footer">

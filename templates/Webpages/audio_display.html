@@ -16,6 +16,7 @@
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
+  <input id="page_identify" style="display: none" value="{{ audio.audio }}">
     <div id="base" class="">
 
   <div id='header'>
@@ -100,7 +101,6 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
-            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
@@ -108,21 +108,21 @@
 
       <div id="Audio">
         <img id="Audio_bgd" src="/static/images/audio_display/u0.png"/>
-        <a href="#"><img id="Download_icon" src="/static/images/video_display/u58.png"/></a>
-        <p id="Download_txt" class="h2">Download</p>
-        <a href="#"><img id="Like_icon" class="ax_image" src="/static/images/video_display/u62.png"/></a>
-        <p id="Like_txt" class="h2">Like</p>
-        <p id="Like_num" class="h2">111</p>
-        <a href="#"><img id="Dislike_icon" class="ax_image" src="/static/images/video_display/u68.png"/></a>
-        <p id="Dislike_txt" class="h2">Dislike</p>
-        <p id="Dislike_num" class="h2">4</p>
-        <a href="#"><img id="Collect_icon" src="/static/images/video_display/u56.png"/></a>
-        <p id="Collect_txt" class="h2">Collect</p>
-        <p id="Audio_title" class="h2">Starboy</p>
-        <img id="Audio_cover" src="/static/images/video_display/image_u125.jpg"/>
-        <iframe id="Audio_lyric" class="ax_inline_frame" scrolling="auto" frameborder="0" src="/audio_lyric/123"></iframe>
+        <div id="Audio_icon">
+          <a href="#"><img id="Download_icon" src="/static/images/video_display/u58.png"/></a>
+          <p id="Download_txt" class="h2">Download</p>
+          <a href="#"><img id="Like_icon" class="ax_image" src="/static/images/video_display/u62.png"/></a>
+          <p id="Like_txt" class="h2">Like</p>
+          <p id="Like_num" class="h2">{{ audio.like }}</p>
+          <a href="#"><img id="Dislike_icon" class="ax_image" src="/static/images/video_display/u68.png"/></a>
+          <p id="Dislike_txt" class="h2">Dislike</p>
+          <p id="Dislike_num" class="h2">{{ audio.dislike }}</p>
+          <a href="#"><img id="Collect_icon" src="/static/images/video_display/u56.png"/></a>
+          <p id="Collect_txt" class="h2">Collect</p>
+        </div>
+        <p id="Audio_title" class="h2">{{ audio.title }}</p>
         <div id="Audio_player" class="shape">
-            <div id="amazingaudioplayer-1" style="display:block;position:relative;width:300px;height:164px;margin:0px auto 0px;">
+            <div id="amazingaudioplayer-1" style="display:block;position:relative;width:862px;height:160px;margin:0px auto 0px;">
             <ul class="amazingaudioplayer-audios" style="display:none;">
                 <li data-artist="" data-title="{{ audio.title }}" data-album="" data-info="" data-image="{{ audio.cover.url }}" data-duration="0">
                     <div class="amazingaudioplayer-source" data-src="{{ audio.audio.url }}" data-type="audio/mpeg" />
@@ -154,83 +154,60 @@
       <div id="Display_author">
         <img id="Author_bgd" class="shape" src="/static/images/video_display/u76.png"/>
         <p id="Author_txt" class="h2">Author</p>
-        <img id="Author_img" class="image" src="/static/images/video_display/image_u125.jpg"/>
-        <a href="personal_page.html"><p id="Author_name" class="h2">Starboy</p></a>
-        <p id="Author_discription" class="paragraph">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</p>
+        <img id="Author_img" class="image" src="{{ audio.user.avatar.url }}"/>
+        <a href="/personal_page/{{ audio.user.username }}"><p id="Author_name" class="h2">{{ audio.user.username }}</p></a>
+        <p id="Author_discription" class="paragraph">{{ audio.user.discription }}</p>
       </div>
 
       <div id="Display_recommand">
         <img id="Recommand_bgd" class="shape" src="/static/images/video_display/u86.png"/>
         <p id="Recommand_title" class="h2">Recommendation</p>
         <ul id="recommand">
-          <li id="item0">
-           <img class="recommand_img" src="/static/images/home/photo_1.jpg"/>
-           <a href="#"></a>
-           <p class="paragraph recommand_name">SCHW</p>
+            {% for foo in recommand_list %}
+          <li id="item{{ forloop.counter0 }}">
+           <img class="recommand_img" src="{{ foo.cover.url }}"/>
+           <a href="/audio_playpage/{{ foo.audio }}"></a>
+           <p class="paragraph recommand_name">{{ foo.title }}</p>
          </li>
-          <li id="item1">
-            <img class="recommand_img" src="/static/images/home/photo_3.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Maritime</p>
-          </li>
-          <li id="item2">
-            <img class="recommand_img" src="/static/images/video_display/u96.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Gipfel</p>
-          </li>
-          <li id="item3">
-            <img class="recommand_img" src="/static/images/video_display/u98.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Weite</p>
-          </li>
-          <li id="item4">
-            <img class="recommand_img" src="/static/images/video_display/u100.jpg"/>
-            <a href="#"></a>
-            <p class="paragraph recommand_name">Schwane</p>
-          </li>
+            {% endfor %}
         </ul>
       </div>
-
+    {% if current_user %}
       <div id="Write_comment">
         <p id="Comment_title" class="h2">Comments</p>
-        <!-- Unnamed (Shape) -->
         <img id="Comment_bgd" class="ax_shape" src="/static/images/video_display/u143.png"/>
         <textarea id="Comment_input" class="ax_text_area"></textarea>
-        <img id="Comment_img" class="ax_image" data-label="Image" src="/static/images/video_display/image_u125.jpg"/>
-        <p id="Comment_name" class="h2" data-label="name">Starboy</p>
-        <a id="Comment_send" class="shape" href="#">
+        <img id="Comment_img" class="ax_image" data-label="Image" src="{{ current_user.avatar.url }}"/>
+        <p id="Comment_name" class="h2" data-label="name">{{ username }}</p>
+        <button id="Comment_send" href="#" class="shape">
           <img id="send_button" src="/static/images/video_display/u150.png"/>
           <p id="send_txt" class="text">Send</p>
-        </a>
+        </button>
       </div>
+    {% else %}
+      <div id="Write_comment">
+        <p id="Comment_title" class="h2">Comments</p>
+        <img id="Comment_bgd" class="ax_shape" src="/static/images/video_display/u143.png"/>
+
+      </div>
+    {% endif %}
 
       <div id="Display_comments">
         <ul>
+            {% for c in comments %}
           <li id="comment0" class="comments">
             <img class="shape Comments_bgd" src="/static/images/video_display/u123.png"/>
-            <a href="personal_page.html"><img class="image Comments_img" src="/static/images/video_display/image_u125.jpg"/></a>
-            <a href="personal_page.html"><p class="h2 Comments_name">Starboy</p></a>
+            <a href="/personal_page/{{ c.user.username }}"><img class="image Comments_img" src="{{ c.user.avatar.url }}"/></a>
+            <a href="/personal_page/{{ c.user.username }}"><p class="h2 Comments_name">{{ c.user.username }}</p></a>
             <!-- comment (Shape) -->
-            <p class="paragraph Comments_content" data-label="comment">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</p>
-            <a href="#"><img class="Comments_like_img" src="/static/images/video_display/u131.png"/></a>
-            <p class="paragraph Comments_like_num">5</p>
-            <p class="paragraph Comments_floor">#1</p>
-            <p class="paragraph Comments_date" data-label="Date">2016.11.6</p>
-            <p class="paragraph Comments_time" data-label="Time">11:48</p>
+            <p class="paragraph Comments_content" data-label="comment">{{ c.content }}</p>
+            <p class="paragraph Comments_floor">#{{ forloop.counter }}</p>
+            <p class="paragraph Comments_date" data-label="Date">{{ c.create_time.date }}</p>
+            <p class="paragraph Comments_time" data-label="Time">{{ c.create_time.time }}</p>
           </li>
-          <li id="comment1" class="comments">
-            <img class="shape Comments_bgd" src="/static/images/video_display/u123.png"/>
-            <a href="personal_page.html"><img class="image Comments_img" src="/static/images/video_display/image_u125.jpg"/></a>
-            <a href="personal_page.html"><p class="h2 Comments_name">Starboy</p></a>
-            <!-- comment (Shape) -->
-            <p class="paragraph Comments_content" data-label="comment">Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.Some discription about the author, who he/she is? whe he/she get his/her inspiration from? Lots of staff basically about anything.</p>
-            <a href="#"><img class="Comments_like_img" src="/static/images/video_display/u131.png"/></a>
-            <p class="paragraph Comments_like_num">5</p>
-            <p class="paragraph Comments_floor">#1</p>
-            <p class="paragraph Comments_date" data-label="Date">2016.11.6</p>
-            <p class="paragraph Comments_time" data-label="Time">11:48</p>
-          </li>
+          {% endfor %}
         </ul>
+      </div>
         <div id="blank"></div>
         <!-- Footer -->
       <div id = "Footer">

@@ -1,6 +1,7 @@
 ﻿$(document).ready(function(){
 
 	var index=document.getElementById("Line_image");
+	var like_collect_url = "/like_collect/"
 	index.id = "Line_this";
 	$("#Line_this").animate({left: '-4px'}, 500); 
 
@@ -12,18 +13,45 @@
 	});
 
 	$("#Image_like_icon").click(function(){
-		alert("Like this video.")
+		$.post(like_collect_url, {"type": "like", "mtype":"image", "image_name": $("#page_identify").val()}, function(ret){
+			if(ret=="F"){
+				alert("你已经表过态了")
+			}else if(ret=="T"){
+				document.getElementById("Image_like_num").innerHTML =
+			 (Number(document.getElementById("Image_like_num").innerHTML)+1).toString()
+			}
+		});
 	});
 
 	$("#Image_dislike_icon").click(function(){
-		alert("Dislike this video.")
+		$.post(like_collect_url, {"type": "dislike","mtype":"image", "image_name": $("#page_identify").val()}, function(ret){
+			if(ret=="F"){
+				alert("你已经表过态了");
+			}else if(ret=="T"){
+				document.getElementById("Image_dislike_num").innerHTML =
+			 (Number(document.getElementById("Image_dislike_num").innerHTML)+1).toString()
+			}
+		});
 	});
 
 	$("#Image_collect_icon").click(function(){
-		alert("Collect this video.")
+		alert("Collect this image.")
+		$.post(like_collect_url, {"type": "collect","mtype":"image", "image_name": $("#page_identify").val()}, function(ret){
+			if(ret=="F"){
+				alert("你已经收藏过了");
+			}
+		});
 	});
-	
-	$(".Comments_like_img").click(function(){
-		alert("Like this comment.")
+
+	$("#Comment_send").click(function (ret) {
+		$.post(like_collect_url, {"type": "comment","mtype":"image",
+			"image_name": $("#page_identify").val(),
+			"comment_input":$("#Comment_input").val()}, function(ret){
+			if(ret=="T"){
+				location.reload()
+			}else{
+				alert("傻逼不要输入空的东西啊！！！")
+			}
+		})
 	});
 });

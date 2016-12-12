@@ -70,6 +70,7 @@ $(document).ready(function(){
       document.getElementById("User").style.visibility="visible";
       $("#Login_body").fadeOut(1000);
       $("#Login_containt").fadeOut(1000);
+        location.reload()
     }else{
       alert("Oops!! Password is Wrong.");
     }
@@ -101,7 +102,7 @@ $(document).ready(function(){
   });
   });
 
-    var width=320, height=240;
+    var width=640, height=480;
     var pos = 0, up_url = "/login/recog_login/";
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);

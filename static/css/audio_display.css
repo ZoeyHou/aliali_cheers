@@ -15,25 +15,29 @@
 #Audio {
   position: relative;
   top: 200px;
-  height: 1000px
+  height: 650px
 }
 #Audio_bgd {
   position:absolute;
   left:110px;
   width:1200px;
-  height:690px;
+  height:340px;
+}
+#Audio_icon {
+  position: relative;
+  margin-left: -100px;
 }
 #Download_icon {
   position:absolute;
   left:406px;
-  top:240px;
+  top:250px;
   width:30px;
   height:30px;
 }
 #Download_txt {
   position:absolute;
   left:446px;
-  top:229px;
+  top:239px;
   width:87px;
   height:21px;
   font-size:18px;
@@ -42,14 +46,14 @@
 #Like_icon {
   position:absolute;
   left:606px;
-  top:240px;
+  top:250px;
   width:30px;
   height:30px;
 }
 #Like_txt {
   position:absolute;
   left:646px;
-  top:229px;
+  top:239px;
   width:37px;
   height:21px;
   font-size:18px;
@@ -58,7 +62,7 @@
 #Like_num {
   position:absolute;
   left:692px;
-  top:229px;
+  top:239px;
   width:29px;
   height:21px;
   font-size:18px;
@@ -66,14 +70,14 @@
 #Dislike_icon {
   position:absolute;
   left:786px;
-  top:245px;
+  top:255px;
   width:30px;
   height:30px;
 }
 #Dislike_txt {
   position:absolute;
   left:836px;
-  top:229px;
+  top:239px;
   width:59px;
   height:21px;
   font-size:18px;
@@ -82,7 +86,7 @@
 #Dislike_num {
   position:absolute;
   left:906px;
-  top:229px;
+  top:239px;
   width:11px;
   height:21px;
   font-size:18px;
@@ -90,14 +94,14 @@
 #Collect_icon {
   position:absolute;
   left:976px;
-  top:245px;
+  top:255px;
   width:25px;
   height:25px;
 }
 #Collect_txt {
   position:absolute;
   left:1016px;
-  top:229px;
+  top:239px;
   width:61px;
   height:21px;
   font-size:18px;
@@ -126,9 +130,9 @@
 }
 #Audio_player {
   position:absolute;
-  left:410px;
+  left:260px;
   top:60px;
-  width:662px;
+  width:862px;
   height:160px;
   font-family:'STHeitiSC-Light', 'Heiti SC Light', 'Heiti SC';
   font-weight:200;
