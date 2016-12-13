@@ -4,14 +4,17 @@ import os
 from mutagen import File
 
 def get_audio_cover(audio_file, cover_path):
-    audio = File(audio_file)  # mutagen can automatically detect format and type of tags
-    audio_tags = audio.tags.get('APIC:', '')
-    if audio_tags:
-        artwork = audio_tags.data  # access APIC frame and grab the image
-        with open(cover_path, "wb") as cover:
-            cover.write(artwork)
-        return True
-    else:
+    try:
+        audio = File(audio_file)  # mutagen can automatically detect format and type of tags
+        audio_tags = audio.tags.get('APIC:', '')
+        if audio_tags:
+            artwork = audio_tags.data  # access APIC frame and grab the image
+            with open(cover_path, "wb") as cover:
+                cover.write(artwork)
+            return True
+        else:
+            return False
+    except Exception:
         return False
 
 

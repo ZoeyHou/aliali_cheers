@@ -138,17 +138,19 @@
           <a href="#"><img id="Download_close" src="/static/images/edit/close.png"/></a>
           <p id="Download_title" class="h2">Download Audio</p>
 
-          <p id="Download_choice0" class="paragraph">MP4</p>
-          <p id="Download_choice1" class="paragraph">MPEG-4</p>
-          <p id="Download_choice2" class="paragraph">3GP</p>
-          <p id="Download_choice3" class="paragraph">AVI</p>
-          <p id="Download_choice4" class="paragraph">MKV</p>
-          
-          <a href="#"><p id="Download_address0" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address1" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address2" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address3" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address4" class="paragraph">Download Address</p></a>
+          <p id="Download_choice0" class="paragraph">MP3</p>
+          <p id="Download_choice1" class="paragraph">WAV</p>
+
+          {% if audio.mp3 %}
+          <a href="{{ audio.mp3.url }}" download="{{ audio.title }}"><p id="Download_address0" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address0" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if audio.wav %}
+          <a href="{{ audio.wav.url }}" download="{{ audio.title }}.wav"><p id="Download_address1" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address1" class="paragraph">Processing</p></a>
+          {% endif %}
       </div>
 
       <div id="Display_author">

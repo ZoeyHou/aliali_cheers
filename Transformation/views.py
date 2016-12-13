@@ -7,8 +7,10 @@ from django.conf import settings
 from django.shortcuts import render_to_response
 import os
 
+import get_filetype as ft
 import process_img as p_i
 import process_video as p_v
+import proccess_audio as p_a
 import thumb
 
 import threading
@@ -126,6 +128,11 @@ def upload(req):
                               discription=discription, title=title)
                     #这里调用是为了防止文件重名
                     v.save()
+                    type = ft.get_videotype(v.video.path)
+                    if type not in ft.video_type_tuple:
+                        os.remove(v.video.path)
+                        v.delete()
+                        return HttpResponse("The formation is not supported!")
                     dir_path, file_name = os.path.split(v.video.path)
                     file_name = os.path.splitext(file_name)[0] + os.path.splitext(file_name)[1]
 
@@ -137,26 +144,56 @@ def upload(req):
                     v.cover = "videos/cover/" + file_name + ".jpg"
                     v.save()
 
+                    #转换低分辨率
+                    t2 = threading.Thread(target=p_v.transform_ppi, args=(v,))
+                    t2.setDaemon(True)
+                    t2.start()
+                    #转换格式
+                    t1 = threading.Thread(target=p_v.transform_format, args=(v, ))
+                    t1.setDaemon(True)
+                    t1.start()
+
             elif file_type == "Audio":
                 if file:
                     a = Audio(audio=file, user=user, catagory=catagory,
                               discription=discription, title=title)
                     a.save()
+
+                    atype = ft.get_videotype(a.audio.path)
+                    if atype not in ft.audio_type_tuple:
+                        os.remove(a.audio.path)
+                        a.delete()
+                        return HttpResponse("The formation is not supported!")
+
                     dir_path, file_name = os.path.split(a.audio.path)
                     file_name = os.path.splitext(file_name)[0] + os.path.splitext(file_name)[1]
                     if not cover:
                         if thumb.get_audio_cover(file, dir_path+"/cover/"+file_name+".jpg"):
                             a.cover = "audios/cover/" + file_name + ".jpg"
+                        else:
+                            a.cover = '/static/images/audio/default_cover.jpg'
                     else:
                         thumb.make_thumb(cover, dir_path + "/cover/" + file_name + ".jpg")
                         a.cover = "audios/cover/" + file_name + ".jpg"
                     a.save()
+
+                    t1 = threading.Thread(target=p_a.transform_format, args=(a, ))
+                    t1.setDaemon(True)
+                    t1.start()
 
             elif file_type == "Image":
                 if file:
                     p = Picture(picture=file, user=user, catagory=catagory,
                                 discription=discription, title=title)
                     p.save()
+
+                    type = ft.get_pictype(p.picture.path)
+                    #判断一下是不是我们要的类型
+                    if type not in ft.image_type_tuple:
+                        os.remove(p.picture.path)
+                        p.delete()
+                        return HttpResponse("The formation is not supported.")
+
                     dir_path, file_name = os.path.split(p.picture.path)
                     file_name = os.path.splitext(file_name)[0] + os.path.splitext(file_name)[1]
                     if not cover:
@@ -165,6 +202,10 @@ def upload(req):
                         thumb.make_thumb(cover, dir_path + "/cover/" + file_name + ".jpg")
                     p.cover = "pictures/cover/" + file_name + ".jpg"
                     p.save()
+
+                    t1 = threading.Thread(target=p_i.comlete_type, args=(p, type))
+                    t1.setDaemon(True)
+                    t1.start()
 
         return render_to_response("Transformation/upload.html", {'username': username,
                                                                  'catagory_list': catagory_list})

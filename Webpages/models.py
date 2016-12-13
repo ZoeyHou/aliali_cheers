@@ -13,6 +13,9 @@ class Catagory(models.Model):
 class Video(models.Model):
     user = models.ForeignKey(User, related_name='User_Video')
     video = models.FileField(upload_to='videos/')
+    mp4 = models.FileField(upload_to='videos/', blank=True)
+    flv = models.FileField(upload_to='videos/', blank=True)
+    low_ppi = models.FileField(upload_to='videos/', blank=True)
     barrage = models.FileField(upload_to='barrages/', null=True, default=None)
     upload_time = models.DateField('上传时间', auto_now=True)
     title = models.CharField(max_length=512)
@@ -34,6 +37,8 @@ class Video_Comment(models.Model):
 class Audio(models.Model):
     user = models.ForeignKey(User, related_name='User_Audio')
     audio = models.FileField(upload_to='audios/')
+    mp3 = models.FileField(upload_to='audios/', blank=True)
+    wav = models.FileField(upload_to='audios/', blank=True)
     upload_time = models.DateField('上传时间', auto_now=True)
     title = models.CharField(max_length=512)
     cover = models.ImageField(upload_to='audios/cover/')
@@ -57,6 +62,10 @@ class Audio_Comment(models.Model):
 class Picture(models.Model):
     user = models.ForeignKey(User, related_name='User_Picture')
     picture = models.ImageField(upload_to='pictures/')
+    jpg = models.ImageField(upload_to='pictures/', blank=True)
+    gif = models.ImageField(upload_to='pictures/', blank=True)
+    png = models.ImageField(upload_to='pictures/', blank=True)
+    bmp = models.ImageField(upload_to='pictures/', blank=True)
     upload_time = models.DateField('上传时间', auto_now=True)
     title = models.CharField(max_length=512)
     cover = models.ImageField(upload_to='pictures/cover/')

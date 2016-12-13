@@ -126,17 +126,30 @@
           <a href="#"><img id="Download_close" src="/static/images/edit/close.png"/></a>
           <p id="Download_title" class="h2">Download Image</p>
 
-          <p id="Download_choice0" class="paragraph">JPEG</p>
           <p id="Download_choice1" class="paragraph">JPG</p>
           <p id="Download_choice2" class="paragraph">PNG</p>
           <p id="Download_choice3" class="paragraph">BMP</p>
           <p id="Download_choice4" class="paragraph">GIF</p>
-          
-          <a href="#"><p id="Download_address0" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address1" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address2" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address3" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address4" class="paragraph">Download Address</p></a>
+          {% if picture.jpg %}
+            <a href="{{ picture.jpg.url }}" download="{{ picture.title }}"><p id="Download_address1" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address1" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if picture.png %}
+          <a href="{{ picture.png.url }}" download="{{ picture.title }}"><p id="Download_address2" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address2" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if picture.bmp %}
+          <a href="{{ picture.bmp.url }}" download="{{ picture.title }}.bmp"><p id="Download_address3" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address3" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if picture.gif %}
+          <a href="{{ picture.gif.url }}" download="{{ picture.title }}"><p id="Download_address4" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address4" class="paragraph">Processing</p></a>
+          {% endif %}
       </div>
 
       <div id="Display_author">

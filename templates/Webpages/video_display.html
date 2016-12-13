@@ -125,17 +125,25 @@
           <a href="#"><img id="Download_close" src="/static/images/edit/close.png"/></a>
           <p id="Download_title" class="h2">Download Video</p>
 
-          <p id="Download_choice0" class="paragraph">MP4</p>
-          <p id="Download_choice1" class="paragraph">MPEG-4</p>
-          <p id="Download_choice2" class="paragraph">3GP</p>
-          <p id="Download_choice3" class="paragraph">AVI</p>
-          <p id="Download_choice4" class="paragraph">MKV</p>
-          
-          <a href="#"><p id="Download_address0" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address1" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address2" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address3" class="paragraph">Download Address</p></a>
-          <a href="#"><p id="Download_address4" class="paragraph">Download Address</p></a>
+          <p id="Download_choice1" class="paragraph">MP4</p>
+          <p id="Download_choice2" class="paragraph">FLV</p>
+          <p id="Download_choice3" class="paragraph">LOW PPI(480*272)</p>
+
+          {% if video.mp4 %}
+          <a href="{{ video.mp4.url }}" download="{{ video.title }}"><p id="Download_address1" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address1" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if video.flv %}
+          <a href="{{ video.flv.url }}" download="{{ video.title }}.flv"><p id="Download_address2" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address2" class="paragraph">Processing</p></a>
+          {% endif %}
+          {% if video.low_ppi %}
+            <a href="{{ video.low_ppi.url }}" download="{{ video.title }}"><p id="Download_address3" class="paragraph">Download Address</p></a>
+          {% else %}
+            <a href="#"><p id="Download_address3" class="paragraph">Processing</p></a>
+          {% endif %}
       </div>
       
       <div id="Display_discription">
