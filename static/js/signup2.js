@@ -1,7 +1,7 @@
 ﻿$(document).ready(function(){
   var photo = 1;
 
-  var width=600, height=400;
+  var width=640, height=480;
     var pos = 0, up_url = "/login/recog_login/";
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);
@@ -70,9 +70,11 @@ jQuery("#webcam2").webcam({
 
   $("#Take_photo").click(function(){
       var photoID='Photo_'+photo;      
-      document.getElementById(photoID).src="/static/images/personal_page/hint.png";
+      document.getElementById(photoID).src="images/personal_page/hint.png";
       photo++;
       webcam2.capture();
   });
 
 });
+
+
