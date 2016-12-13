@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Uploaded Image</title>
+	<title>Image</title>
 	<meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/uploaded_video.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/image.css">
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/uploaded_image.js"></script>
+  <script type="text/javascript" src="/static/js/image.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
@@ -98,37 +98,78 @@
           </div>
         </div>
   </div>
+  
+  <div class="Photo_display">
+    <!-- Photo -->
+    <div id='photo'>
+      <ul>
+        <li id='li1'><a href='#'><img src='/static/images/home/photo_1.jpg'/></a></li>
+        <li id='li2'><a href='#'><img src='/static/images/home/photo_2.png'/></a></li>
+        <li id='li3'><a href='#'><img src='/static/images/home/photo_3.jpg'/></a></li>
+        <li id='li4'><a href='#'><img src='/static/images/home/photo_4.jpg'/></a></li>
+      </ul>
+    </div>
+    <!-- next -->
+    <a id="next" href="#">
+      <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
+      <p class="photo_nav_txt">&gt;</p>
+    </a>
 
-  <div id="Uploaded">
-        <p class="Title">Uploaded Image</p>
-        <ul id = "display_detail" class="display">
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+    <!-- pre -->
+    <a id="pre" href="#">
+      <img class="photo_nav_bgd" src="/static/images/home/next_u123.png"/>
+      <p class="photo_nav_txt">&lt;</p>
+    </a>
+
+    <!-- mark -->
+    <div id="mark">
+      <ul>
+        <li id="markli4">
+          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u128.png"/></a>
+        </li>
+        <li id="markli3">
+          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u128.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+        </li>
+        <li id="markli2">
+          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u128.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+        </li>
+        <li id="markli1">
+          <a href="#"><img id="marker1" class="mark_item" src="/static/images/home/u128.png"/></a>
+          <a href="#"><img id="marker2" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker3" class="mark_item" src="/static/images/home/u130.png"/></a>
+          <a href="#"><img id="marker4" class="mark_item" src="/static/images/home/u130.png"/></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="display_detail">
+      {% for k, p in picture_list.items %}
+      <div id = "Image{{ forloop.counter0 }}"  class="image_display">
+        <p class="Title">{{ k }}</p>
+        <a class="More" href="/search" style="text-decoration:underline;">more</a>
+        <ul id = "display_detail{{ forloop.counter0 }}" class="display">
+          {% for picture in p %}
+          <li id="item{{ forloop.counter0 }}">
+            <img src="{{ picture.cover.url }}">
+            <p>{{ picture.title }}</p>
+            <a href="/picture_display/{{ picture.picture }}"></a>
           </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
+          {% endfor %}
         </ul>
-        <!-- Footer -->
+      </div>
+      {% endfor %}
+
+      <!-- Footer -->
       <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
@@ -142,10 +183,9 @@
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
     </div>
-
-      
 </body>
 <script type="text/javascript">
+  $('#photo').slider();
   $("#capture_btn").click(function(){
       webcam.capture();
   });

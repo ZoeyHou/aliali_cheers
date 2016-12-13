@@ -103,15 +103,12 @@
         <p class="Title">Uploaded Video</p>
         <ul id = "display_detail" class="display">
         {% for item in list %}
-            <li id="item{{ forloop.counter0 }}">
+            <li id="item">
             <img src="{{ item.cover.url }}">
             <p>{{ item.title }}</p>
             <a href="/playpage/{{ item.video }}"></a>
           </li>
         {% endfor %}
-
-          <li id="item3" class="last"></li>
-
         </ul>
         <!-- Footer -->
       <div id = "Footer">
