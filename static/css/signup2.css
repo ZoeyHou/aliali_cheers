@@ -29,8 +29,8 @@
 }
 #Signup_camera {
   position:absolute;
-  left:440px;
-  top:180px;
+  left:420px;
+  top:120px;
   width:600px;
   height:400px;
   font-size:28px;
@@ -62,14 +62,14 @@
 #Signup_hint {
   position:absolute;
   left:190px;
-  top:70px;
+  top:50px;
   width:505px;
   height:23px;
   font-size:20px;
 }
 #Photo {
   position: absolute;
-  top: 600px;
+  top: 620px;
   left: 420px;
 }
 #Photo img{
