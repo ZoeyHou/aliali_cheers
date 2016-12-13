@@ -388,13 +388,9 @@ ul{
   word-wrap:break-word;
 }
 #Footer p{
-  margin-left: 50px;
   top:5px;
   height:15px;
   color:#666666;
-}
-#Footer img{
-  margin-left: 50px;
 }
 #Footer_txt_1 {
   position:absolute;
