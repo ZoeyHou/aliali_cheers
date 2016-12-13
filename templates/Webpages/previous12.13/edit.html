@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<!--suppress ALL -->
 <html>
 <head>
-  <title>Sign up</title>
+  <title>Personal page</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup2.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/edit.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup2.js"></script>
+  <script type="text/javascript" src="/static/js/edit.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
+    <div id="base" class="">
+
   <div id='header'>
         <!-- Logo -->
         <div id='logo'>
@@ -99,29 +100,46 @@
           </div>
         </div>
   </div>
-    <div id="base" class="">
-      <img id="Signup_bgd" src="/static/images/upload/u56.png"/>
-      <p id="Signup_title" class="h2">Sign up</p>
+      
+      <div id="Edit">
 
-      <p id="Signup_hint" class="paragraph">5 photos are required to be taken for Face Login function</p>
-      <div id="Signup_camera">
-          <div id="webcam2"></div>
+        <img id="Edit_bgd" src="/static/images/edit/u0.png"/>
+        <p id="Edit_title" class="h2">Personal Page Edit</p>
+        <a href="#"><img id="Edit_img" src="{{ user.avatar.url }}"/></a>
+        
+        <button id= "Edit_update">
+            <img id="Edit_update_bt" src="/static/images/edit/u62.png"/>
+            <p id="Edit_update_txt">Update</p>
+        </button>
+        
+        <p id="Edit_name_txt" class="h2">Username:</p>
+
+        <p id="Edit_name_input" type="text" >{{ username }}</p>
+
+        <p id="Edit_discription_txt" class="h2">Discription:</p>
+
+        <textarea id="Edit_discription_input" name="discription" class="ax_text_area">{{ user.discription }}</textarea>
       </div>
-      <button id="Take_photo">Take photo</button>
-      <a id="Signup_bt" class="shape" href="/">
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Sign up</p>
-      </a>
-      <div id="Photo">
-        <img id="Photo_1" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_2" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_3" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_4" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_5" src="/static/images/personal_page/u0.png"/>
-      </div>
+
+    <div id="Upload_image">
+      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
+      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
     </div>
-    <div id="blank"></div>
-    <div id = "Footer">
+      <div id = "Upload_image_content">
+        <img id="preview" src="/static/images/edit/u98.png" width="250" height="250" style="display: block; width: 250px; height: 250px;">
+        <input type="file" name="avatar" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
+        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
+        <select id="filter_select">
+          <option selected value="Filter0">None</option>
+          <option value="Filter1">Filter1</option>
+          <option value="Filter2">Filter2</option>
+        </select>
+        <button id="filter_btn">Apply</button>
+      </div>s
+
+      <div id="blank"></div>
+       <!-- Footer -->
+      <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
@@ -133,17 +151,17 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
+    </div>
   </body>
 <script type="text/javascript">
   $("#capture_btn").click(function(){
       webcam.capture();
   });
-  $("#Take_photo").click(function(){
-      webcam.capture();
-  });
-{% if username %}
-    document.getElementById("Search_login").style.visibility="hidden";
-    document.getElementById("User").style.visibility="visible";
-{% endif %}
 </script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
 </html>

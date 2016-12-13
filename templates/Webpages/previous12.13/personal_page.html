@@ -1,15 +1,13 @@
 ﻿<!DOCTYPE html>
-<!--suppress ALL -->
 <html>
 <head>
-  <title>Sign up</title>
+  <title>Personal page</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup2.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/personal_page.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup2.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
@@ -99,29 +97,110 @@
           </div>
         </div>
   </div>
-    <div id="base" class="">
-      <img id="Signup_bgd" src="/static/images/upload/u56.png"/>
-      <p id="Signup_title" class="h2">Sign up</p>
 
-      <p id="Signup_hint" class="paragraph">5 photos are required to be taken for Face Login function</p>
-      <div id="Signup_camera">
-          <div id="webcam2"></div>
+      <div id="Person">
+        <img id="Person_bgd" src="/static/images/personal_page/u0.png"/>
+        <p id="Person_title" class="h2">Personal Page</p>
+        <img id="Person_img" class="image" src="{{ page_user.avatar.url }}"/>
+        <p id="Person_name" class="h1">{{ page_user.username }}</p>
+        <p id="Person_discription" class="paragraph"> {{ page_user.discription }}</p>
+          {% if username == page_user.username %}
+        <a href="/edit_info"><p id="Person_edit" class="paragraph" style="text-decoration:underline;">Edit</p></a>
+          {% endif %}
       </div>
-      <button id="Take_photo">Take photo</button>
-      <a id="Signup_bt" class="shape" href="/">
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Sign up</p>
-      </a>
-      <div id="Photo">
-        <img id="Photo_1" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_2" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_3" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_4" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_5" src="/static/images/personal_page/u0.png"/>
+
+      <div id="Video_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Video</p>
+        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for v in video_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ v.cover.url }}"/>
+               <a href="/playpage/{{ v.video }}"></a>
+               <p class="paragraph recommand_name">{{ v.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
       </div>
-    </div>
-    <div id="blank"></div>
-    <div id = "Footer">
+
+      <div id="Image_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Image</p>
+        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for i in image_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ i.cover.url }}"/>
+               <a href="/picture_display/{{ i.picture }}"></a>
+               <p class="paragraph recommand_name">{{ i.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Audio_upload" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Uploaded Audio</p>
+        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+          {% for a in audio_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ a.cover.url }}"/>
+               <a href="/audio_playpage/{{ a.audio }}"></a>
+               <p class="paragraph recommand_name">{{ a.title }}</p>
+             </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Video_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Video</p>
+        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for collect_item in collect_video_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ collect_item.video.cover.url }}"/>
+               <a href="/playpage/{{ collect_item.video.video }}"></a>
+               <p class="paragraph recommand_name">{{ collect_item.video.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Image_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Image</p>
+        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+            {% for collect_item in collect_image_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ collect_item.picture.cover.url }}"/>
+               <a href="/picture_display/{{ collect_item.picture.picture }}"></a>
+               <p class="paragraph recommand_name">{{ collect_item.picture.title }}</p>
+             </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div id="Audio_collect" class="uploaded">
+        <img class="bgd" src="/static/images/video_display/u86.png"/>
+        <p class="h2 title">Collected Audio</p>
+        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <ul id="recommand">
+          {% for collect_item in collect_audio_list %}
+              <li id="item{{ forloop.counter0 }}">
+               <img class="recommand_img" src="{{ collect_item.audio.cover.url }}"/>
+               <a href="/audio_playpage/{{ collect_item.audio.audio }}"></a>
+               <p class="paragraph recommand_name">{{ collect_item.audio.title }}</p>
+             </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
@@ -138,12 +217,11 @@
   $("#capture_btn").click(function(){
       webcam.capture();
   });
-  $("#Take_photo").click(function(){
-      webcam.capture();
-  });
-{% if username %}
-    document.getElementById("Search_login").style.visibility="hidden";
-    document.getElementById("User").style.visibility="visible";
-{% endif %}
 </script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
 </html>

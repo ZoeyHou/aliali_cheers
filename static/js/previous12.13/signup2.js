@@ -1,14 +1,12 @@
 ﻿$(document).ready(function(){
-  var photo = 1;
-
-  var width=640, height=480;
-    var pos = 0, up_url = "/login/recog_login/";
+   var width=640, height=480;
+    var pos = 0;
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);
     canvas.setAttribute('height', height);
     ctx = canvas.getContext("2d");
     image = ctx.getImageData(0, 0, width, height);
-
+    var photo = 1;
 
 jQuery("#webcam2").webcam({
     width: width,
@@ -43,8 +41,7 @@ jQuery("#webcam2").webcam({
                     image: canvas.toDataURL("image/jpeg"),
                     username: $("#username").val()
                 }, function (data) {
-                    if(data=="F") alert("没认出来");
-                    else location.reload();
+
                 });
                 pos = 0;
             } else {
@@ -69,12 +66,30 @@ jQuery("#webcam2").webcam({
 });
 
   $("#Take_photo").click(function(){
-      var photoID='Photo_'+photo;      
-      document.getElementById(photoID).src="images/personal_page/hint.png";
-      photo++;
-      webcam2.capture();
+      webcam.capture();
+      var photoID='Photo_img_'+photo;
+      var Objcanvas=document.getElementById(photoID);
+      var Objctx=Objcanvas.getContext('2d');
+      Objctx.fillStyle='#DDDDDD';
+      Objctx.fillRect(0,0,300,200);
+      photo = photo % 5 +1;
+
+      var imgdata = Objctx.getImageData(0,0,300,200);
+      var Objpixels = imgdata.data;
+      var pixels = image.data;
+      var pos = 0, Objpos = 0;
+      for(var i=0;i<height;++i){
+          for(var j = 0; j < width; ++j){
+              Objpixels[Objpos] = pixels[pos];
+              Objpixels[Objpos+1] = pixels[pos+1];
+              Objpixels[Objpos+2] = pixels[pos+2];
+              Objpixels[Objpos+3] = pixels[pos+3];
+              pos+=4;
+              Objpos+=8;
+          }
+          Objpos+=4*width;
+      }
+    Objctx.putImageData(imgdata,0,0);
   });
 
 });
-
-

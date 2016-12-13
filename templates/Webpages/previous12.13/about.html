@@ -1,15 +1,14 @@
 ﻿<!DOCTYPE html>
-<!--suppress ALL -->
 <html>
 <head>
-  <title>Sign up</title>
+  <title>About</title>
   <meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/signup2.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/about.css">
   <script type="text/javascript" src="/static/js/jquery.js"></script>
   <script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/signup2.js"></script>
+  <script type="text/javascript" src="/static/js/about.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
   <body>
@@ -99,29 +98,54 @@
           </div>
         </div>
   </div>
-    <div id="base" class="">
-      <img id="Signup_bgd" src="/static/images/upload/u56.png"/>
-      <p id="Signup_title" class="h2">Sign up</p>
+    
+    <div id="base">
 
-      <p id="Signup_hint" class="paragraph">5 photos are required to be taken for Face Login function</p>
-      <div id="Signup_camera">
-          <div id="webcam2"></div>
+      <img id="About_bgd" src="/static/images/video_display/u0.png"/>
+      <p id="About_title" class="h2">About everything</p>
+
+      <p id="About_web_title" class="h2">About this website:</p>
+      <p id="About_web_txt" class="paragraph">A multimedia website, being able to upload, download, play video, audio and view images.</p>
+
+      <p id="About_us_title" class="h2">About us:</p>
+      <div id="About_us_work" class="paragraph">
+        <p>Integration:</p>
+        <p>Website Design:</p>
+        <p>Front-End:</p>
+        <p>Back-End:</p>
+        <p>Interaction:</p>
+        <p>Face recognition(login):</p>
+        <p>Image&amp;Video Processing:</p>
+        <p>Player:</p>
+        <p>Barrage:</p>
+        <p>Web Camera:</p>
       </div>
-      <button id="Take_photo">Take photo</button>
-      <a id="Signup_bt" class="shape" href="/">
-        <img id="Signup_bt_bgd" src="/static/images/edit/u62.png"/>
-        <p id="Signup_bt_txt">Sign up</p>
-      </a>
-      <div id="Photo">
-        <img id="Photo_1" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_2" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_3" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_4" src="/static/images/personal_page/u0.png"/>
-        <img id="Photo_5" src="/static/images/personal_page/u0.png"/>
+      <div id="About_us_people" class="paragraph">
+          <p>Zikang Xiong</p>
+          <p>Chuyi Hou</p>
+          <p>Chuyi Hou</p>
+          <p>Zikang Xiong</p>
+          <p>Zikang Xiong</p>
+          <p>Zhe Chen, Hanya Zhang, Zhihao Liu</p>
+          <p>Hanya Zhang</p>
+          <p>Ruibo Dingyang</p>
+          <p>Ruibo Dingyang</p>
+          <p>Shuai Yang</p>
+        </div>
+      </div>
+
+      <p id="About_contact_title" class="h2">Contact us:</p>
+      <div id="About_contact_txt" class="paragraph">
+        <p>Feel free to contact us, send emails if you are interested in us or our website.</p>
+        <p>E-mail Address: 619195275@qq.com</p>
+        <p>Github: https://github.com/caffett/aliali_cheers</p>
+        <p>Address: No.4, Section 2, North Jianshe Road, Chengdu, Sichuan, China 610054</p>
+        <p>International Elite Class, School of Information and Software Engineering</p>
       </div>
     </div>
+
     <div id="blank"></div>
-    <div id = "Footer">
+            <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
         <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
@@ -138,12 +162,11 @@
   $("#capture_btn").click(function(){
       webcam.capture();
   });
-  $("#Take_photo").click(function(){
-      webcam.capture();
-  });
-{% if username %}
-    document.getElementById("Search_login").style.visibility="hidden";
-    document.getElementById("User").style.visibility="visible";
-{% endif %}
 </script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
 </html>

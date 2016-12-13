@@ -24,20 +24,31 @@
   position:relative;
   left:30px;
   top:26px;
-  width:1240px;
+  width:1190px;
 }
-#item {
+#item0{
   position: relative;
-  float: left;
-  width: 310px;
+  left:0px;
+}
+#item1{
+  position: relative;
+  left:310px;
+}
+#item2{
+  position: relative;
+  left:620px;
+}
+#item3{
+  position: relative;
+  left:930px;
   height: 270px;
 }
-#item img {
+.display img {
   position:absolute;
   width:260px;
   height:200px;
 }
-#item p{
+.display p{
   position:absolute;
   top:210px;
   width:260px;
@@ -48,15 +59,18 @@
   font-size:14px;
   text-align:center;
 }
-#item a{
+.display a{
   position:absolute;
   top:0px;
   width:260px;
   height:200px;
 }
-#item a:hover{
+.display a:hover{
   background-color: #333333;
   opacity: 0.3;
+}
+.last {
+  height: 300px;
 }
 #Uploaded {
   position: relative;
@@ -66,10 +80,8 @@
   border-top: #000000 solid 2px;
 }
 #Footer{
-  margin-top: 30px;
-  float: left;
   position: relative;
-  left:143px;
-  width:954px;
+  left:193px;
+  width:854px;
   border-top: #888888 solid 1px;
 }

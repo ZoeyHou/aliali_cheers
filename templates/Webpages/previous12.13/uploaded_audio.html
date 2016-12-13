@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Uploaded Image</title>
+	<title>Uploaded Audio</title>
 	<meta charset='utf-8'/>
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="/static/css/uploaded_video.css">
-	<script type="text/javascript" src="/static/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/js/header.js"></script>
-  <script type="text/javascript" src="/static/js/uploaded_image.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/css/uploaded_audio.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="js/uploaded_audio.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
@@ -94,41 +94,77 @@
             <p id="face_email_txt">E-mail</p>
             <input id="username" type="text">
             <button id="capture_btn">Capture</button>
+            <button id="Face_login_button">Login(之后合并到Capture)</button>
             <div id="webcam"></div>
           </div>
         </div>
   </div>
 
-  <div id="Uploaded">
-        <p class="Title">Uploaded Image</p>
+  <div id="Uploaded" class="audio_display">
+        <p class="Title">Uploaded audio</p>
         <ul id = "display_detail" class="display">
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
           </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
           </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
           </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
+          <li>
+            <div class="item">
+              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <div id="item_change">
+                <img id="item_change_img" src="/static/images/audio/up.png"/>
+              </div>
+              <p id="item_rank">1</p>
+              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
+              <a href="audio_display.html">
+                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
+              </a>
+              <p id="item_title">Closer</p>
+              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+            </div>
           </li>
-          <li id="item">
-            <img src="/static/images/home/photo_1.jpg">
-            <p>Gates</p>
-            <a href="video_display.html"></a>
-          </li>
-        </ul>
-        <!-- Footer -->
+          <!-- Footer -->
+          <div id="blank"></div>
       <div id = "Footer">
         <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
         <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
@@ -141,6 +177,7 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
+        </ul>
     </div>
 
       
