@@ -92,6 +92,9 @@ def recog_login(req):
         img = req.POST['image'][23:]
         username = req.POST.get('username', '')
         imgData = base64.b64decode(img)
+        with open('/home/william/test.jpg', 'w+') as im:
+            im.write(imgData)
+
 
         user = User.objects.filter(username=username)[0]
         if fr.is_user(user.username, imgData):

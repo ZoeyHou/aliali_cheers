@@ -115,7 +115,7 @@ jQuery("#webcam").webcam({
     width: width,
     height: height,
     mode: "callback",
-    swffile: "/static/js/jscam_canvas_only.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
+    swffile: "/static/swf/jscam.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
 
     onTick: function(remain) {
         if (0 == remain) {
