@@ -7,6 +7,7 @@ import base64
 
 import face_recog as fr
 import Transformation.process_img as p_i
+import Transformation.get_filetype as ft
 
 
 # 注册
@@ -25,8 +26,10 @@ def register(req):
                 user = User()
                 user.username = username
                 user.password = password
-                if avatar: user.avatar = avatar
-                else: user.avatar = '/static/images/users/default_user.jpg'
+                if avatar and ft.get_pictype(avatar) in ft.image_type_tuple:
+                    user.avatar = avatar
+                else:
+                    user.avatar = '/static/images/users/default_user.jpg'
                 user.discription = discription
                 user.email = email
                 user.save()

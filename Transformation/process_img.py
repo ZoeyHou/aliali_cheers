@@ -1,6 +1,10 @@
 #coding:utf-8
 import os
-from PIL import Image, ImageFilter, ImageEnhance
+from PIL import Image, ImageFilter
+
+import sys
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
 
 filter_list = ('EMBOSS', 'FIND_EDGES', 'SMOOTH', 'SMOOTH_MORE', 'SHARPEN')
 model_type = ("<class 'Authentication.models.User'>", )

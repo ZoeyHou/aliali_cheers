@@ -10,6 +10,8 @@ from Webpages.models import Video, Audio, Picture
 from Webpages.models import Like_Item, Dislike_Item, Collect_Item
 from Webpages.models import Video_Comment, Audio_Comment, Picture_Comment
 from Webpages.models import Catagory
+import Transformation.process_img as p_i
+import Transformation.get_filetype as ft
 
 import json
 
@@ -55,6 +57,7 @@ def personal_page(req, page_username):
 
 def edit_info(req):
     username = req.COOKIES.get("username", '')
+    filter_type = req.POST.get('filter_type', '')
     if username:
         user = User.objects.get(username=username)
 
@@ -62,13 +65,17 @@ def edit_info(req):
         discription = req.POST.get('discription', '')
         avatar = req.FILES.get("avatar", '')
         user.discription = discription
-        if avatar:
+        if avatar and ft.get_pictype(avatar) in ft.image_type_tuple:
             user.avatar = avatar
         user.save()
+        if filter_type != 'None' and avatar:
+            p_i.apply_filter(user, filter_type)
         return HttpResponseRedirect("/personal_page/"+username+'/')
 
     else:
-        return render_to_response("Webpages/edit.html", {"username": username, "user": user})
+        return render_to_response("Webpages/edit.html", {"username": username,
+                                                         "user": user,
+                                                         "filter_list": p_i.filter_list, })
 
 
 def more_upload(req, page_username, type):
