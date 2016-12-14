@@ -34,18 +34,4 @@ def transform_format(a):
         a.save()
 
 
-# def transform_ppi(v):
-#     file_name, file_type = str(v.video).split('/')[-1].split('.')
-#
-#     target_ppi = "480*272"
-#
-#     file_new = file_name + '_' + target_ppi + '.' + file_type
-#     source_file = join(source_path, file_name+'.'+file_type)
-#     out_file = join(out_path, file_new)
-#     comm = 'ffmpeg -i {0} -strict -2 -s {1} {2}'.format(source_file, target_ppi, out_file)
-#     print comm
-#     os.system(comm)
-#     v.low_ppi = 'videos/' + file_new
-#     v.save()
-
 

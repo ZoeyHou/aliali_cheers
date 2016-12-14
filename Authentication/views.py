@@ -2,7 +2,6 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import User
-from django import forms
 from django.conf import settings
 import base64
 

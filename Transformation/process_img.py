@@ -9,24 +9,6 @@ def open_save(open_file, save_file):
     im = Image.open(open_file)
     im.save(save_file)
 
-def handle(open_file,save_file,choice,value):
-    im = Image.open(open_file)
-
-    if choice == 'brightness':
-        brightness = ImageEnhance.Brightness(im)
-        bright_img = brightness.enhance(value)    # 亮度增强
-        bright_img.save(save_file)
-
-    if choice == 'sharpness':
-        sharpness = ImageEnhance.Sharpness(im)
-        sharp_img = sharpness.enhance(value)  # 锐度增强
-        sharp_img.save(save_file)
-
-    if choice == 'contrast':
-        contrast = ImageEnhance.Contrast(im)
-        contrast_img = contrast.enhance(value)  # 对比度增强
-        contrast_img.save(save_file)
-
 def apply_filter(model,choice):   #choice: ImageFilter.BLUR|ImageFilter.CONTOUR|ImageFilter.DETAIL|ImageFilter.EDGE_ENHANCE|ImageFilter.EDGE_ENHANCE_MORE
     if str(type(model)) not in model_type:
         im = Image.open(model.cover.path)
@@ -48,11 +30,6 @@ def apply_filter(model,choice):   #choice: ImageFilter.BLUR|ImageFilter.CONTOUR|
         im.save(model.cover.path)
     else:
         im.save(model.avatar.path)
-
-def mode_convert(open_file,save_file,mode):    #mode: 1|L|P|RGB|RGBA|CMYK|YCbCr|I|F
-    im = Image.open(open_file)
-    im0 = im.convert(mode)
-    im0.save(save_file)
 
 def comlete_type(pic_model, type):
     dir_path, file_name = os.path.split(pic_model.picture.path)

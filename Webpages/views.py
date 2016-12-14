@@ -162,10 +162,6 @@ def audio_playpage(req, audio_name):
                                "recommand_list": recommand_list})
 
 
-def audio_lyric(req, audio_name):
-    return render_to_response('Webpages/lyric.html')
-
-
 # photo展示页面，对应url /gallery
 def gallery(req):
     username = req.COOKIES.get('username', '')

@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'^hello/$', views.return_hello, name='return_hello'),
     url(r'^gallery/$', views.gallery, name='gallery'),
     url(r'^picture_display/(.+)/$', views.picture_display, name='picture_display'),
-    url(r'^audio_lyric/(.+)/$', views.audio_lyric, name='audio_lyric'),
     url(r'^audio/', views.audio, name='audio'),
     url(r'^audio_playpage/(.+)/$', views.audio_playpage, name='audio_playpage'),
     url(r'^video/$', views.video, name='video'),
