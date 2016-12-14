@@ -26,6 +26,7 @@
 		var type_input = $("#Type_input");
 		var catagoty_input = $("#Catagory_input");
 		var discription_input = $("#Discription_input");
+		var filter_input = $("#filter_select");
 
 		var form = document.createElement('form');
 		form.id="signup_form";
@@ -40,9 +41,12 @@
 		form.appendChild(type_input[0]);
 		form.appendChild(catagoty_input[0]);
 		form.appendChild(discription_input[0]);
+		form.appendChild(filter_input[0]);
+
 
 		alert("ready!")
 		form.submit();
+
 	});
 
 	$("#Title_input").blur(function(){

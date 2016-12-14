@@ -7,10 +7,12 @@ from django.conf import settings
 import base64
 
 import face_recog as fr
+import Transformation.process_img as p_i
 
 
 # 注册
 def register(req):
+    username = req.COOKIES.get("username", '')
     if req.method == "POST":
             print req
             username = req.POST.get('user', '')
@@ -18,6 +20,7 @@ def register(req):
             avatar = req.FILES.get('avatar', '')
             discription = req.POST.get('discription', '')
             email = req.POST.get('email', '')
+            filter_type = req.POST.get('filter_type', '')
             try:
             #将表单写入数据库
                 user = User()
@@ -28,6 +31,8 @@ def register(req):
                 user.discription = discription
                 user.email = email
                 user.save()
+                if filter_type != 'None' and avatar:
+                    p_i.apply_filter(user, filter_type)
             except Exception, e:
                 print Exception, ":", e
                 return HttpResponse(e)
@@ -36,7 +41,8 @@ def register(req):
             response.set_cookie('username', username, 3600)
             return response
 
-    return render_to_response("Authentication/signup.html")
+    return render_to_response("Authentication/signup.html", {'username':username,
+                                                             'filter_list': p_i.filter_list})
 
 #登录
 def login(req):

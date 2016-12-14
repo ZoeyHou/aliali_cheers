@@ -2,6 +2,9 @@
 import os
 from PIL import Image, ImageFilter, ImageEnhance
 
+filter_list = ('EMBOSS', 'FIND_EDGES', 'SMOOTH', 'SMOOTH_MORE', 'SHARPEN')
+model_type = ("<class 'Authentication.models.User'>", )
+
 def open_save(open_file, save_file):
     im = Image.open(open_file)
     im.save(save_file)
@@ -24,8 +27,11 @@ def handle(open_file,save_file,choice,value):
         contrast_img = contrast.enhance(value)  # 对比度增强
         contrast_img.save(save_file)
 
-def set_filter(open_file,save_file,choice):   #choice: ImageFilter.BLUR|ImageFilter.CONTOUR|ImageFilter.DETAIL|ImageFilter.EDGE_ENHANCE|ImageFilter.EDGE_ENHANCE_MORE
-    im = Image.open(open_file)                #ImageFilter.EMBOSS|ImageFilter.FIND_EDGES|ImageFilter.SMOOTH|ImageFilter.SMOOTH_MORE|ImageFilter.SHARPEN
+def apply_filter(model,choice):   #choice: ImageFilter.BLUR|ImageFilter.CONTOUR|ImageFilter.DETAIL|ImageFilter.EDGE_ENHANCE|ImageFilter.EDGE_ENHANCE_MORE
+    if str(type(model)) not in model_type:
+        im = Image.open(model.cover.path)
+    else:
+        im = Image.open(model.avatar.path)
     item = ImageFilter.EMBOSS
     if choice == 'EMBOSS':
         item = ImageFilter.EMBOSS
@@ -37,8 +43,11 @@ def set_filter(open_file,save_file,choice):   #choice: ImageFilter.BLUR|ImageFil
         item = ImageFilter.SMOOTH_MORE
     elif choice == 'SHARPEN':
         item = ImageFilter.SHARPEN
-    im0 = im.filter(item)
-    im0.save(save_file)
+    im = im.filter(item)
+    if str(type(model)) not in model_type:
+        im.save(model.cover.path)
+    else:
+        im.save(model.avatar.path)
 
 def mode_convert(open_file,save_file,mode):    #mode: 1|L|P|RGB|RGBA|CMYK|YCbCr|I|F
     im = Image.open(open_file)

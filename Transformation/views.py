@@ -121,6 +121,7 @@ def upload(req):
             discription = req.POST.get("discription", '')
             title = req.POST.get("title", '')
             cover = req.FILES.get("discript_img", '')
+            filter_type = req.POST.get("filter_type", '')
 
             if file_type == "Video":
                 if file:
@@ -143,6 +144,9 @@ def upload(req):
 
                     v.cover = "videos/cover/" + file_name + ".jpg"
                     v.save()
+
+                    if filter_type != 'None' and cover:
+                        p_i.apply_filter(v, filter_type)
 
                     #转换低分辨率
                     t2 = threading.Thread(target=p_v.transform_ppi, args=(v,))
@@ -175,7 +179,11 @@ def upload(req):
                     else:
                         thumb.make_thumb(cover, dir_path + "/cover/" + file_name + ".jpg")
                         a.cover = "audios/cover/" + file_name + ".jpg"
+
                     a.save()
+
+                    if filter_type != 'None' and cover:
+                        p_i.apply_filter(a, filter_type)
 
                     t1 = threading.Thread(target=p_a.transform_format, args=(a, ))
                     t1.setDaemon(True)
@@ -203,12 +211,16 @@ def upload(req):
                     p.cover = "pictures/cover/" + file_name + ".jpg"
                     p.save()
 
+                    if filter_type != 'None' and cover:
+                        p_i.apply_filter(p, filter_type)
+
                     t1 = threading.Thread(target=p_i.comlete_type, args=(p, type))
                     t1.setDaemon(True)
                     t1.start()
 
         return render_to_response("Transformation/upload.html", {'username': username,
-                                                                 'catagory_list': catagory_list})
+                                                                 'catagory_list': catagory_list,
+                                                                 'filter_list': p_i.filter_list})
     else:
         return HttpResponse("Not_login")
 
