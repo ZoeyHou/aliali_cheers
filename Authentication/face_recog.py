@@ -65,8 +65,11 @@ def delete_pergro(name, group):
 # name为人的姓名， group为组名， face_list为预设人的三张图片
 def create_person(name, group, face_list):
     face_id = get_local_faceid(open(face_list[0][1], 'rb'))
-    api.person.create(person_name=name, group_name=group,
-                      face_id=face_id)
+    try:
+        api.person.create(person_name=name, group_name=group,
+                          face_id=face_id)
+    except Exception:
+        print 'Person has created'
     print 'person create done'
 
     for i in range(1, len(face_list)):
@@ -99,7 +102,9 @@ def face_regist(user):
     # 预设的三张图片，名字和文件位置
     face_list = [(NAME, settings.MEDIA_ROOT + str(user.face1)),
                  (NAME, settings.MEDIA_ROOT + str(user.face2)),
-                 (NAME, settings.MEDIA_ROOT + str(user.face3))]
+                 (NAME, settings.MEDIA_ROOT + str(user.face3)),
+                 (NAME, settings.MEDIA_ROOT + str(user.face3)),
+                 (NAME, settings.MEDIA_ROOT + str(user.face3)),]
     create_person(name=NAME, group=GROUP, face_list=face_list)
     train_person(name=NAME)
 

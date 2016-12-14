@@ -144,7 +144,10 @@ jQuery("#webcam").webcam({
                     image: canvas.toDataURL("image/jpeg"),
                     username: $("#username").val()
                 }, function (data) {
-                    if(data=="F") alert("没认出来");
+                    if(data == "User_not_exist"){
+                        alert("用户不存在");
+                    }
+                    else if(data=="F") alert("没认出来");
                     else location.reload();
                 });
                 pos = 0;

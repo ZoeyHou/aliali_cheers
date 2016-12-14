@@ -71,7 +71,6 @@
                 <input id="email_input" type="email" name="E-mail" value=""/>
 
                 <p id="pwd_txt">Password</p>
-                <a href="/forget"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
                 <input id="pwd_input" type="password" name="pwd" value=""/>
             </form> 
             <!-- Login -->
@@ -101,9 +100,9 @@
   </div>
 
       <div id="Search">
-        <input id="Search_area" class="ax_text_field" type="text" value=""/>
+        <input id="Search_area" class="ax_text_field" type="text" name="search_input" value=""/>
         <img id="Search_icon_bgd" src="/static/images/search/u57.png"/>
-        <a href="#"><img id="Search_icon_img" src="/static/images/search/search_icon_u59.png"/></a>
+        <a id="search_btn"><img id="Search_icon_img" src="/static/images/search/search_icon_u59.png"/></a>
       </div>
 
       <div id="Search_navigator">
@@ -131,70 +130,29 @@
           <div id="Video_ca" class="ca">
 
             <p id="cata_txt" class="h2">Catagory:</p>
-            <ul id="Cata">
+            <form id="Cata">
             {% for cata in catagories %}
               <li id="cata_item" class="ax_checkbox">
                 <label for="cata_bt"><p>{{ cata.catagory_name }}</p></label>
-                <input id="cata_bt" type="checkbox" value="checkbox"/>
+                <input name="cata_item" type="checkbox" value="{{ cata.catagory_name }}"/>
               </li>
             {% endfor %}
-            </ul>
+            </form>
           </div>
-          <a id="update_bt" class="shape" href="#">
-              <img id="update_bt_bgd" src="/static/images/search/u111.png"/>
-              <p id="update_bt_txt">Update</p>
-            </a>
           <ul id="Video_content" class="Content">
+            {% for v in video_list %}
             <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
+              <a class="item" href="/playpage/{{ v.video }}">
+                <img src="{{ v.cover.url }}"/>
+                <p id="Content_title">{{ v.title }}</p>
+                <p id="Content_discription">{{ v.discription }}</p>
+                <p id="Content_date">{{ v.upload_time.date }}</p>
+                <p id="Content_name">{{ v.user.username }}</p>
+                <p id="Content_time">{{ v.upload_time.time }}</p>
               </a>
             </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
+            {% endfor %}
+
           </ul>
           <div id="blank"></div>
       <div id = "Footer">
@@ -215,40 +173,28 @@
           <div id="Audio_ca" class="ca">
 
             <p id="cata_txt" class="h2">Catagory:</p>
-            <ul id="Cata">
+            <form id="Cata">
             {% for cata in catagories %}
               <li id="cata_item" class="ax_checkbox">
                 <label for="cata_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input id="cata_bt" type="checkbox" value="checkbox"/>
               </li>
             {% endfor %}
-            </ul>
-            <a id="update_bt" class="shape" href="#">
-              <img id="update_bt_bgd" src="/static/images/search/u111.png"/>
-              <p id="update_bt_txt">Update</p>
-            </a>
+            </form>
           </div>
           <ul id="Audio_content" class="Content">
+            {% for a in audio_list %}
             <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
+              <a class="item" href="/audio_playpage/{{ a.audio }}">
+                <img src="{{ a.cover.url }}"/>
+                <p id="Content_title">{{ a.title }}</p>
+                <p id="Content_discription">{{ a.discription }}</p>
+                <p id="Content_date">{{ a.upload_time.date }}</p>
+                <p id="Content_name">{{ a.user.username }}</p>
+                <p id="Content_time">{{ a.upload_time.time }}</p>
               </a>
             </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
+            {% endfor %}
           </ul>
           <div id="blank"></div>
       <div id = "Footer">
@@ -268,41 +214,29 @@
         <div id="Content_image">
           <div id="Image_ca" class="ca">
             <p id="cata_txt" class="h2">Catagory:</p>
-            <ul id="Cata">
+            <form id="Cata">
             {% for cata in catagories %}
               <li id="cata_item" class="ax_checkbox">
                 <label for="cata_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input id="cata_bt" type="checkbox" value="checkbox"/>
               </li>
             {% endfor %}
-            </ul>
-            <a id="update_bt" class="shape" href="#">
-              <img id="update_bt_bgd" src="/static/images/search/u111.png"/>
-              <p id="update_bt_txt">Update</p>
-            </a>
+            </form>
           </div>
 
           <ul id="Image_content" class="Content">
+            {% for p in picture_list %}
             <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
+              <a class="item" href="/picture_display/{{ p.picture }}">
+                <img src="{{ p.cover.url }}"/>
+                <p id="Content_title">{{ p.title }}</p>
+                <p id="Content_discription">{{ p.discription }}</p>
+                <p id="Content_date">{{ p.upload_time.date }}</p>
+                <p id="Content_name">{{ p.user.username }}</p>
+                <p id="Content_time">{{ p.upload_time.time }}</p>
               </a>
             </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
+            {% endfor %}
           </ul>
           <div id="blank"></div>
       <div id = "Footer">
@@ -321,26 +255,15 @@
 
         <div id="Content_user">
           <ul id="User_content" class="Content">
+            {% for u in user_list %}
             <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
+              <a class="item" href="/personal_page/{{ u.username}}">
+                <img src="{{ u.avatar.url }}"/>
+                <p id="Content_title">{{ u.username }}</p>
+                <p id="Content_discription">{{ u.discription }}</p>
               </a>
             </li>
-            <li>
-              <a class="item" href="video_display.html">
-                <img src="/static/images/home/photo_1.jpg"/>
-                <p id="Content_title">Title</p>
-                <p id="Content_discription">Discription</p>
-                <p id="Content_date">2016.11.6</p>
-                <p id="Content_name">UserName</p>
-                <p id="Content_time">21:55</p>
-              </a>
-            </li>
+            {% endfor %}
           </ul>
           <div id="blank"></div>
       <div id = "Footer">

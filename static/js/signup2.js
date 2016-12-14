@@ -1,20 +1,22 @@
 ﻿$(document).ready(function(){
-  var photo = 1;
 
-  var width=640, height=480;
-    var pos = 0, up_url = "/login/recog_login/";
+    var width=640, height=480;
+    var pos = 0, up_url = "/login/recog_register/";
     var canvas = document.createElement("canvas");
     canvas.setAttribute('width', width);
     canvas.setAttribute('height', height);
     ctx = canvas.getContext("2d");
     image = ctx.getImageData(0, 0, width, height);
+    var pic_count=5;
+    var photo = 1;
+    var img5, img4, img3, img2, img1;
 
 
 jQuery("#webcam2").webcam({
     width: width,
     height: height,
     mode: "callback",
-    swffile: "/static/js/jscam_canvas_only.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
+    swffile: "/static/swf/jscam.swf", // canvas only doesn't implement a jpeg encoder, so the file is much smaller
 
     onTick: function(remain) {
         if (0 == remain) {
@@ -38,14 +40,28 @@ jQuery("#webcam2").webcam({
             }
             if (pos >= 4 * width * height) {
                 ctx.putImageData(img, 0, 0);
-                $.post(up_url, {
-                    type: "data",
-                    image: canvas.toDataURL("image/jpeg"),
-                    username: $("#username").val()
-                }, function (data) {
-                    if(data=="F") alert("没认出来");
-                    else location.reload();
-                });
+                if(pic_count <= 0){
+                　　	$.post(up_url, {type: "data", img1: img1, img2: img2, img3: img3, img4: img4, img5: img5},
+                        function(return_html){
+                                self.location.href='/'
+                    　　	});
+                }
+                if(pic_count==5){
+                    img5 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==4){
+                    img4 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==3){
+                    img3 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==2){
+                    img2 = canvas.toDataURL("image/jpeg");
+                }
+                else if(pic_count==1){
+                    img1 = canvas.toDataURL("image/jpeg");
+                }
+                pic_count -= 1;
                 pos = 0;
             } else {
                 image.push(data);
@@ -69,10 +85,12 @@ jQuery("#webcam2").webcam({
 });
 
   $("#Take_photo").click(function(){
-      var photoID='Photo_'+photo;      
-      document.getElementById(photoID).src="images/personal_page/hint.png";
-      photo++;
-      webcam2.capture();
+      if(pic_count!=0) {
+          var photoID = 'Photo_' + photo;
+          document.getElementById(photoID).src = "images/personal_page/hint.png";
+          photo++;
+      }
+      webcam.capture();
   });
 
 });

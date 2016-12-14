@@ -23,7 +23,8 @@ def register(req):
                 user = User()
                 user.username = username
                 user.password = password
-                user.avatar = avatar
+                if avatar: user.avatar = avatar
+                else: user.avatar = '/static/images/users/default_user.jpg'
                 user.discription = discription
                 user.email = email
                 user.save()
@@ -62,29 +63,49 @@ def logout(req):
 
 def recog_register(req):
     if req.method=='POST':
+        username = req.COOKIES.get("username", '')
+        user = User.objects.filter(username=username)[0]
+
         img1 = req.POST.get('img1', '')
         img2 = req.POST.get('img2', '')
         img3 = req.POST.get('img3', '')
-        username = req.COOKIES.get("username", '')
-        user = User.objects.filter(username=username)[0]
-        face1 = open(settings.MEDIA_ROOT+"faces/"+username+"1.jpg", 'wb')
+        img4 = req.POST.get('img4', '')
+        img5 = req.POST.get('img5', '')
+
+        face1 = open(settings.MEDIA_ROOT + "faces/" + username + "1.jpg", 'wb')
         face2 = open(settings.MEDIA_ROOT + "faces/" + username + "2.jpg", 'wb')
         face3 = open(settings.MEDIA_ROOT + "faces/" + username + "3.jpg", 'wb')
+        face4 = open(settings.MEDIA_ROOT + "faces/" + username + "4.jpg", 'wb')
+        face5 = open(settings.MEDIA_ROOT + "faces/" + username + "5.jpg", 'wb')
+
         face1.write(base64.b64decode(img1[23:]))
         face2.write(base64.b64decode(img2[23:]))
         face3.write(base64.b64decode(img3[23:]))
+        face4.write(base64.b64decode(img4[23:]))
+        face5.write(base64.b64decode(img5[23:]))
+
         face1.close()
         face2.close()
         face3.close()
-        user.face1 = "faces/"+username+"1.jpg"
-        user.face2 = "faces/"+username+"2.jpg"
-        user.face3 = "faces/"+username+"3.jpg"
+        face4.close()
+        face5.close()
+
+        user.face1 = "faces/" + username + "1.jpg"
+        user.face2 = "faces/" + username + "2.jpg"
+        user.face3 = "faces/" + username + "3.jpg"
+        user.face4 = "faces/" + username + "4.jpg"
+        user.face5 = "faces/" + username + "5.jpg"
         user.save()
 
         fr.face_regist(user)
+
+        return HttpResponse("Succ")
     else:
         username = req.COOKIES.get("username", '')
-        return render_to_response('Authentication/signup2.html', {"username": username})
+        if username:
+            return render_to_response('Authentication/signup2.html', {"username": username})
+        else:
+            return HttpResponse("Not Login")
 
 #人脸识别登录
 def recog_login(req):
@@ -92,12 +113,16 @@ def recog_login(req):
         img = req.POST['image'][23:]
         username = req.POST.get('username', '')
         imgData = base64.b64decode(img)
-        with open('/home/william/test.jpg', 'w+') as im:
-            im.write(imgData)
+
+        #Debug code
+        # with open('/home/william/test.jpg', 'w+') as im:
+        #     im.write(imgData)
 
 
-        user = User.objects.filter(username=username)[0]
-        if fr.is_user(user.username, imgData):
+        user = User.objects.filter(username=username)
+        if not user:
+            return HttpResponse('User_not_exist')
+        if fr.is_user(user[0].username, imgData):
             #用了ajax post,ajax请求无法重定向
             response = HttpResponse('T')
             response.set_cookie('username', username, 3600)
@@ -105,5 +130,4 @@ def recog_login(req):
         else:
             return HttpResponse('F')
 
-    return render_to_response('Authentication/recog_login.html')
 

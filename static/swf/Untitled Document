@@ -1,0 +1,35 @@
+username = req.COOKIES.get("username", '')
+user = User.objects.filter(username=username)[0]
+
+img1 = req.POST.get('img1', '')
+img2 = req.POST.get('img2', '')
+img3 = req.POST.get('img3', '')
+img4 = req.POST.get('img4', '')
+img5 = req.POST.get('img5', '')
+
+face1 = open(settings.MEDIA_ROOT+"faces/"+username+"1.jpg", 'wb')
+face2 = open(settings.MEDIA_ROOT + "faces/" + username + "2.jpg", 'wb')
+face3 = open(settings.MEDIA_ROOT + "faces/" + username + "3.jpg", 'wb')
+face4 = open(settings.MEDIA_ROOT + "faces/" + username + "4.jpg", 'wb')
+face5 = open(settings.MEDIA_ROOT + "faces/" + username + "5.jpg", 'wb')
+
+face1.write(base64.b64decode(img1[23:]))
+face2.write(base64.b64decode(img2[23:]))
+face3.write(base64.b64decode(img3[23:]))
+face4.write(base64.b64decode(img4[23:]))
+face5.write(base64.b64decode(img5[23:]))
+
+face1.close()
+face2.close()
+face3.close()
+face4.close()
+face5.close()
+
+user.face1 = "faces/"+username+"1.jpg"
+user.face2 = "faces/"+username+"2.jpg"
+user.face3 = "faces/"+username+"3.jpg"
+user.face4 = "faces/"+username+"4.jpg"
+user.face5 = "faces/"+username+"5.jpg"
+user.save()
+
+fr.face_regist(user)

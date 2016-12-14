@@ -69,7 +69,6 @@
                 <input id="email_input" type="email" name="E-mail" value=""/>
 
                 <p id="pwd_txt">Password</p>
-                <a href="/forget"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
                 <input id="pwd_input" type="password" name="pwd" value=""/>
             </form> 
             <!-- Login -->
@@ -157,7 +156,7 @@
       <div id="Video_collect" class="uploaded">
         <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Collected Video</p>
-        <a href="/personal_page/{{ page_user.username }}/video"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/video_collected"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
             {% for collect_item in collect_video_list %}
               <li id="item{{ forloop.counter0 }}">
@@ -172,7 +171,7 @@
       <div id="Image_collect" class="uploaded">
         <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Collected Image</p>
-        <a href="/personal_page/{{ page_user.username }}/picture"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/picture_collected"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
             {% for collect_item in collect_image_list %}
               <li id="item{{ forloop.counter0 }}">
@@ -187,7 +186,7 @@
       <div id="Audio_collect" class="uploaded">
         <img class="bgd" src="/static/images/video_display/u86.png"/>
         <p class="h2 title">Collected Audio</p>
-        <a href="/personal_page/{{ page_user.username }}/audio"><p class="h2 more" style="text-decoration:underline;">More</p></a>
+        <a href="/personal_page/{{ page_user.username }}/audio_collected"><p class="h2 more" style="text-decoration:underline;">More</p></a>
         <ul id="recommand">
           {% for collect_item in collect_audio_list %}
               <li id="item{{ forloop.counter0 }}">

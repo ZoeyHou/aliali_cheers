@@ -15,7 +15,7 @@
 	$("#Image_like_icon").click(function(){
 		$.post(like_collect_url, {"type": "like", "mtype":"video", "video_name": $("#page_identify").val()}, function(ret){
 			if(ret=="F"){
-				alert("你已经表过态了")
+				alert("你已经表过态了");
 			}else if(ret=="T"){
 				document.getElementById("Image_like_num").innerHTML =
 			 (Number(document.getElementById("Image_like_num").innerHTML)+1).toString()
@@ -36,6 +36,7 @@
 
 
 	$("#Image_collect_icon").click(function(){
+		alert("collect this video");
 		$.post(like_collect_url, {"type": "collect","mtype":"video", "video_name": $("#page_identify").val()}, function(ret){
 			if(ret=="F"){
 				alert("你已经收藏过了");

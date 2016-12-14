@@ -61,7 +61,7 @@
     form.action=signup_url;
     form.method='post';
     form.name="signup_form";
-    form.enctype="multipart/form-data";;
+    form.enctype="multipart/form-data";
 
     form.appendChild(email[0]);//在form中追加input表单
     form.appendChild(user[0]);

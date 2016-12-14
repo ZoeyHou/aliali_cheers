@@ -73,6 +73,7 @@ def edit_info(req):
 
 def more_upload(req, page_username, type):
     username = req.COOKIES.get("username", '')
+    page_user = User.objects.get(username=page_username)
     if type == "video" or type == "video/":
         vlist = Video.objects.filter(user__username=page_username)
         return render_to_response("Webpages/uploaded_video.html", {'list': vlist,
@@ -85,14 +86,52 @@ def more_upload(req, page_username, type):
         plist = Picture.objects.filter(user__username=page_username)
         return render_to_response("Webpages/uploaded_image.html", {'list': plist,
                                                                    'username': username})
+    elif type == "video_collected" or type == "video_collected/":
+        vclist = page_user.Collect_User.filter(~Q(video=None))
+        return render_to_response("Webpages/collected_video.html", {'list': vclist,
+                                                                   'username': username})
+    elif type == "audio_collected" or type == "audio_collected/":
+        aclist = page_user.Collect_User.filter(~Q(audio=None))
+        return render_to_response("Webpages/collected_audio.html", {'list': aclist,
+                                                                   'username': username})
+    elif type == "picture_collected" or type == "picture_collected/":
+        pclist = page_user.Collect_User.filter(~Q(picture=None))
+        return render_to_response("Webpages/collected_image.html", {'list': pclist,
+                                                                   'username': username})
+
 
 
 def search(req):
     username = req.COOKIES.get("username", '')
-    catagories = Catagory.objects.all()
-    if req.method == "POST":
-        pass
-    return render_to_response("Webpages/search.html", {"username": username, "catagories":catagories})
+    catagory_items = Catagory.objects.all()
+    if req.method == 'POST':
+        search_input = req.POST.get('search_input', '')
+        catagories = req.POST.get('catagory', '')
+
+        if search_input and catagories:
+            catagories_list = catagories.split(',')
+            my_filter_qs = Q()
+            for c_item in catagories_list[:-1]:
+                my_filter_qs = (my_filter_qs | Q(catagory__catagory_name=c_item))
+            my_filter_qs = (my_filter_qs & Q(title__contains=search_input))
+
+            audio_list = Audio.objects.filter(my_filter_qs)[:40]
+            video_list = Video.objects.filter(my_filter_qs)[:40]
+            picture_list = Picture.objects.filter(my_filter_qs)[:40]
+            user_list = User.objects.filter(username=search_input)[:40]
+            return render_to_response("Webpages/search.html", {"username": username,
+                                                           "catagories": catagory_items,
+                                                           "audio_list": audio_list,
+                                                            "video_list": video_list,
+                                                            "picture_list": picture_list,
+                                                            "user_list": user_list, })
+        elif search_input and not catagories:
+            user_list = User.objects.filter(username=search_input)[:40]
+            return render_to_response("Webpages/search.html", {"username": username,
+                                                               "catagories": catagory_items,
+                                                               "user_list": user_list, })
+
+    return render_to_response("Webpages/search.html", {"username": username, "catagories": catagory_items})
 
 
 # audio展示页面，对应url /audio

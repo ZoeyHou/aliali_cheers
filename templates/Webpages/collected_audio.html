@@ -6,9 +6,9 @@
   <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
   <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="/static/css/uploaded_audio.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/header.js"></script>
-  <script type="text/javascript" src="js/uploaded_audio.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/uploaded_audio.js"></script>
   <script src="/static/js/jquery.webcam.min.js"></script>
 </head>
 <body>
@@ -70,7 +70,7 @@
                 <input id="email_input" type="email" name="E-mail" value=""/>
 
                 <p id="pwd_txt">Password</p>
-                <a href="/forget"><p id="forget_txt" style="text-decoration:underline;">Forget</p></a>            
+
                 <input id="pwd_input" type="password" name="pwd" value=""/>
             </form> 
             <!-- Login -->
@@ -101,67 +101,26 @@
 
   <div id="Uploaded" class="audio_display">
         <p class="Title">Collected audio</p>
+
         <ul id = "display_detail" class="display">
+        {% for item in list %}
           <li>
             <div class="item">
-              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
+              <img id="item_cover" src="{{ item.audio.cover.url }}"/>
               <div id="item_change">
                 <img id="item_change_img" src="/static/images/audio/up.png"/>
               </div>
-              <p id="item_rank">1</p>
+              <p id="item_rank">{{ forloop.counter }}</p>
               <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="audio_display.html">
+              <a href="/audio_playpage/{{ item.audio.audio }}">
                 <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
               </a>
-              <p id="item_title">Closer</p>
-              <p id="item_singer">The chainsmokers Featuring Halsey</p>
+              <p id="item_title">{{ item.audio.title }}</p>
+              <p id="item_singer">{{ item.audio.discription }}</p>
             </div>
           </li>
-          <li>
-            <div class="item">
-              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
-              <div id="item_change">
-                <img id="item_change_img" src="/static/images/audio/up.png"/>
-              </div>
-              <p id="item_rank">1</p>
-              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="audio_display.html">
-                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
-              </a>
-              <p id="item_title">Closer</p>
-              <p id="item_singer">The chainsmokers Featuring Halsey</p>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
-              <div id="item_change">
-                <img id="item_change_img" src="/static/images/audio/up.png"/>
-              </div>
-              <p id="item_rank">1</p>
-              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="audio_display.html">
-                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
-              </a>
-              <p id="item_title">Closer</p>
-              <p id="item_singer">The chainsmokers Featuring Halsey</p>
-            </div>
-          </li>
-          <li>
-            <div class="item">
-              <img id="item_cover" src="/static/images/audio/image_u61.jpg"/>
-              <div id="item_change">
-                <img id="item_change_img" src="/static/images/audio/up.png"/>
-              </div>
-              <p id="item_rank">1</p>
-              <img id="play_bg" src="/static/images/audio/play_bg_u82.png"/>
-              <a href="audio_display.html">
-                <img id="play_tri" src="/static/images/audio/play_tri_u84.png"/>
-              </a>
-              <p id="item_title">Closer</p>
-              <p id="item_singer">The chainsmokers Featuring Halsey</p>
-            </div>
-          </li>
+        {% endfor %}
+
           <!-- Footer -->
           <div id="blank"></div>
       <div id = "Footer">
@@ -176,7 +135,7 @@
         <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
         <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
       </div>
-        </ul>
+     </ul>
     </div>
 
       
