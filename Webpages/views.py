@@ -14,6 +14,7 @@ import Transformation.process_img as p_i
 import Transformation.get_filetype as ft
 
 import json
+import os
 
 
 def return_hello(req):
@@ -64,10 +65,18 @@ def edit_info(req):
     if req.method == "POST":
         discription = req.POST.get('discription', '')
         avatar = req.FILES.get("avatar", '')
+        print str(user.avatar)
+        if str(user.avatar) != '/static/images/users/default_user.jpg':
+            os.remove(user.avatar.path)
         user.discription = discription
-        if avatar and ft.get_pictype(avatar) in ft.image_type_tuple:
-            user.avatar = avatar
+        user.avatar = avatar
         user.save()
+        if avatar and (ft.get_pictype(user.avatar.path) not in ft.image_type_tuple):
+            os.remove(user.avatar.path)
+            user.avatar = '/static/images/users/default_user.jpg'
+            user.save()
+            return HttpResponse("The formation of your avatar is not supported by our website. "
+                                "please upload jpg, png, or gif")
         if filter_type != 'None' and avatar:
             p_i.apply_filter(user, filter_type)
         return HttpResponseRedirect("/personal_page/"+username+'/')

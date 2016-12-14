@@ -55,6 +55,7 @@
     var reenter_password = $("#signup_rpwd_input");
     var avatar = $("#doc");
     var discription = $("#signup_dis_input");
+    var filter_input = $("#filter_select");
 
     var form = document.createElement('form');
     form.id="signup_form";
@@ -68,6 +69,7 @@
     form.appendChild(password[0]);
     form.appendChild(avatar[0]);
     form.appendChild(discription[0]);
+    form.appendChild(filter_input[0]);
 
     if(password.val()!=reenter_password.val()){
       alert("The passwords entering twice are different");

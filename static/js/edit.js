@@ -21,6 +21,7 @@
     var edit_url = "/edit_info/"
     var avatar = $("#doc");
     var discription = $("#Edit_discription_input");
+    var filter_input = $("#filter_select");
 
     var form = document.createElement('form');
     form.id="description_form";
@@ -31,6 +32,7 @@
 
     form.appendChild(avatar[0]);
     form.appendChild(discription[0]);
+    form.appendChild(filter_input[0]);
 
     form.submit();
   })
