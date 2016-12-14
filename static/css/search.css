@@ -130,9 +130,11 @@
 #Cata {
   position: absolute;
   top: 47px;
+  left: 160px;
+  width: 1200px;
 }
 #Cata p {
-  position:absolute;
+  position:relative;
   left:16px;
   top:-14px;
   width:182px;
@@ -145,7 +147,6 @@
 }
 #cata_item {
   position: relative;
-  left: 160px;
   width: 100px;
   float: left;
 }
