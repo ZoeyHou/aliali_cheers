@@ -1,0 +1,254 @@
+﻿.Photo_display {
+  position: relative;
+}
+#photo {
+  position:absolute;
+  left:136px;
+  top:70px;
+  width:1168px;
+  height:510px;
+  overflow:hidden;
+}
+#photo img{
+  width:1170px;
+  height:510px;
+}
+.slider {
+  width:1168px;
+  height:510px;
+  overflow: hidden;
+  margin: 100px auto;
+  }
+
+.slider ul {
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.slider ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+  font-size: 0;
+}
+
+.slideitem {
+  position: relative;
+}
+#next {
+  position:absolute;
+  left:1264px;
+  top:440px;
+  width:40px;
+  height:40px;
+  opacity:0.5;
+  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:20px;
+  color:#FFFFFF;
+  z-index: 9;
+}
+#pre {
+  position:absolute;
+  left:136px;
+  top:440px;
+  width:40px;
+  height:40px;
+  opacity:0.5;
+  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:20px;
+  color:#FFFFFF;
+  z-index: 8;
+}
+.photo_nav_bgd {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:40px;
+  height:40px;
+}
+.photo_nav_txt {
+  position:absolute;
+  left:14px;
+  top:-10px;
+  width:36px;
+  word-wrap:break-word;
+}
+#mark {
+  position:absolute;
+  left:1214px;
+  top:652px;
+  width:90px;
+  height:28px;
+  overflow:hidden;
+  z-index: 8;
+}
+#mark li{
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:90px;
+  height:28px;
+  -ms-overflow-x:hidden;
+  overflow-x:hidden;
+  -ms-overflow-y:hidden;
+  overflow-y:hidden;
+  background-image:none;
+}
+.mark_item{
+  position: absolute;
+  top:10px;
+  width:10px;
+  height:10px;
+}
+#marker1 {
+  left:10px;
+}
+#marker2 {
+  left:30px;
+}
+#marker3 {
+  left:50px;
+}
+#marker4 {
+  left:70px;
+}
+.display_detail {
+  position: relative;
+  top:770px;
+}
+.audio_display {
+  position: relative;
+  left:132px;
+  height:610px;
+  width:1150px;
+  border-top: #000000 solid 2px;
+}
+#Footer{
+  position: relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}
+.Title {
+  position:absolute;
+  top:-45px;
+  width:53px;
+  height:22px;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:18px;
+}
+.More {
+  position:absolute;
+  left:1100px;
+  top:-24px;
+  width:41px;
+  height:20px;
+  font-family:'CenturyGothic', 'Century Gothic';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  color: #000000;
+  text-decoration:underline;
+}
+.display {
+  position:absolute;
+  left:75px;
+  top:20px;
+  width:1000px;
+  height:530px;
+}
+.display li{
+  position: relative;
+  height: 130px;
+}
+.item {
+  position: relative;
+  width:1000px;
+  height:110px;
+  border: #CCCCCC solid 1px;
+}
+#item_cover {
+  position:absolute;
+  left:160px;
+  top:0px;
+  width:110px;
+  height:110px;
+}
+#item_change {
+  position: absolute;
+  width: 50px;
+  height: 110px;
+  background-color: #EEEEEE
+}
+#item_change_img {
+  position:absolute;
+  left:0px;
+  top:30px;
+  width:50px;
+  height:50px;
+}
+#item_rank {
+  position:absolute;
+  left:92px;
+  top:-18px;
+  width:28px;
+  height:55px;
+  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:48px;
+  text-align:center;
+}
+#play_bg {
+  position:absolute;
+  left:920px;
+  top:35px;
+  width:40px;
+  height:40px;
+}
+#play_tri {
+  position:absolute;
+  left:935px;
+  top:44px;
+  width:15px;
+  height:21px;
+}
+#item_title {
+  position:absolute;
+  left:319px;
+  top:-5px;
+  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:32px;
+  color:#333333;
+  text-align:left;
+  line-height:normal;
+  width:101px;
+  height:37px;
+
+}
+#item_singer {
+  position:absolute;
+  left:319px;
+  top:35px;
+  font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:24px;
+  color:#333333;
+  text-align:left;
+  line-height:normal;
+  width:412px;
+  height:28px;
+  color:#666666;
+}

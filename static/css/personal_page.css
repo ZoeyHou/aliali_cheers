@@ -1,0 +1,153 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:relative;
+  left:-80px;
+  width:1260px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#Person {
+  position: relative;
+  top: 200px;
+  height: 550px;
+}
+#Person_bgd {
+  position:absolute;
+  left:110px;
+  width:1200px;
+  height:300px;
+}
+#Person_title {
+  position:absolute;
+  left:140px;
+  top:-58px;
+  width:166px;
+  height:28px;
+}
+#Person_img {
+  position:absolute;
+  left:240px;
+  top:60px;
+  width:150px;
+  height:160px;
+}
+#Person_name {
+  position:absolute;
+  left:510px;
+  top:20px;
+  width:120px;
+  height:37px;
+}
+#Person_discription {
+  position:absolute;
+  left:510px;
+  top:87px;
+  width:530px;
+  height:115px;
+  font-size:20px;
+}
+#Person_edit {
+  position:absolute;
+  left:1191px;
+  top:22px;
+  width:39px;
+  height:18px;
+  font-size:16px;
+  color:#003366;
+}
+.uploaded {
+  position: relative;
+  height: 300px;
+}
+.title {
+  position:absolute;
+  left:140px;
+  width:200px;
+  height:28px;
+}
+.more {
+  position:absolute;
+  left:1250px;
+  top:7px;
+  width:44px;
+  height:21px;
+  font-size:18px;
+  text-decoration:underline;
+}
+.bgd {
+  position:absolute;
+  left:110px;
+  top:58px;
+  width:1200px;
+  height:210px;
+}
+#recommand li{
+  position: absolute;
+  top: 80px;
+}
+#item0{
+  position: absolute;
+  left:140px;
+}
+#recommand a {
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  width:200px;
+  height:140px;
+}
+#recommand a:hover{
+  background-color: #333333;
+  opacity: 0.3;
+}
+#recommand img {
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  width:200px;
+  height:140px;
+}
+#recommand p {
+  position:absolute;
+  left:72px;
+  top:140px;
+  width:56px;
+  height:21px;
+  font-size:18px;
+}
+#item1 {
+  position:absolute;
+  left:375px;
+  width:200px;
+  height:140px;
+}
+#item2 {
+  position:absolute;
+  left:610px;
+  width:200px;
+  height:140px;
+}
+#item3 {
+  position:absolute;
+  left:846px;
+  width:200px;
+  height:140px;
+}
+#item4 {
+  position:absolute;
+  left:1080px;
+  width:200px;
+  height:140px;
+}
+#Footer{
+  position:relative;
+  left:293px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}

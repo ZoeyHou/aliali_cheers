@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload</title>
+  <meta charset='utf-8'/>
+  <link href="/static/css/styles.css" type="text/css" rel="stylesheet"/>
+  <link href="/static/css/header.css" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/upload.css">
+  <script type="text/javascript" src="/static/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/upload.js"></script>
+  <script src="/static/js/jquery.webcam.min.js"></script>
+</head>
+  <body>
+    <div id="base" class="">
+
+  <div id='header'>
+        <!-- Logo -->
+        <div id='logo'>
+          <p id="Logo_title1">Super</p>
+          <p id="Logo_title2">JiJi</p>
+          <img id="Logo_circle" src="/static/images/header/logo_header.png"/>
+        </div>
+        <!-- Navigator -->
+        <ul id='Navigator'>
+          <li id = "Nav_Home">
+              <p id="Txt_home">Home</p>
+              <img id= "Line_home" class="Line" src="/static/images/header/line.png" />
+              <a id = "Hot_home" class="Hot" href="/"></a>
+          </li>
+          <li id = "Nav_Video">
+            <p id="Txt_video">Video</p>
+            <img id= "Line_video" class="Line" src="/static/images/header/line.png" />
+            <a id= "Hot_video" class="Hot" href="/video"></a>
+          <li>
+          <li id = "Nav_Audio">
+            <p id="Txt_audio">Audio</p>
+            <img id= "Line_audio" class="Line" src="/static/images/header/line.png" />
+            <a id= "Hot_audio" class="Hot" href="/audio"></a>
+          </li>
+          <li id = "Nav_Image">
+            <p id="Txt_image">Image</p>
+            <img id= "Line_image" class="Line" src="/static/images/header/line.png"/>
+            <a id= "Hot_image" class="Hot" href="/gallery"></a>
+          <li>
+        </ul>
+        <!-- Search -->
+        <div id = 'Search'>
+          <a href="#"><p id="Search_login" class="paragraph">Login</p></a>
+          <div id = 'User'>
+            <a href="/personal_page/{{ username }}" ><p id="User_name" class="paragraph">{{ username }}</p></a>
+            <p id="User_circle1" class="paragraph">○</p>
+            <a href="#"><p id="User_logout" class="paragraph">Logout</p></a>
+            <p id="User_circle2" class="paragraph">○</p>
+            <a href="/transform/upload"><p id="User_upload" class="paragraph">Upload</p></a>
+          </div>
+          <img id="Search_bgd" src="/static/images/header/Search_bgd.png"/>
+          <a id="search" href ="/search"><img id="Search_icon" src="/static/images/header/Search_icon.png"/></a>
+        </div>
+        <!-- Login -->
+        <div id="Login">
+          <div id="Login_containt" style="display:none;">
+            <img id="Login_bgd" src="/static/images/header/Login_bgd.png">
+            <!-- Logo -->
+            <p id="Login_logo_title1">Super</p>
+            <p id="Login_logo_title2">JiJi</p>
+            <img id="Login_logo_circle" src="/static/images/header/logo_login.png"/>
+
+            <form id="Input" action="action_page.php">
+                <p id="email_txt">E-mail Address</p>
+                <a href="/login/register/"><p id="sign_txt" style="text-decoration:underline;">Sign up</p></a>
+                <input id="email_input" type="email" name="E-mail" value=""/>
+
+                <p id="pwd_txt">Password</p>
+                <input id="pwd_input" type="password" name="pwd" value=""/>
+            </form> 
+            <!-- Login -->
+            <a id="Login_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">LOGIN</p>
+            </a>
+            <!-- Sign up -->
+            <a id="Face_button" class="shape" href="#">
+              <img id="Login_button_img" class="button " src="/static/images/header/button.png"/>
+              <p id="Login_button_txt" class="text">FACE LOGIN</p>
+            </a>
+          </div>
+          <div id="Login_body" style="display:none;">
+          </div>
+          <div id="Face_login_bgd" style="visibility:hidden;">
+            <img id="Face_login_bgd_img" src="/static/images/edit/u94.png"/>
+            <a href="#"><img id="Face_login_close" src="/static/images/edit/close.png"/></a>
+          </div>
+          <div id="Face_login_page" style="visibility:hidden;">
+            <p id="face_email_txt">E-mail</p>
+            <input id="username" type="text">
+            <button id="capture_btn">Capture</button>
+            <div id="webcam"></div>
+          </div>
+        </div>
+  </div>
+
+      <div id="Upload">
+        <img id="upload_bgd" class="ax_shape" src="/static/images/upload/u56.png"/>
+        <p id="upload_title" class="h2">Upload</p>
+
+        <a id="upload_cover" class="shape" href="#">
+          <p id="upload_cover_txt1">+</p>
+          <p id="upload_cover_txt2">Cover</p>
+          <img id="upload_cover_img" src="/static/images/upload/u60.png"/>
+        </a>
+
+        <p id="File_txt" class="h2">File:</p>
+        <input id="File_input" name="upload_file" class="ax_text_field" type="file" value=""/>
+
+        <p id="Title_txt" class="h2">Title:</p>
+        <input id="Title_input" name="title" class="ax_text_field" type="text" value=""/>
+        <p id="Title_hint" class="paragraph">Title cannot be none!</p>
+
+        <p id="Discription_txt" class="h2">Discription:</p>
+        <textarea id="Discription_input" name="discription" class="ax_text_area"></textarea>
+
+        <p id="Type_txt" class="h2">Type:</p>
+        <select id="Type_input" name="file_type" class="ax_droplist">
+          <option selected value="Video">Video</option>
+          <option value="Audio">Audio</option>
+          <option value="Image">Image</option>
+        </select>
+
+        <p id="Catagory_txt" class="h2">Catagory:</p>
+          <select id="Catagory_input" name="catagory" class="ax_droplist">
+            {% for item in catagory_list %}
+                {% if forloop.counter == 1 %}
+                    <option selected value="{{ item.catagory_name }}">{{ item.catagory_name }}</option>
+                {% else %}
+                    <option value="{{ item.catagory_name }}">{{ item.catagory_name }}</option>
+                {% endif %}
+            {% endfor %}
+          </select>
+
+        <button id="Upload_bt" class="shape">
+          
+          <p id="Upload_bt_txt" class="text">Upload</p>
+        </button>
+      </div>
+
+    <div id="Upload_image">
+      <img id="Upload_image_bgd" src="/static/images/edit/u94.png"/>
+      <a href="#"><img id="Upload_image_close" src="/static/images/edit/close.png"/></a>
+    </div>
+      <div id = "Upload_image_content">
+        <img id="preview" src="/static/images/edit/u98.png" width="250" height="200" style="display: block; width: 250px; height: 200px;">
+        <input type="file" name="discript_img" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">
+        <p id="Upload_image_txt" class="paragraph">Choose Filter</p>
+        <select id="filter_select" name="filter_type" class="ax_droplist">
+        <option value="None" selected>None</option>
+        {% for item in filter_list %}
+          <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+        </select>
+        <button id="filter_btn">Apply</button>
+      </div>
+      
+      <div id="blank"></div>
+      <!-- Footer -->
+      <div id = "Footer">
+        <a href="/about_us/"><p id="Footer_txt_1" class="paragraph">Contact us</p></a>
+        <a href="/about_us/"><p id="Footer_txt_2" class="paragraph">About this website.</p></a>
+        <a href="/about_us/"><p id="Footer_txt_3" class="paragraph">About us</p></a>
+        <img id="Footer_logo" src="/static/images/header/logo_footer.png"/>
+        <p id="Footer_txt_4" class="paragraph">Super ○ JIJI 2016 in Chengdu</p>
+        <p id="Footer_txt_5" class="paragraph">@Copyright Team ○Quan.&nbsp; All Rights Reserved</p>
+        <img id="slice_1" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_2" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_3" class="slice" src="/static/images/header/slice.png"/>
+        <img id="slice_4" class="slice" src="/static/images/header/slice.png"/>
+      </div>
+    </div>
+  </body>
+<script type="text/javascript">
+  $("#capture_btn").click(function(){
+      webcam.capture();
+  });
+</script>
+{% if username %}
+    <script>
+        document.getElementById("Search_login").style.visibility="hidden";
+        document.getElementById("User").style.visibility="visible";
+    </script>
+{% endif %}
+</html>

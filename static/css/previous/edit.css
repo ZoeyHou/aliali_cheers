@@ -1,0 +1,120 @@
+﻿body {
+  margin:0px;
+  background-image:none;
+  position:static;
+  left:auto;
+  width:1340px;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+#Edit_bgd {
+  position:absolute;
+  left:110px;
+  top:200px;
+  width:1200px;
+  height:510px;
+}
+#Edit_title {
+  position:absolute;
+  left:140px;
+  top:142px;
+  width:166px;
+  height:28px;
+}
+#Edit_img {
+  position:absolute;
+  left:210px;
+  top:269px;
+  width:150px;
+  height:160px;
+}
+#Edit_update {
+  position:absolute;
+  left:600px;
+  top:610px;
+  width:220px;
+  height:50px;
+  font-size:24px;
+}
+#Edit_update_bt {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:220px;
+  height:50px;
+}
+#Edit_update_txt {
+  position:absolute;
+  left:2px;
+  top:-9px;
+  width:216px;
+  word-wrap:break-word;
+}
+#Edit_name_txt {
+  position:absolute;
+  left:470px;
+  top:249px;
+  width:125px;
+  height:28px;
+}
+#Edit_name {
+  position:absolute;
+  left:635px;
+  top:269px;
+  width:235px;
+  height:28px;
+}
+#Edit_name_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:235px;
+  height:28px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+#Edit_discription_txt {
+  position:absolute;
+  left:470px;
+  top:330px;
+  width:134px;
+  height:28px;
+}
+#Edit_discription {
+  position:absolute;
+  left:635px;
+  top:350px;
+  width:490px;
+  height:170px;
+}
+#Edit_discription_input {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:490px;
+  height:170px;
+  font-family:'ArialMT', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+#Footer{
+  position:absolute;
+  left:293px;
+  top:780px;
+  width:854px;
+  border-top: #888888 solid 1px;
+}
