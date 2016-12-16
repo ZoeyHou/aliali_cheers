@@ -41,7 +41,6 @@ def register(req):
                 if filter_type != 'None' and avatar:
                     p_i.apply_filter(user, filter_type)
             except Exception, e:
-                user.delete()
                 print Exception, ":", e
                 return HttpResponse(e)
 

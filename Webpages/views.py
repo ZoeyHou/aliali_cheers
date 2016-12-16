@@ -69,7 +69,10 @@ def edit_info(req):
         if str(user.avatar) != '/static/images/users/default_user.jpg':
             os.remove(user.avatar.path)
         user.discription = discription
-        user.avatar = avatar
+        if avatar:
+            user.avatar = avatar
+        else:
+            user.avatar = '/static/images/users/default_user.jpg'
         user.save()
         if avatar and (ft.get_pictype(user.avatar.path) not in ft.image_type_tuple):
             os.remove(user.avatar.path)
@@ -344,7 +347,7 @@ def like_and_collect(req):
             elif m_type == 'audio':
                 an = req.POST['audio_name']
                 a = Audio.objects.get(audio=an)
-                if not (Dislike_Item.objects.filter(user=user, audio=a)\
+                if not (Dislike_Item.objects.filter(user=user, audio=a)
                         or Like_Item.objects.filter(user=user, audio=a)):
                     a.dislike += 1
                     a.save()
