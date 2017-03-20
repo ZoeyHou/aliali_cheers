@@ -87,7 +87,7 @@ jQuery("#webcam2").webcam({
   $("#Take_photo").click(function(){
       if(pic_count!=0) {
           var photoID = 'Photo_' + photo;
-          document.getElementById(photoID).src = "images/personal_page/hint.png";
+          document.getElementById(photoID).src = "/static/images/personal_page/hint.png";
           photo++;
       }
       webcam.capture();

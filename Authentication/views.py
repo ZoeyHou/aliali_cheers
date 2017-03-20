@@ -4,9 +4,11 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import User
 from django.conf import settings
 import base64
+import os
 
 import face_recog as fr
 import Transformation.process_img as p_i
+import Transformation.get_filetype as ft
 
 
 # 注册
@@ -25,11 +27,17 @@ def register(req):
                 user = User()
                 user.username = username
                 user.password = password
-                if avatar: user.avatar = avatar
-                else: user.avatar = '/static/images/users/default_user.jpg'
+                if avatar:
+                    user.avatar = avatar
+                else:
+                    user.avatar = '/static/images/users/default_user.jpg'
                 user.discription = discription
                 user.email = email
                 user.save()
+                if user.avatar != '/static/images/users/default_user.jpg':
+                    if ft.get_pictype(user.avatar.path) not in ft.image_type_tuple:
+                        os.remove(user.avatar.path)
+                        user.delete()
                 if filter_type != 'None' and avatar:
                     p_i.apply_filter(user, filter_type)
             except Exception, e:

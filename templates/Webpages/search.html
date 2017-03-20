@@ -102,7 +102,7 @@
       <div id="Search">
         <input id="Search_area" class="ax_text_field" type="text" name="search_input" value=""/>
         <img id="Search_icon_bgd" src="/static/images/search/u57.png"/>
-        <a id="search_btn"><img id="Search_icon_img" src="/static/images/search/search_icon_u59.png"/></a>
+        <a id="search_btn" href="#"><img id="Search_icon_img" src="/static/images/search/search_icon_u59.png"/></a>
       </div>
 
       <div id="Search_navigator">
@@ -131,12 +131,14 @@
 
             <p id="cata_txt" class="h2">Catagory:</p>
             <form id="Cata">
+            <ul>
             {% for cata in catagories %}
               <li id="cata_item" class="ax_checkbox">
                 <label for="cata_bt"><p>{{ cata.catagory_name }}</p></label>
                 <input name="cata_item" type="checkbox" value="{{ cata.catagory_name }}"/>
               </li>
             {% endfor %}
+             </ul>
             </form>
           </div>
           <ul id="Video_content" class="Content">

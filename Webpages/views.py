@@ -10,8 +10,11 @@ from Webpages.models import Video, Audio, Picture
 from Webpages.models import Like_Item, Dislike_Item, Collect_Item
 from Webpages.models import Video_Comment, Audio_Comment, Picture_Comment
 from Webpages.models import Catagory
+import Transformation.process_img as p_i
+import Transformation.get_filetype as ft
 
 import json
+import os
 
 
 def return_hello(req):
@@ -55,20 +58,36 @@ def personal_page(req, page_username):
 
 def edit_info(req):
     username = req.COOKIES.get("username", '')
+    filter_type = req.POST.get('filter_type', '')
     if username:
         user = User.objects.get(username=username)
 
     if req.method == "POST":
         discription = req.POST.get('discription', '')
         avatar = req.FILES.get("avatar", '')
+        print str(user.avatar)
+        if str(user.avatar) != '/static/images/users/default_user.jpg':
+            os.remove(user.avatar.path)
         user.discription = discription
         if avatar:
             user.avatar = avatar
+        else:
+            user.avatar = '/static/images/users/default_user.jpg'
         user.save()
+        if avatar and (ft.get_pictype(user.avatar.path) not in ft.image_type_tuple):
+            os.remove(user.avatar.path)
+            user.avatar = '/static/images/users/default_user.jpg'
+            user.save()
+            return HttpResponse("The formation of your avatar is not supported by our website. "
+                                "please upload jpg, png, or gif")
+        if filter_type != 'None' and avatar:
+            p_i.apply_filter(user, filter_type)
         return HttpResponseRedirect("/personal_page/"+username+'/')
 
     else:
-        return render_to_response("Webpages/edit.html", {"username": username, "user": user})
+        return render_to_response("Webpages/edit.html", {"username": username,
+                                                         "user": user,
+                                                         "filter_list": p_i.filter_list, })
 
 
 def more_upload(req, page_username, type):
@@ -328,7 +347,7 @@ def like_and_collect(req):
             elif m_type == 'audio':
                 an = req.POST['audio_name']
                 a = Audio.objects.get(audio=an)
-                if not (Dislike_Item.objects.filter(user=user, audio=a)\
+                if not (Dislike_Item.objects.filter(user=user, audio=a)
                         or Like_Item.objects.filter(user=user, audio=a)):
                     a.dislike += 1
                     a.save()
