@@ -71,13 +71,13 @@ http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B
 
 ###Linux：  
 1. 安装python django PIL ffmpeg  
-Ubuntu下： 
-　　PIL ffmpeg： 
-　　　　sudo apt-get install python-imaging ffmpeg
-　　django： 
-　　　　sudo apt-get install pip
-　　　　sudo pip install django==1.9.6
-　　python:系统自带了
+Ubuntu下：  
+　　PIL ffmpeg：  
+　　　　sudo apt-get install python-imaging ffmpeg  
+　　django：   
+　　　　sudo apt-get install pip  
+　　　　sudo pip install django==1.9.6  
+　　python:系统自带了  
 					
 2. cd到项目文件夹下  
 3. 输入 python manage.py runserver  
