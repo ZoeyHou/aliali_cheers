@@ -1,19 +1,19 @@
 # aliali_chrees  
 
-##每个app对应的功能：  
+## 每个app对应的功能：  
   
-###webpage：  
+### webpage：  
 对应项目目录下的webpage文件夹与url中的/*  
 主要用于展示网站中所有页面，播放视频音频，展示图片，处理弹幕请求，处理评论，点赞，收藏，个人主页展示与编辑功能。  
-###tranformation：  
+### tranformation：  
 对应目录下Transfomation文件夹与url中/transform/*  
 主要处理多媒体文件的上传与上传后的转换。
-###authentication：  
+### authentication：  
 对应项目目录下Authentication文件夹与url中/login/*  
 主要处理用户的登录/注册，人脸识别登录与注册。  
 
   
-##所有URL及其对应功能：  
+## 所有URL及其对应功能：  
 */  网站主页  
 */gallery/  所有图片展示页面  
 */picture_display/(.+)/  特定图片展示页面  
@@ -40,7 +40,7 @@
 */login/recog_register  人脸识别注册  
   
   
-##工作及文档分配：  
+## 工作及文档分配：  
 具体可参见 /about_us  
   
 ×陈：人脸识别登录  
@@ -52,8 +52,8 @@
 ×张：视频图像处理，人脸识别登录  
   
   
-##可通过如下方法跑起网站来：  
-###Ｗindows：  
+## 可通过如下方法跑起网站来：  
+### Ｗindows：  
 1. 安装python django PIL ffmpeg
 可以参照以下教程装上django，开发用的django是1.9.6版本, 之上到1.10.4都是可以跑的起来的。  
 http://jingyan.baidu.com/article/466506580e7d29f549e5f8b6.html  
@@ -69,7 +69,7 @@ http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B
 3. 输入 python manage.py runserver
 4. 浏览器访问  127.0.0.1:8000   
 
-###Linux：  
+### Linux：  
 1. 安装python django PIL ffmpeg  
 Ubuntu下：  
 　　PIL ffmpeg：  
@@ -83,15 +83,15 @@ Ubuntu下：
 3. 输入 python manage.py runserver  
 4. 浏览器访问 127.0.0.1:8000     
 
-###MAC：  
+### MAC：  
 1. 安装python django PIL ffmpeg
 2. cd到项目文件夹下
 3. 输入 python manage.py runserver
 4. 浏览器访问 127.0.0.1:8000  
 	
-##所有依赖的库  
+## 所有依赖的库  
 将整理在requirement.txt中。  
   
-##网站具体效果展现与功能介绍  
+## 网站具体效果展现与功能介绍  
 请参见项目目录中/doc/presentation_ppt.pdf
   
