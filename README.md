@@ -52,8 +52,8 @@
 ×张：视频图像处理，人脸识别登录  
 
 
-##可通过如下方法跑起网站来：  
-###Ｗindows：  
+## 可通过如下方法跑起网站来：  
+### Ｗindows：  
 1. 安装python django PIL ffmpeg  
 可以参照以下教程装上python pip.  
 http://www.tuicool.com/articles/eiM3Er3/  
@@ -70,7 +70,7 @@ http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B
 5. 输入 python manage.py runserver  
 6. 浏览器访问  127.0.0.1:8000  
 
-###Linux：  
+### Linux：  
 1. 安装python django PIL ffmpeg 以及其他依赖环境  
 Ubuntu下：  
 PIL ffmpeg：  
@@ -84,7 +84,7 @@ PIL ffmpeg：
 5. 输入 python manage.py runserver  
 6. 浏览器访问  127.0.0.1:8000  
 
-###MAC：
+### MAC：
 1. 安装python pip django PIL ffmpeg  
 2. cd到项目文件夹下, pip install -r requirement.txt  
 3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages  
@@ -92,10 +92,9 @@ PIL ffmpeg：
 5. 输入 python manage.py runserver  
 6. 浏览器访问  127.0.0.1:8000  
 
-##所有依赖的库
+## 所有依赖的库
 mmmpeg  
 以及pip可安装的整理在requirement.txt中。  
 
-##网站具体效果展现与功能介绍  
+## 网站具体效果展现与功能介绍  
 请参见项目目录中/doc/presentation_ppt.pdf  
-
