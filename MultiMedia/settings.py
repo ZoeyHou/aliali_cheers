@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Webpages.apps.WebpagesConfig',
-    'Authentication.apps.AuthenticationConfig',
-    'Transformation.apps.TransformationConfig',
+    'Webpages',
+    'Authentication',
+    'Transformation',
 ]
 
 MIDDLEWARE_CLASSES = [
