@@ -52,50 +52,50 @@
 ×张：视频图像处理，人脸识别登录  
 
 
-##可通过如下方法跑起网站来：
-###Ｗindows：
-1. 安装python django PIL ffmpeg
-可以参照以下教程装上python pip.
-http://www.tuicool.com/articles/eiM3Er3/
-安装django，开发用的django是1.9.6版本, 之上到1.10.4都是可以跑的起来的。
-安装好pip后，cd 到项目文件夹，在cmd中输入
-`pip install -r requirement.txt`
-安装依赖的环境
-需要安装ffmpeg，教程如下：
-http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B%E5%BA%8F
+##可通过如下方法跑起网站来：  
+###Ｗindows：  
+1. 安装python django PIL ffmpeg  
+可以参照以下教程装上python pip.  
+http://www.tuicool.com/articles/eiM3Er3/  
+安装django，开发用的django是1.9.6版本, 之上到1.10.4都是可以跑的起来的。  
+安装好pip后，cd 到项目文件夹，在cmd中输入  
+`pip install -r requirement.txt`  
+安装依赖的环境  
+需要安装ffmpeg，教程如下：  
+http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B%E5%BA%8F  
 
-2. cd到项目文件夹下
-3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
-4. 输入python makemigrations，然后输入python manage.py migrate
-5. 输入 python manage.py runserver
-6. 浏览器访问  127.0.0.1:8000
+2. cd到项目文件夹下  
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages  
+4. 输入python makemigrations，然后输入python manage.py migrate  
+5. 输入 python manage.py runserver  
+6. 浏览器访问  127.0.0.1:8000  
 
-###Linux：
-1. 安装python django PIL ffmpeg 以及其他依赖环境
-Ubuntu下：
-PIL ffmpeg：
-`sudo apt-get install ffmpeg `
-其他依赖环境：
-`pip install -r requirement.txt`
+###Linux：  
+1. 安装python django PIL ffmpeg 以及其他依赖环境  
+Ubuntu下：  
+PIL ffmpeg：  
+`sudo apt-get install ffmpeg `  
+其他依赖环境：  
+`pip install -r requirement.txt`  
 
-2. cd到项目文件夹下
-3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
-4. 输入python makemigrations，然后输入python manage.py migrate
-5. 输入 python manage.py runserver
-6. 浏览器访问  127.0.0.1:8000
+2. cd到项目文件夹下  
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages  
+4. 输入python makemigrations，然后输入python manage.py migrate  
+5. 输入 python manage.py runserver  
+6. 浏览器访问  127.0.0.1:8000  
 
 ###MAC：
-1. 安装python pip django PIL ffmpeg
-2. cd到项目文件夹下, pip install -r requirement.txt
-3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
+1. 安装python pip django PIL ffmpeg  
+2. cd到项目文件夹下, pip install -r requirement.txt  
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages  
 4. 输入python makemigrations，然后输入python manage.py migrate
-5. 输入 python manage.py runserver
-6. 浏览器访问  127.0.0.1:8000
+5. 输入 python manage.py runserver  
+6. 浏览器访问  127.0.0.1:8000  
 
 ##所有依赖的库
-mmmpeg
-以及pip可安装的整理在requirement.txt中。
+mmmpeg  
+以及pip可安装的整理在requirement.txt中。  
 
-##网站具体效果展现与功能介绍
-请参见项目目录中/doc/presentation_ppt.pdf
+##网站具体效果展现与功能介绍  
+请参见项目目录中/doc/presentation_ppt.pdf  
 
