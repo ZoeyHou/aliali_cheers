@@ -45,6 +45,7 @@
 
 
 		alert("ready!")
+		$(document.body).append(form);
 		form.submit();
 
 	});

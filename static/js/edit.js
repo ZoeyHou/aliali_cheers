@@ -34,6 +34,7 @@
     form.appendChild(discription[0]);
     form.appendChild(filter_input[0]);
 
+    $(document.body).append(form);
     form.submit();
   })
 

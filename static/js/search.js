@@ -66,6 +66,7 @@
 		inp.type="text";
 		form.appendChild(inp)
 
+		$(document.body).append(form);
 		form.submit();
 	})
 });

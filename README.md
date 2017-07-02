@@ -29,7 +29,7 @@
 */search/  搜索（视频/音频/图片/用户）页面  
 */about_us/  团队信息展示页面  
   
-*/admin：后台数据库管理 用户名：suprejiji 密码：guoji1420  
+*/admin：后台数据库管理 用户名：superjiji 密码：guoji1420  
   
 */transform/upload   任何文件上传都需要将数据post给这个url，其中调用了python-magic来判断文件类型，并根据此来决定对应的操作。同时在数据上传后，数据会在后台进行转换，使之支持多种文件格式，比如上传一个jpg文件后，后台会自动把这个文件转换为bmp，png等格式，提供给用户下载。   
   
