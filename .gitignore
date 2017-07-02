@@ -1,0 +1,14 @@
+# 需要ignore的文件有 
+# 上传的各种媒体文件：视频，音频，图片
+/media/*.[(mp4)(MP4)(flv)(FLV)]
+/media/*.[(mp3)(MP3)(wav)(WAV)]
+/media/*.[(png)(PNG)(jpg)(JPG)(bmp)(BMP)]
+
+# 数据库文件
+db.sqlite3
+
+# pyc文件
+*.pyc
+
+# migrations文件夹
+migrations/

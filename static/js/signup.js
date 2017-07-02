@@ -74,6 +74,7 @@
     if(password.val()!=reenter_password.val()){
       alert("The passwords entering twice are different");
     }else{
+      $(document.body).append(form);
       form.submit();
     }
   });

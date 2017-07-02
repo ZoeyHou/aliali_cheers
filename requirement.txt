@@ -1,0 +1,5 @@
+django==1.9.6
+requests==2.18.1
+pillow==4.2.0
+python-libmagic==0.4.0
+mutagen==1.38

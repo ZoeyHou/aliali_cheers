@@ -29,7 +29,7 @@
 */search/  搜索（视频/音频/图片/用户）页面  
 */about_us/  团队信息展示页面  
   
-*/admin：后台数据库管理 用户名：suprejiji 密码：guoji1420  
+*/admin：后台数据库管理 用户名：superjiji 密码：guoji1420  
   
 */transform/upload   任何文件上传都需要将数据post给这个url，其中调用了python-magic来判断文件类型，并根据此来决定对应的操作。同时在数据上传后，数据会在后台进行转换，使之支持多种文件格式，比如上传一个jpg文件后，后台会自动把这个文件转换为bmp，png等格式，提供给用户下载。   
   
@@ -50,48 +50,52 @@
 ×熊：后台及整合  
 ×杨：聊天  
 ×张：视频图像处理，人脸识别登录  
-  
-  
-## 可通过如下方法跑起网站来：  
-### Ｗindows：  
-1. 安装python django PIL ffmpeg
-可以参照以下教程装上django，开发用的django是1.9.6版本, 之上到1.10.4都是可以跑的起来的。  
-http://jingyan.baidu.com/article/466506580e7d29f549e5f8b6.html  
-需要python的PIL库，安装如下：  
-在32位win7下可以通过下面的地址下载windows安装程序来安装：  
-http://www.pythonware.com/products/pil/  
-但是64位的程序官方没有提供，需要到第三方地址下载安装。  
-http://www.lfd.uci.edu/~gohlke/pythonlibs/  
-需要安装ffmpeg，教程如下：  
-http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B%E5%BA%8F  
-  
-2. cd到项目文件夹下
-3. 输入 python manage.py runserver
-4. 浏览器访问  127.0.0.1:8000   
 
-### Linux：  
-1. 安装python django PIL ffmpeg  
-Ubuntu下：  
-　　PIL ffmpeg：  
-　　　　sudo apt-get install python-imaging ffmpeg  
-　　django：   
-　　　　sudo apt-get install pip  
-　　　　sudo pip install django==1.9.6  
-　　python:系统自带了  
-					
-2. cd到项目文件夹下  
-3. 输入 python manage.py runserver  
-4. 浏览器访问 127.0.0.1:8000     
 
-### MAC：  
+##可通过如下方法跑起网站来：
+###Ｗindows：
 1. 安装python django PIL ffmpeg
+可以参照以下教程装上python pip.
+http://www.tuicool.com/articles/eiM3Er3/
+安装django，开发用的django是1.9.6版本, 之上到1.10.4都是可以跑的起来的。
+安装好pip后，cd 到项目文件夹，在cmd中输入
+`pip install -r requirement.txt`
+安装依赖的环境
+需要安装ffmpeg，教程如下：
+http://zh.wikihow.com/%E5%9C%A8Windows%E4%B8%8A%E5%AE%89%E8%A3%85FFmpeg%E7%A8%8B%E5%BA%8F
+
 2. cd到项目文件夹下
-3. 输入 python manage.py runserver
-4. 浏览器访问 127.0.0.1:8000  
-	
-## 所有依赖的库  
-将整理在requirement.txt中。  
-  
-## 网站具体效果展现与功能介绍  
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
+4. 输入python makemigrations，然后输入python manage.py migrate
+5. 输入 python manage.py runserver
+6. 浏览器访问  127.0.0.1:8000
+
+###Linux：
+1. 安装python django PIL ffmpeg 以及其他依赖环境
+Ubuntu下：
+PIL ffmpeg：
+`sudo apt-get install ffmpeg `
+其他依赖环境：
+`pip install -r requirement.txt`
+
+2. cd到项目文件夹下
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
+4. 输入python makemigrations，然后输入python manage.py migrate
+5. 输入 python manage.py runserver
+6. 浏览器访问  127.0.0.1:8000
+
+###MAC：
+1. 安装python pip django PIL ffmpeg
+2. cd到项目文件夹下, pip install -r requirement.txt
+3. 输入python manage.py makemigrations --empty Authentication Transformation Webpages
+4. 输入python makemigrations，然后输入python manage.py migrate
+5. 输入 python manage.py runserver
+6. 浏览器访问  127.0.0.1:8000
+
+##所有依赖的库
+mmmpeg
+以及pip可安装的整理在requirement.txt中。
+
+##网站具体效果展现与功能介绍
 请参见项目目录中/doc/presentation_ppt.pdf
-  
+
